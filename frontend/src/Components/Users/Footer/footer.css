@@ -1,0 +1,19 @@
+.footerSection{
+    width: 100%;
+    height: 100px;
+    background-color: #131a22;
+}
+.footerLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    height: 40px;
+    width: auto;
+}
+.footerContentText{
+    color: white;
+    font-size: small;
+    text-align: center;
+    padding-top: 10px;
+}
