@@ -2,6 +2,9 @@
     width: 100%;
     height: 100px;
     background-color: #131a22;
+    clear: both;
+    position: relative;
+    bottom: -1rem;
 }
 .footerLogo{
     display: block;

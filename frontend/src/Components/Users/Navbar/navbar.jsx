@@ -2,15 +2,22 @@ import React from 'react';
 import './navbar.css'
 import Logo from '../../../Images/logo.png'
 import Cart from '../../../Images/cart.png'
+import {useNavigate} from 'react-router-dom'
 
-function home() {
+function Home() {
+
+  const navigate=useNavigate()
+
   return(
       <div className='navcontainer'>
           <div className='navbarContainer'>
               <header className="userHomeHeader">
                 <div className="row logoRowHomeHeader">
                   <div className='amazonNavLogoDiv'>
-                    <a href=""><img className='amazonNavLogo' src={Logo} alt="" /></a>
+                    <a onClick={(e)=>{
+                      e.preventDefault()
+                      navigate('/')
+                    }}><img className='amazonNavLogo' src={Logo} alt="" /></a>
                   </div>
                   <div className='navTextDivAccount'>
                    <a href=""> <p className='navText'>Hello, Sign in <br /><span className='navHighText'>Account & Lists</span></p></a>
@@ -31,4 +38,4 @@ function home() {
   )
 }
 
-export default home;
+export default Home;

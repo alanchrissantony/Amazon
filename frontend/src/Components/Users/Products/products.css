@@ -1,0 +1,63 @@
+.productsSectionContainer{
+    width: 100%;
+    height: auto;
+}
+.productsContainer{
+    width: 95.34%;
+    margin: auto;
+    height: auto;
+}
+.productBox{
+    height: 500px;
+    width: 290px;
+    background-color: #fff;
+    float: left;
+    margin: 1rem;
+}
+.productsImageDiv{
+    margin: 1rem;
+}
+.productsTitleDiv{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.productsTitleLink{
+    color: black;
+}
+.productsTitle{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.productsTitle:hover{
+    color: #ffa53f;
+}
+.productsRatingDiv{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.productsPriceDiv{
+    margin-left: 2rem;
+}
+.productsPrice{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.productsRatingDiv span{
+    color: #ffa53f;
+    margin: 0.1rem;
+    float: left;
+}
+.productsPriceDollar{
+    font-size: smaller;
+}
+.productsPriceText{
+    font-size: large;
+}
+.productsPriceDecimal{
+    font-size: smaller;
+}
+.productsReviewDiv{
+    padding-top: 0.3rem;
+    font-size: smaller;
+    color: #007185;
+}
