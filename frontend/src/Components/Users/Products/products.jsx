@@ -7,11 +7,11 @@ function Products() {
     const [product, setProduct] = useState([]);
 
     useEffect(()=>{
-        const fecthData = async ()=>{
+        const fetchData = async ()=>{
         const{data}=await axios.get('/api/products')
         setProduct(data)
         };
-        fecthData();
+        fetchData();
     },[])
 
     return (

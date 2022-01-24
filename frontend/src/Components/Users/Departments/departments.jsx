@@ -1,44 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import './departments.css'
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
+import Department from './department';
+import RowPost from '../RowPosts/rowPost';
+import LoadingBox from '../LoadingBox/loadingBox';
+import MessageBox from '../MessageBox/messageBox';
 
 
 function Departments() {
 
-  const navigate=useNavigate()
-
   const [departments, setDepartments] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
 
   useEffect(()=>{
-    const fecthData = async ()=>{
-      const{data}=await axios.get('/api/departments')
-      setDepartments(data)
+    const fetchData = async ()=>{
+
+      try{
+        setLoading(true)
+        const{data}=await axios.get('/api/departments')
+        setLoading(false)
+        setDepartments(data)
+      }catch(err){
+        setError(err.message)
+        setLoading(false)
+      }
     };
-    fecthData();
+    fetchData();
   },[])
+
+  
 
   return (
       <div>
+        {loading ? (
+          <LoadingBox></LoadingBox>
+        ) : error ? (
+          <MessageBox>{error}</MessageBox>
+        ) : (
           <section className='departmentsSectionContainer'>
             <div className="departmentsDivContainer">
 
               {departments.map(departments=>(
-                <div key={departments._id} className="departmentBox" onClick={(e)=>{
-                  e.preventDefault()
-                  navigate('/products')
-                }}>
-                <a className='departmentTitleLink'><h2 className='departmentTitle'>{departments.title}</h2></a>
-                <a className='departmentImageLink'><img src={departments.image} className='departmentImage' alt="" /></a>
-                <br />
-                <a href=""className='departmentShopLink' onClick={(e)=>{
-                  e.preventDefault()
-                  navigate('/products')
-                }}>Shop now</a>
-              </div>
+                <Department key={departments._id} departments={departments}></Department>
               ))}
             </div>
           </section>
+          )}
       </div>
   )
 }

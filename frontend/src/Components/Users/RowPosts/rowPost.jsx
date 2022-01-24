@@ -7,11 +7,11 @@ function RowPost() {
     const [products, setProducts] = useState([]);
 
     useEffect(()=>{
-        const fecthData = async ()=>{
+        const fetchData = async ()=>{
         const{data}=await axios.get('/api/phones')
         setProducts(data)
         };
-        fecthData();
+        fetchData();
     },[])
 
   return (

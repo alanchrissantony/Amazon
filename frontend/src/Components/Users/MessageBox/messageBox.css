@@ -1,0 +1,13 @@
+.alert{
+    margin-top: 5rem;
+    margin-left: 31%;
+    margin-right: 50%;
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+    color: rgb(255, 0, 0);
+    background-color: rgb(255, 233, 233);
+    text-align: center;
+    height: 3rem;
+    width: 30rem;
+    padding-top: 1.3rem;
+}
