@@ -24,11 +24,24 @@ function productScreen() {
                     <div className='productScreenPriceDiv'>
                         <p className='productScreenPrice'><span className='productScreenPriceTitle'>Price: </span><span className='productScreenPriceValue'>$ 3826.98</span></p>
                     </div>
-                    <div className="productScreenInstockDiv">
-                        <p className="productScreenInstockText">In Stock</p>
+                    <div className="productScreenInStockDiv">
+                        <p className="productScreenInStockText">In Stock</p>
                     </div>
                     <div className="productScreenQtyBtnDiv">
-                        
+                        <button className='btnQty'>
+                            <span className='btnText'>Qty: </span>
+                            <select name="" id="" className='selectBtnQty'>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </button>
+                    </div>
+                    <div className="CartBuyButtonsDiv">
+                        <button className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
+                        <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
                     </div>
                 </div>
             </div>
