@@ -1,6 +1,7 @@
 .productsSectionContainer{
     width: 100%;
     height: auto;
+    min-height: 500px;
 }
 .productsContainer{
     width: 95.34%;
