@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './departments.css'
 import axios from 'axios';
 import Department from './department';
-import RowPost from '../RowPosts/rowPost';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
 

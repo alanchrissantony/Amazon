@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import './rowPost.css'
 import axios from 'axios';
+import LoadingBox from '../LoadingBox/loadingBox';
+import MessageBox from '../MessageBox/messageBox';
 
 function RowPost() {
 
     const [products, setProducts] = useState([]);
-
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+  
+  
     useEffect(()=>{
-        const fetchData = async ()=>{
-        const{data}=await axios.get('/api/phones')
-        setProducts(data)
-        };
-        fetchData();
+      const fetchData = async ()=>{
+  
+        try{
+          setLoading(true)
+          const{data}=await axios.get('/api/phones')
+          setLoading(false)
+          setProducts(data)
+        }catch(err){
+          setError(err.message)
+          setLoading(false)
+        }
+      };
+      fetchData();
     },[])
 
   return (
       <div>
-        <div className="rowPosterSection">
+          {loading ? (
+          <LoadingBox></LoadingBox>
+        ) : error ? (
+          <MessageBox>{error}</MessageBox>
+        ) : (
+            <div className="rowPosterSection">
             <div className='rowPosterContainer'>
                 <div className="divRow">
                     <div className="posters">
@@ -27,6 +45,8 @@ function RowPost() {
                 </div>
             </div>
         </div>
+          )}
+        
        
       </div>
   )
