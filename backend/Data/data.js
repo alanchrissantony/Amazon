@@ -42,7 +42,7 @@ const data={
         },
         
     ],
-    products:[
+    phones:[
         {
             _id:'1',
             image:'https://www.gizmochina.com/wp-content/uploads/2020/10/Apple-iPhone-12-Mini-500x500.jpg'
@@ -85,7 +85,7 @@ const data={
         },
         
     ],
-    electronics:[
+    products:[
         {
             _id:'1',
             title:'MYao Magnetic Wireless Power Bank, 15W Wireless Portable Phone Charger 10000mAh, 4 Output PD 20W',

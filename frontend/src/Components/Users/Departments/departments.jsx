@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './departments.css'
-import data from '../Data/data';
+import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 
 
@@ -8,12 +8,22 @@ function Departments() {
 
   const navigate=useNavigate()
 
+  const [departments, setDepartments] = useState([]);
+
+  useEffect(()=>{
+    const fecthData = async ()=>{
+      const{data}=await axios.get('/api/departments')
+      setDepartments(data)
+    };
+    fecthData();
+  },[])
+
   return (
       <div>
           <section className='departmentsSectionContainer'>
             <div className="departmentsDivContainer">
 
-              {data.departments.map(departments=>(
+              {departments.map(departments=>(
                 <div key={departments._id} className="departmentBox" onClick={(e)=>{
                   e.preventDefault()
                   navigate('/products')
