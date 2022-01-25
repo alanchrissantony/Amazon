@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import './products.css'
+import {useNavigate} from 'react-router-dom'
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../../actions/productActions';
 
 function Products() {
+
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
     const productList = useSelector((state)=> state.productList)
@@ -24,7 +27,9 @@ function Products() {
             ) : (
                 <div className="productsContainer">
                     {products.map(product => (
-                        <div key={product._id} className="productBox">
+                        <div key={product._id} className="productBox" onClick={(e)=>{
+                            navigate(`/products/${product._id}`)
+                        }}>
                             <div className="productsImageDiv">
                                 <a className='productsImageLink'><img className='productsImage' src={product.image} alt="" /></a>
                             </div>

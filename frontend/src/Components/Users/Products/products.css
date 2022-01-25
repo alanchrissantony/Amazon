@@ -1,7 +1,7 @@
 .productsSectionContainer{
     width: 100%;
     height: auto;
-    min-height: 500px;
+    min-height: 600px;
 }
 .productsContainer{
     width: 95.34%;
@@ -14,6 +14,7 @@
     background-color: #fff;
     float: left;
     margin: 1rem;
+    cursor: pointer;
 }
 .productsImageDiv{
     margin: 1rem;

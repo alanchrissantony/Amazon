@@ -1,3 +1,7 @@
+.productScreenSection{
+    height: auto;
+    min-height: 600px;
+}
 .productScreenImageDiv{
     width: 40%;
     height: 600px;

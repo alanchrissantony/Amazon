@@ -29,8 +29,10 @@ function ProductScreen(props) {
         fetchData();
     }, [])
 
+    const proId = window.location.pathname.split('/')
 
-    const product= products.find(element => element._id === '2')
+    const product= products.find(element => element._id === proId[2])
+
   
 
     
