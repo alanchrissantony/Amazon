@@ -19,6 +19,10 @@
 .productsImageDiv{
     margin: 1rem;
 }
+.productsImage{
+    max-width: 250px;
+    height: auto;
+}
 .productsTitleDiv{
     margin-left: 2rem;
     margin-top: 1rem;
