@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './products.css'
-import axios from 'axios';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { listProducts } from '../../../actions/productActions';
 
 function Products() {
 
-    const [product, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
-
+    const dispatch = useDispatch()
+    const productList = useSelector((state)=> state.productList)
+    const {loading, error, products} = productList
 
     useEffect(() => {
-        const fetchData = async () => {
-
-            try {
-                setLoading(true)
-                const { data } = await axios.get('/api/products')
-                setLoading(false)
-                setProducts(data)
-            } catch (err) {
-                setError(err.message)
-                setLoading(false)
-            }
-        };
-        fetchData();
+        dispatch(listProducts())
     }, [])
 
     return (
@@ -35,7 +23,7 @@ function Products() {
                 <MessageBox>{error}</MessageBox>
             ) : (
                 <div className="productsContainer">
-                    {product.map(product => (
+                    {products.map(product => (
                         <div key={product._id} className="productBox">
                             <div className="productsImageDiv">
                                 <a className='productsImageLink'><img className='productsImage' src={product.image} alt="" /></a>

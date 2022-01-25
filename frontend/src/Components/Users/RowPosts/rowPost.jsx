@@ -15,7 +15,7 @@ function RowPost() {
       const fetchData = async ()=>{
   
         try{
-          setLoading(true)
+          setLoading(false)
           const{data}=await axios.get('/api/phones')
           setLoading(false)
           setProducts(data)
