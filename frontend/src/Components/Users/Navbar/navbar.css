@@ -76,12 +76,22 @@
     margin-top: 12px;
 }
 .cartText{
-    margin-top: -21px;
+    margin-top: -5px;
     margin-left: 42px;
     color: white;
 }
 .cartText:hover{
     color: #ffa53f;
+}
+.navCartCountText{
+    font-size: larger;
+    font-weight: 700;
+    color: #ffa53f;
+
+}
+.navCartCountDiv{
+    margin-top: -40px;
+    margin-left: 22px;
 }
 a{
     text-decoration: none;

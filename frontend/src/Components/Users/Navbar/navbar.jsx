@@ -26,7 +26,7 @@ function Home() {
                     <a href=""><p className='navText'>Returns <br /><span className='navHighText'>& Orders</span></p></a>
                   </div>
                   <div className='navTextDivCart'>
-                    <a href=""><img className='cartNavLogo' src={Cart} alt="" /><p className='navHighText cartText'>Cart</p></a>
+                    <a href=""><img className='cartNavLogo' src={Cart} alt="" /><div className='navCartCountDiv'><span className='navCartCountText'>9</span></div><p className='navHighText cartText'>Cart</p></a>
                   </div>
                 </div>
                 <div className="row departmentRowHomeHeader">

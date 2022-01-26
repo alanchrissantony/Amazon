@@ -2,7 +2,7 @@
     background-color: #eaeded;
     width: 100%;
     height: 900px;
-    min-height: 600px;
+    min-height: 900px;
 }
 .departmentsDivContainer{
     width: 95.34%;
@@ -27,6 +27,7 @@
 }
 .departmentImage{
     margin-left: 1rem;
+    max-width: 250px;
 }
 .departmentShopLink{
     margin: 2rem;

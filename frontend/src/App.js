@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
 import Home from './ view/Users/Pages/home';
 import Products from './ view/Users/Pages/products';
 import ProductScreen from './ view/Users/Pages/productScreen';
+import Cart from './ view/Users/Pages/cart';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route exact path='/' element={<Home/>}/>
           <Route path='/products' element={<Products/>}/>
           <Route path='/products/:id' element={<ProductScreen/>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </Router>
     </div>

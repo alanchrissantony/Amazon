@@ -11,6 +11,7 @@ function ProductScreen(props) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [qty,setQty]=useState(1)
 
 
     useEffect(() => {
@@ -34,7 +35,6 @@ function ProductScreen(props) {
     const product= products.find(element => element._id === proId[2])
 
   
-
     
 
     return (
@@ -66,24 +66,24 @@ function ProductScreen(props) {
                             <p className='productScreenPrice'><span className='productScreenPriceTitle'>Price: </span><span className='productScreenPriceValue'>$</span><span className='productScreenPriceValue'>{product.price}</span><span className='productScreenPriceValue'>{product.decimal}</span></p>
                         </div>
                         <div className="productScreenInStockDiv">
-                            <p className="productScreenInStockText">In Stock</p>
+                           {product.stock ? <p className="productScreenInStockText">In Stock</p> : <p className="productScreenUnavailableText">Out of Stock</p>}
                         </div>
-                        <div className="productScreenQtyBtnDiv">
+                        {product.stock ? <div className="productScreenQtyBtnDiv">
                             <button className='btnQty'>
                                 <span className='btnText'>Qty: </span>
-                                <select name="" id="" className='selectBtnQty'>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                <select name="" id="" value={qty} className='selectBtnQty' onChange={(e)=>setQty(e.target.value)}>
+                                    {[...Array(product.stock)].map((x, i)=>
+                                        <option key={i+1}>{i+1}</option>
+                                        
+                                    )}
                                 </select>
                             </button>
-                        </div>
-                        <div className="CartBuyButtonsDiv">
+                        </div> : ''}
+                        
+                        {product.stock ? <div className="CartBuyButtonsDiv">
                             <button className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
                             <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
-                        </div>
+                        </div> : ''}
                     </div>
                 </div>
             </div>

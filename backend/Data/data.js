@@ -93,7 +93,8 @@ const data={
             price:'49',
             decimal:'99',
             review:'237',
-            rating:2
+            rating:2,
+            stock:19
         },
         {
             _id:'2',
@@ -102,7 +103,8 @@ const data={
             price:'24',
             decimal:'99',
             review:'68',
-            rating:5
+            rating:5,
+            stock:0
         },
         {
             _id:'3',
@@ -111,7 +113,8 @@ const data={
             price:'18',
             decimal:'56',
             review:'492',
-            rating:4.5
+            rating:4.5,
+            stock:25
         },
         {
             _id:'4',
@@ -120,7 +123,8 @@ const data={
             price:'32',
             decimal:'27',
             review:'1354',
-            rating:3
+            rating:3,
+            stock:12
         },
         {
             _id:'5',
@@ -129,7 +133,8 @@ const data={
             price:'149',
             decimal:'98',
             review:'674',
-            rating:3.5
+            rating:3.5,
+            stock:5
         },
         {
             _id:'6',
@@ -138,7 +143,8 @@ const data={
             price:'312',
             decimal:'95',
             review:'4859',
-            rating:4.5
+            rating:4.5,
+            stock:53
         },
         {
             _id:'7',
@@ -147,7 +153,8 @@ const data={
             price:'499',
             decimal:'99',
             review:'4',
-            rating:4
+            rating:4,
+            stock:43
         },
         {
             _id:'8',
@@ -156,7 +163,8 @@ const data={
             price:'278',
             decimal:'99',
             review:'912',
-            rating:5
+            rating:5,
+            stock:34
         }
     ]
 }
