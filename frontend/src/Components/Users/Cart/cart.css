@@ -4,6 +4,7 @@
     min-height: 550px;
     background-color: #eaeded;
     padding-top: 1rem;
+    overflow:auto;
 }
 .cartContainer{
     margin: auto;
@@ -14,6 +15,11 @@
     background-color: #ffffff;
     margin-left: 1rem;
     float: left;
+    margin-bottom: 2rem;
+}
+.cartBox{
+    width:1000px;
+    height: auto;
 }
 .checkoutBox{
     width: 300px;
@@ -21,6 +27,7 @@
     background-color: #ffffff;
     margin-top: 1rem;
     margin-left: 65rem;
+    text-align: center;
 }
 .shoppingCartText{
     font-weight: 400;
@@ -48,6 +55,7 @@
 }
 .cartImage{
     max-width: 200px;
+    max-height: 200px;
 }
 .cartContentBox{
     margin-left: 220px;
@@ -109,11 +117,61 @@
     width: 140px;
     height: 50px;
     margin-left: 850px;
-    margin-top: -10rem;
+    margin-top: -9rem;
 }
 .cartProductPrice{
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
     font-family: sans-serif;
+}
+.subTotalCartDiv{
+    width: 100%;
+    height: 60px;
+    text-align: right;
+}
+.cartBottomHr{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 10rem;
+    background-color: #dddddd;
+}
+.subTotalCartText{
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+.cartSubTotalText{
+    font-size: 18px;
+    line-height: 24px;
+}
+.cartSubTotalPrice{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.subTotalText{
+    padding-top: 2rem;
+}
+.checkOutSubTotalText{
+    font-size: 18px;
+    line-height: 24px;
+}
+.checkOutSubTotalPrice{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.checkOutBtn{
+    width: 258px;
+    height: 30px;
+    margin-top: 2rem;
+    background-color: #ffd93c;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.checkOutBtn:hover{
+    background-color: #FCD200;
 }
