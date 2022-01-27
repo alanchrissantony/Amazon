@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './productScreen.css'
 import MessageBox from '../MessageBox/messageBox';
 import LoadingBox from '../LoadingBox/loadingBox';
+import {useNavigate} from 'react-router-dom'
 
 
 function ProductScreen(props) {
@@ -12,6 +13,9 @@ function ProductScreen(props) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [qty,setQty]=useState(1)
+    const [cart, setCart]=useState([])
+
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -34,7 +38,23 @@ function ProductScreen(props) {
 
     const product= products.find(element => element._id === proId[2])
 
-  
+    const handleAddCart=(e)=>{
+        setCart([
+            {
+                id: product._id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+                decimal: product.decimal,
+                quantity: qty
+            }
+        ])
+        navigate('/cart')
+    }
+
+    useEffect(()=>{
+        localStorage.setItem('Cart', JSON.stringify(cart))
+    }, [cart])
     
 
     return (
@@ -81,7 +101,7 @@ function ProductScreen(props) {
                         </div> : ''}
                         
                         {product.stock ? <div className="CartBuyButtonsDiv">
-                            <button className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
+                            <button className='ProductCartBtn'><span className='ProductCartBtnText' onClick={()=>handleAddCart()}>Add to Cart</span></button>
                             <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
                         </div> : ''}
                     </div>

@@ -4,7 +4,7 @@ import { productListReducer } from '../reducers/productReducers';
 
 const initialState = {};
 const reducer = combineReducers({
-    productList: productListReducer
+    productList: productListReducer,
 })
 
 const composeEnhancer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

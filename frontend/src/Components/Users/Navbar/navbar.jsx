@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './navbar.css'
 import Logo from '../../../Images/logo.png'
 import Cart from '../../../Images/cart.png'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
 
 function Home() {
 
   const navigate=useNavigate()
+
+  const [cart, setCart] = useState([]);
+
+
+  useEffect(()=>{
+    const fetchData = async ()=>{
+
+      try{
+        
+        const{data}=await axios.get('/api/departments')
+
+        setCart(data)
+      }catch(err){
+        
+        console.log(err.message)
+      }
+    };
+    fetchData();
+  },[])
+
+  const cartCount = cart.length
+
 
   return(
       <div className='navcontainer'>
@@ -26,7 +49,7 @@ function Home() {
                     <a href=""><p className='navText'>Returns <br /><span className='navHighText'>& Orders</span></p></a>
                   </div>
                   <div className='navTextDivCart'>
-                    <a href=""><img className='cartNavLogo' src={Cart} alt="" /><div className='navCartCountDiv'><span className='navCartCountText'>9</span></div><p className='navHighText cartText'>Cart</p></a>
+                    <a href=""><img className='cartNavLogo' src={Cart} alt="" /><div className='navCartCountDiv'><span className='navCartCountText'>{cartCount}</span></div><p className='navHighText cartText'>Cart</p></a>
                   </div>
                 </div>
                 <div className="row departmentRowHomeHeader">

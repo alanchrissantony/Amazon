@@ -11,7 +11,7 @@ function Cart() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [cartQty, setCartQty] = useState(1);
+    
 
 
     useEffect(() => {
@@ -32,6 +32,9 @@ function Cart() {
 
 
 
+    
+
+    console.log()
 
     return (
         <div className='cartSection'>
@@ -60,7 +63,7 @@ function Cart() {
                                 {product.stock ? <div className="cartQtyBtnDiv">
                                     <button className='cartBtnQty'>
                                         <span className='cartBtnText'>Qty: </span>
-                                        <select className='cartSelectBtnQty' value={2} onClick={(e)=>setCartQty(e.target.value)} >
+                                        <select className='cartSelectBtnQty' value={2} >
 
                                         {[...Array(product.stock)].map((x, i)=>
                                         <option key={i+1}>{i+1}</option>
