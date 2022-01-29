@@ -16,10 +16,10 @@ function address() {
                 <div className="newAddressDiv">
                     <div className="newAddressFormContainer">
                         <p className='addNewAddressText'>Add a new address</p>
-                        <form action="">
+                        <form>
                             <div className="formDivTop">
                                 <label htmlFor="country" className='newAddressLabel labelCountry'>Country/Region</label>
-                                <select name="" id="" className='selectCountry'>
+                                <select name="country" id="" className='selectCountry'>
                                     <option value="" className='countryOption'>India</option>
                                     <option value="">China</option>
                                     <option value="">America</option>
@@ -28,37 +28,37 @@ function address() {
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="name" className='newAddressLabel labelName'>Full name</label>
-                                <input type="text" className='inputSpace inputName' />
+                                <input type="text" className='inputSpace inputName' name='name'/>
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="number" className='newAddressLabel labelNumber'>Mobile number</label>
-                                <input type="tel" className='inputSpace inputNumber' />
+                                <input type="tel" className='inputSpace inputNumber' name='mobile'/>
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="pincode" className='newAddressLabel labelPincode' placeholder='6 digits [0-9] PIN code'>Pincode</label>
-                                <input type="num" className='inputSpace inputPincode' />
+                                <input type="num" className='inputSpace inputPincode' name='pincode' />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="flat" className='newAddressLabel labelFlat'>Flat, House no., Building, Company, Apartment</label>
-                                <input type="text" className='inputSpace inputFlat' />
+                                <input type="text" className='inputSpace inputFlat' name='address' />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="area" className='newAddressLabel labelArea'>Area, Street, Sector, Village</label>
-                                <input type="text" className='inputSpace inputArea' />
+                                <input type="text" className='inputSpace inputArea' name='place'/>
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="landmark" className='newAddressLabel labelLandmark' placeholder='E.g. near Apollo hospital'>Landmark</label>
-                                <input type="text" className='inputSpace inputLandmark' />
+                                <input type="text" className='inputSpace inputLandmark' name='landmark'/>
                             </div>
                             <div className="formDiv inputCityDiv">
                                 <label htmlFor="city" className='newAddressLabel labelCity'>Town/City</label>
                                 <br />
-                                <input type="text" className='inputCity' />
+                                <input type="text" className='inputCity'  name='city'/>
                             </div>
                             <div className='selectStateDiv'>
                                 <label htmlFor="state" className='newAddressLabel labelState'>State</label>
                                 <br />
-                                <select name="" id="" className='selectState'>
+                                <select name="state" id="" className='selectState' >
                                     <option value="">Choose a state</option>
                                     <option value="">Kerala</option>
                                     <option value="">Tamil Nadu</option>
@@ -67,7 +67,7 @@ function address() {
                             </div>
                             <br />
                             <div className='formDivTop'>
-                                <input type="checkbox" className='addressCheckbox'/>
+                                <input type="checkbox" className='addressCheckbox' name='defaultAddress'/>
                                 <label htmlFor="addressDefault" className='newAddressLabel labelDefaultAddress'>Make this my default address</label>
                             </div>
                             <div className="deliveryInstructionDiv">
@@ -78,7 +78,7 @@ function address() {
                             </div>
                             <div className='formDiv'>
                                 <label htmlFor="type" className='newAddressLabel labelType'>Address Type</label>
-                                <select name="" id="" className='selectAddressType'>
+                                <select name="addressType" id="" className='selectAddressType'>
                                     <option value="">Select an Address Type</option>
                                     <option value="">Home (7 am - 9 pm delivery)</option>
                                     <option value="">Office/Commercial (10 am - 6 pm delivery)</option>
