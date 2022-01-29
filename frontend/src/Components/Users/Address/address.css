@@ -1,0 +1,168 @@
+.addressContainer{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: auto;
+    color: #333;
+    margin-bottom: 5rem;
+}
+.newAddressDiv{
+    margin-top: 2rem;
+}
+.addressTitleTextDiv{
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.SelectDeliveryAddressText{
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #333;
+}
+.newAddressFormContainer{
+    width: 50%;
+}
+.addNewAddressText{
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+.formDivTop{
+    margin-top: 2rem;
+}
+.formDiv{
+    margin-top: 1rem;
+}
+.newAddressLabel{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 700;
+}
+.selectCountry{
+    width: 94%;
+    outline: 0;
+    color: #111;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+    display: inline-block;
+    height: 31px;
+    border: 1px solid;
+    border-color: #bcc1c8 #bababa #adb2bb;
+    background-color: #f1f2f4;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+}
+.inputSpace{
+    width: 94%;
+    height: 31px;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #bbb;
+    outline-color: #f69b3c;
+    outline-width: thin;
+}
+.inputCity{
+    width: 260px;
+    height: 31px;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #bbb;
+    outline-color: #f69b3c;
+    outline-width: thin;
+}
+.inputCityDiv{
+    float: left;
+}
+.selectStateDiv{
+    margin-top: 1rem;
+    margin-left: 282px;
+}
+.selectState{
+    outline: 0;
+    color: #111;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+    display: inline-block;
+    height: 31px;
+    border: 1px solid;
+    border-color: #bcc1c8 #bababa #adb2bb;
+    background-color: #f1f2f4;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    width: 260px;
+}
+.labelDefaultAddress{
+    margin-left: 1rem;
+}
+.selectAddressType{
+    width: 94%;
+    outline: 0;
+    color: #111;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+    display: inline-block;
+    height: 31px;
+    border: 1px solid;
+    border-color: #bcc1c8 #bababa #adb2bb;
+    background-color: #f1f2f4;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+}
+.deliveryInstructionDiv{
+    margin-top: 2rem;
+}
+.deliveryInstructionText{
+    font-size: 17px;
+    line-height: 1.24;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+}
+.deliveryInstructionContentDiv{
+    margin-top: 1rem;
+}
+.deliveryInstructionContentText{
+    font-size: 13px;
+    line-height: 19px;
+}
+.useAddressBtnDiv{
+    margin-top: 2rem;
+}
+.useAddressBtn{
+    width: 120px;
+    height: 31px;
+    color: #111;
+    text-align: center;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+    background-color: #f0c24f;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #bf942b;
+    outline: #f69b3c;
+}
