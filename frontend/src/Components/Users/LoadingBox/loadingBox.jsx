@@ -3,7 +3,7 @@ import './loadingBox.css'
 
 function loading() {
   return (
-      <div>
+      <div className='loadingBoxContainer'>
           <i className='fa fa-spinner fa-spin loadingIcon'></i> Loading.....
       </div>
   )

@@ -1,34 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './navbar.css'
 import Logo from '../../../Images/logo.png'
 import Cart from '../../../Images/cart.png'
-import {useNavigate} from 'react-router-dom'
-import axios from 'axios';
+import {useNavigate, Link} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+
+
 
 function Home() {
 
   const navigate=useNavigate()
 
-  const [cart, setCart] = useState([]);
 
 
-  useEffect(()=>{
-    const fetchData = async ()=>{
 
-      try{
-        
-        const{data}=await axios.get('/api/departments')
 
-        setCart(data)
-      }catch(err){
-        
-        console.log(err.message)
-      }
-    };
-    fetchData();
-  },[])
 
-  const cartCount = cart.length
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
 
   return(
@@ -43,13 +32,13 @@ function Home() {
                     }}><img className='amazonNavLogo' src={Logo} alt="" /></a>
                   </div>
                   <div className='navTextDivAccount'>
-                   <a href=""> <p className='navText'>Hello, Sign in <br /><span className='navHighText'>Account & Lists</span></p></a>
+                   <Link to="/login"> <p className='navText'>Hello, Sign in <br /><span className='navHighText'>Account & Lists</span></p></Link>
                   </div>
                   <div className='navTextDivOrders'>
                     <a href=""><p className='navText'>Returns <br /><span className='navHighText'>& Orders</span></p></a>
                   </div>
                   <div className='navTextDivCart'>
-                    <a href=""><img className='cartNavLogo' src={Cart} alt="" /><div className='navCartCountDiv'><span className='navCartCountText'>{cartCount}</span></div><p className='navHighText cartText'>Cart</p></a>
+                    <Link to="/cart/:id"><img className='cartNavLogo' src={Cart} alt="" /><div className='navCartCountDiv'><span className='navCartCountText'>{cartItems.length}</span></div><p className='navHighText cartText'>Cart</p></Link>
                   </div>
                 </div>
                 <div className="row departmentRowHomeHeader">

@@ -47,7 +47,7 @@ function Products() {
                             <div className='productsReviewDiv'><span className='productsReviewText'>{product.review}</span></div>
                             <br />
                             <div className='productsPriceDiv'>
-                                <p className='productsPrice'><span className='productsPriceDollar'>$</span><span className='productsPriceText'>{product.price}</span><span className='productsPriceDecimal'>{product.decimal}</span></p>
+                                <p className='productsPrice'><span className='productsPriceDollar'>$</span><span className='productsPriceText'>{product.price}</span></p>
                             </div>
                             <hr />
                         </div>

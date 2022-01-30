@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './signup.css'
 import logo from '../../../Images/AmazonLogo.png'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 
 function Signup() {
@@ -60,10 +60,10 @@ function Signup() {
                 <br />
                 <br />
 
-                <a className='signin' onClick={(e)=>{
+                <Link className='signin' onClick={(e)=>{
                     e.preventDefault()
                     navigate('/login')
-                }}><span className='signinText'>Already have an account? </span>Sign In</a>
+                }}><span className='signinText'>Already have an account? </span>Sign In</Link>
             </div>
             </form>
         </div>

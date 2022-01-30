@@ -1,42 +1,34 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './productScreen.css'
 import MessageBox from '../MessageBox/messageBox';
 import LoadingBox from '../LoadingBox/loadingBox';
 import {useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { detailsProduct } from '../../../actions/productActions';
 
 
 function ProductScreen(props) {
 
 
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
     const [qty,setQty]=useState(1)
     const [cart, setCart]=useState([])
 
     const navigate = useNavigate()
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-
-            try {
-                setLoading(true)
-                const { data } = await axios.get('/api/products')
-                setLoading(false)
-                setProducts(data)
-            } catch (err) {
-                setError(err.message)
-                setLoading(false)
-            }
-        };
-        fetchData();
-    }, [])
+    const dispatch = useDispatch();
 
     const proId = window.location.pathname.split('/')
 
-    const product= products.find(element => element._id === proId[2])
+
+    const productId= proId[2]
+
+    const productDetails = useSelector((state) => state.productDetails);
+    const { loading, error, product } = productDetails;
+
+    useEffect(() => {
+        dispatch(detailsProduct(productId));
+      }, [dispatch, productId]);
+
 
     const handleAddCart=(e)=>{
         setCart([
@@ -49,13 +41,18 @@ function ProductScreen(props) {
                 quantity: qty
             }
         ])
-        navigate('/cart')
+        navigate(`/cart/${productId}?qty=${qty}`)
     }
 
     useEffect(()=>{
         localStorage.setItem('Cart', JSON.stringify(cart))
     }, [cart])
     
+    if(! product){
+        return(
+            <MessageBox>{error}</MessageBox>
+        )
+    }
 
     return (
         <div>
@@ -83,7 +80,7 @@ function ProductScreen(props) {
                         <div className='productScreenReviewDiv'><span className='productScreenReviewText'>{product.review} ratings</span></div>
                         <br />
                         <div className='productScreenPriceDiv'>
-                            <p className='productScreenPrice'><span className='productScreenPriceTitle'>Price: </span><span className='productScreenPriceValue'>$</span><span className='productScreenPriceValue'>{product.price}</span><span className='productScreenPriceValue'>{product.decimal}</span></p>
+                            <p className='productScreenPrice'><span className='productScreenPriceTitle'>Price: </span><span className='productScreenPriceValue'>$</span><span className='productScreenPriceValue'>{product.price}</span></p>
                         </div>
                         <div className="productScreenInStockDiv">
                            {product.stock ? <p className="productScreenInStockText">In Stock</p> : <p className="productScreenUnavailableText">Out of Stock</p>}
@@ -101,7 +98,7 @@ function ProductScreen(props) {
                         </div> : ''}
                         
                         {product.stock ? <div className="CartBuyButtonsDiv">
-                            <button className='ProductCartBtn'><span className='ProductCartBtnText' onClick={()=>handleAddCart()}>Add to Cart</span></button>
+                            <button onClick={()=>handleAddCart()} className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
                             <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
                         </div> : ''}
                     </div>
