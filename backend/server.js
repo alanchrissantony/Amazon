@@ -18,17 +18,10 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon', {
   useUnifiedTopology: true,
 });
 
-app.get('/api/users', userRouter)
-app.get('/api/products', productRouter)
+app.use('/api/users', userRouter)
+app.use('/api/products', productRouter)
 
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
+
 
 app.get('/api/departments', (req, res) => {
   res.send(data.departments)
@@ -38,9 +31,6 @@ app.get('/api/phones', (req, res) => {
   res.send(data.phones)
 })
 
-app.get('/api/products', (req, res) => {
-  res.send(data.products)
-})
 
 
 app.get('/', (req, res) => {

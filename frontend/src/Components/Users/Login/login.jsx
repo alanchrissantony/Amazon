@@ -1,7 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import logo from '../../../Images/AmazonLogo.png'
 import { useNavigate } from 'react-router-dom'
 import './login.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { signin } from '../../../actions/userActions'
+import LoadingBox from '../LoadingBox/loadingBox'
+import MessageBox from '../MessageBox/messageBox'
+import { useEffect } from 'react'
 
 function Login() {
 
@@ -11,14 +16,25 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const dispatch = useDispatch()
 
+
+    const userSignIn = useSelector((state) => state.userSignin)
+    const { userInfo, loading, error } = userSignIn;
 
 
     const handleLogin = (e) => {
         e.preventDefault()
-        
+        dispatch(signin(email,password))
     }
 
+    useEffect(()=>{
+        if(userInfo){
+            navigate('/')
+        }
+    })
+
+    
 
     return (
         <div>
@@ -33,6 +49,8 @@ function Login() {
                     <form onSubmit={handleLogin}>
                         <div className="login-box">
                             <p className='signin-text'>Sign-In</p>
+                            {loading && <LoadingBox></LoadingBox>}
+                            {error && <p className='loginErrorContent'>{error} !</p>}
                             <label for="email" className='email-label'>Email address</label>
                             <br />
                             <input type="email" name="email" placeholder="Enter Email Address" className='email-input'

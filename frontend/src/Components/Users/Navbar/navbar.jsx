@@ -3,7 +3,8 @@ import './navbar.css'
 import Logo from '../../../Images/logo.png'
 import Cart from '../../../Images/cart.png'
 import {useNavigate, Link} from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { signout } from '../../../actions/userActions';
 
 
 
@@ -11,6 +12,7 @@ function Home() {
 
   const navigate=useNavigate()
 
+  const dispatch = useDispatch()
 
 
 
@@ -18,6 +20,13 @@ function Home() {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
+  const userSignIn = useSelector((state) => state.userSignin)
+  const { userInfo } = userSignIn;
+
+  const signOutHandler = ()=>{
+    dispatch(signout());
+  }
 
 
   return(
@@ -32,7 +41,13 @@ function Home() {
                     }}><img className='amazonNavLogo' src={Logo} alt="" /></a>
                   </div>
                   <div className='navTextDivAccount'>
-                   <Link to="/login"> <p className='navText'>Hello, Sign in <br /><span className='navHighText'>Account & Lists</span></p></Link>
+                   <a> <p className='navText'>Hello, {userInfo ? userInfo.name : 'Sign in'} <br /><span className='navHighText'>Account & Lists</span></p></a>
+                   <ul className='dropdown-content' >
+                     {userInfo ? <button className='navSignOutBtn' onClick={signOutHandler} >Sign out</button> : <button className='navSignInBtn' onClick={(e)=>{
+                       e.preventDefault()
+                       navigate('/login')
+                     }} >Sign in</button>}
+                   </ul>
                   </div>
                   <div className='navTextDivOrders'>
                     <a href=""><p className='navText'>Returns <br /><span className='navHighText'>& Orders</span></p></a>

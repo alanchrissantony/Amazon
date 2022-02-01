@@ -12,7 +12,7 @@ function Department(props) {
         e.preventDefault()
         navigate('/products')
       }}>
-      <a className='departmentTitleLink'><h2 className='departmentTitle'>{departments.title}</h2></a>
+      <a className='departmentTitleLink'><h2 className='departmentTitle'>{departments.name}</h2></a>
       <a className='departmentImageLink'><img src={departments.image} className='departmentImage' alt="" /></a>
       <br />
       <a href=""className='departmentShopLink' onClick={(e)=>{

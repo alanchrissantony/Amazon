@@ -68,7 +68,7 @@ function ProductScreen(props) {
                 <div className="productScreenContentDiv">
                     <div className="productScreenContentTextDiv">
                         <div className="productScreenTitleDiv">
-                            <p className='productScreenTitle'>{product.title}</p>
+                            <p className='productScreenTitle'>{product.name}</p>
                         </div>
                         <div className="productScreenRatingDiv">
                                 <span> <i className={product.rating >= 1 ? "fa fa-star" : product.rating >= 0.5 ? "fa fa-star-half" : "fa fa-star-o"}></i> </span>

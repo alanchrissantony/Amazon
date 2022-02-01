@@ -19,42 +19,44 @@ const data={
     departments:[
         {
             _id:'1',
-            title:'Electronics',
+            name:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             image:'https://s16458.pcdn.co/wp-content/uploads/2019/11/Anker-Charger-250x300.jpg'
         },
         {
             _id:'2',
-            title:'Smartwatches',
+            name:'Smartwatches',
             image:'https://cf1.s3.souqcdn.com/item/2020/10/14/13/19/07/98/9/item_L_131907989_d72314784445f.jpg'
         },
         {
             _id:'3',
-            title:'Laptops',
+            name:'Laptops',
             image:'https://images-na.ssl-images-amazon.com/images/I/91MW2X7lrfL.__AC_SX300_SY300_QL70_ML2_.jpg'
         },
         {
             _id:'4',
-            title:'Smartphones',
+            name:'Smartphones',
             image:'https://s3b.cashify.in/gpro/uploads/2020/10/13211658/iphone-12-pro-family-250x300.jpeg'
         },
         {
             _id:'5',
-            title:'Clothes',
+            name:'Clothes',
             image:'http://www.countryboylifestyle.com/UserPanel/UserPanel/Uploads/432637553103879714328_small_MI.jpg'
         },
         {
             _id:'6',
-            title:'SmartTv',
+            name:'SmartTv',
             image:'http://www.krisons.com/product_images/KR-32-LED-TV-T.jpg'
         },
         {
             _id:'7',
-            title:'Computers',
+            name:'Computers',
             image:'https://aigostore.b-cdn.net/wp-content/uploads/2020/10/HTB1F4_vclCw3KVjSZR0q6zcUpXau-250x300.jpg'
         },
         {
             _id:'8',
-            title:'Shoes',
+            name:'Shoes',
             image:'http://tirupurbrands.in/wp-content/uploads/2018/07/5-250x300.jpg'
         },
         
@@ -104,76 +106,100 @@ const data={
     ],
     products:[
         {
-            _id:'1',
-            title:'MYao Magnetic Wireless Power Bank, 15W Wireless Portable Phone Charger 10000mAh, 4 Output PD 20W',
+            
+            name:'MYao Magnetic Wireless Power Bank, 15W Wireless Portable Phone Charger 10000mAh, 4 Output PD 20W',
             image:'https://s.alicdn.com/@sc04/kf/Hdcb7ea9a3c8b4767bc46f8fde3a99ad9u.png_300x300.png',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'49.99',
-            review:'237',
+            numReviews:'237',
             rating:2,
-            stock:19
+            countInStock:19
         },
         {
-            _id:'2',
-            title:'ADCB POW1 - Emergency USB Battery Powered Power Bank Compact Portable 4 AA Batteries Ideal',
+            
+            name:'ADCB POW1 - Emergency USB Battery Powered Power Bank Compact Portable 4 AA Batteries Ideal',
             image:'https://gardibazar.com/wp-content/uploads/2019/04/full_1301-250x300.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'24.99',
-            review:'68',
+            numReviews:'68',
             rating:5,
-            stock:0
+            countInStock:0
         },
         {
-            _id:'3',
-            title:'mophie snap+ juice pack mini - Magnetic and portable wireless charger containing a 5,000mAh internal battery. - Black',
+            
+            name:'mophie snap+ juice pack mini - Magnetic and portable wireless charger containing a 5,000mAh internal battery. - Black',
             image:'https://20fd661yccar325znz1e9bdl-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/anker-20100mah-powercore-high-capacity-power-bank-power-bank-250x300.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'18.56',
-            review:'492',
+            numReviews:'492',
             rating:4.5,
-            stock:25
+            countInStock:25
         },
         {
-            _id:'4',
-            title:'Hermitshell Hard EVA Travel Case Fits Anker PowerCore 13000 Portable Charger - Compact 13000mAh',
+            
+            name:'Hermitshell Hard EVA Travel Case Fits Anker PowerCore 13000 Portable Charger - Compact 13000mAh',
             image:'https://images-eu.ssl-images-amazon.com/images/I/3173lBxbF3L._SX300_SY300_QL70_ML2_.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'32.27',
-            review:'1354',
+            numReviews:'1354',
             rating:3,
-            stock:12
+            countInStock:12
         },
         {
-            _id:'5',
-            title:'Portable Bluetooth Speakers, IPX7 Waterproof Wireless Bluetooth Speaker, Outdoor Mini Speaker',
+            
+            name:'Portable Bluetooth Speakers, IPX7 Waterproof Wireless Bluetooth Speaker, Outdoor Mini Speaker',
             image:'https://s.alicdn.com/@sc04/kf/Hdcb7ea9a3c8b4767bc46f8fde3a99ad9u.png_300x300.png',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'149.98',
-            review:'674',
+            numReviews:'674',
             rating:3.5,
-            stock:5
+            countInStock:5
         },
         {
-            _id:'6',
-            title:'Sony SRS-XB13 Extra BASS Wireless Portable Compact Speaker IP67 Waterproof Bluetooth, Light Blue',
+            
+            name:'Sony SRS-XB13 Extra BASS Wireless Portable Compact Speaker IP67 Waterproof Bluetooth, Light Blue',
             image:'https://i.ebayimg.com/thumbs/images/g/FJcAAOSwRglhWFGi/s-l300.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'312.95',
-            review:'4859',
+            numReviews:'4859',
             rating:4.5,
-            stock:53
+            countInStock:53
         },
         {
-            _id:'7',
-            title:'New Bose SoundLink Flex Bluetooth Portable Speaker, Wireless Waterproof Speaker for Outdoor Travel - Black',
+            
+            name:'New Bose SoundLink Flex Bluetooth Portable Speaker, Wireless Waterproof Speaker for Outdoor Travel - Black',
             image:'https://images-na.ssl-images-amazon.com/images/I/81WI54kMFoL.__AC_SX300_SY300_QL70_ML2_.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'499.99',
-            review:'4',
+            numReviews:'4',
             rating:4,
-            stock:43
+            countInStock:43
         },
         {
-            _id:'8',
-            title:'JBL Flip 4, Black - Waterproof, Portable & Durable Bluetooth Speaker - Up to 12 Hours of Wireless Streaming ',
+
+            name:'JBL Flip 4, Black - Waterproof, Portable & Durable Bluetooth Speaker - Up to 12 Hours of Wireless Streaming ',
             image:'https://www.cellcom.com/resources/phones/5706_JBL_Flip5_big.jpg',
+            brand:'Syska',
+            category:'Electronics',
+            description:'Good Product',
             price:'278.99',
-            review:'912',
+            numReviews:'912',
             rating:5,
-            stock:34
+            countInStock:34
         }
     ]
 }

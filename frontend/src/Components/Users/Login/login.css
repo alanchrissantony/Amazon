@@ -101,4 +101,8 @@
     padding-top: 1rem;
     text-align: center;
   }
-  
+  .loginErrorContent{
+    color: red;
+    margin-left: 10%;
+    margin-bottom: 1rem;
+  }
