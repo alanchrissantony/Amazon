@@ -30,16 +30,24 @@ function Cart(props) {
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
 
+    const userSignIn = useSelector((state) => state.userSignin)
+    const { userInfo } = userSignIn;
+
     const removeFromCartHandler = (id) => {
         // delete action
         dispatch(removeFromCart(id));
     };
 
-    const checkoutHandler = () =>{
-        navigate('/login')
+
+    const checkoutHandler = () => {
+        if(userInfo){
+            navigate('/shipping')
+        }
+        else{
+            navigate('/login?redirect=shipping')
+        }
     }
 
-    console.log()
 
     return (
         <div className='cartSection'>
@@ -102,7 +110,7 @@ function Cart(props) {
                     </div>
                     <div className="checkoutBox">
                         <p className="subTotalText"><span className='checkOutSubTotalText'>Subtotal ({cartItems.reduce((a, c) => (a + c.qty), 0)} {cartItems.length <= 1 ? "item" : "items"}) : </span><span className='checkOutSubTotalPrice'> ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span></p>
-                        <button type='button' className='checkOutBtn' disabled={cartItems.length === 0} onClick={(e)=> {
+                        <button type='button' className='checkOutBtn' disabled={cartItems.length === 0} onClick={(e) => {
                             e.preventDefault()
                             checkoutHandler()
                         }}>Proceed to checkout</button>

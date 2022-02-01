@@ -70,6 +70,9 @@ function ProductScreen(props) {
                         <div className="productScreenTitleDiv">
                             <p className='productScreenTitle'>{product.name}</p>
                         </div>
+                        <div className="productScreenBrandDiv">
+                            <p className='productScreenBrand'>{product.brand}</p>
+                        </div>
                         <div className="productScreenRatingDiv">
                                 <span> <i className={product.rating >= 1 ? "fa fa-star" : product.rating >= 0.5 ? "fa fa-star-half" : "fa fa-star-o"}></i> </span>
                                 <span> <i className={product.rating >= 2 ? "fa fa-star" : product.rating >= 1.5 ? "fa fa-star-half" : "fa fa-star-o"}></i> </span>
@@ -77,19 +80,22 @@ function ProductScreen(props) {
                                 <span> <i className={product.rating >= 4 ? "fa fa-star" : product.rating >= 3.5 ? "fa fa-star-half" : "fa fa-star-o"}></i> </span>
                                 <span> <i className={product.rating >= 5 ? "fa fa-star" : product.rating >= 4.5 ? "fa fa-star-half" : "fa fa-star-o"}></i> </span>
                         </div>
-                        <div className='productScreenReviewDiv'><span className='productScreenReviewText'>{product.review} ratings</span></div>
+                        <div className='productScreenReviewDiv'><span className='productScreenReviewText'>{product.numReviews} ratings</span></div>
                         <br />
+                        <div className="productScreenDescriptionDiv">
+                            <p className='productScreenDescription'>{product.description}</p>
+                        </div>
                         <div className='productScreenPriceDiv'>
                             <p className='productScreenPrice'><span className='productScreenPriceTitle'>Price: </span><span className='productScreenPriceValue'>$</span><span className='productScreenPriceValue'>{product.price}</span></p>
                         </div>
                         <div className="productScreenInStockDiv">
-                           {product.stock ? <p className="productScreenInStockText">In Stock</p> : <p className="productScreenUnavailableText">Out of Stock</p>}
+                           {product.countInStock ? <p className="productScreenInStockText">In Stock</p> : <p className="productScreenUnavailableText">Out of Stock</p>}
                         </div>
-                        {product.stock ? <div className="productScreenQtyBtnDiv">
+                        {product.countInStock ? <div className="productScreenQtyBtnDiv">
                             <button className='btnQty'>
                                 <span className='btnText'>Qty: </span>
                                 <select name="" id="" value={qty} className='selectBtnQty' onChange={(e)=>setQty(e.target.value)}>
-                                    {[...Array(product.stock)].map((x, i)=>
+                                    {[...Array(product.countInStock)].map((x, i)=>
                                         <option key={i+1}>{i+1}</option>
                                         
                                     )}
@@ -97,7 +103,7 @@ function ProductScreen(props) {
                             </button>
                         </div> : ''}
                         
-                        {product.stock ? <div className="CartBuyButtonsDiv">
+                        {product.countInStock ? <div className="CartBuyButtonsDiv">
                             <button onClick={()=>handleAddCart()} className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
                             <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
                         </div> : ''}

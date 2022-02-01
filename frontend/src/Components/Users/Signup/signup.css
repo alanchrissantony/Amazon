@@ -10,6 +10,7 @@
   .logo-signup {
     width: 10rem;
     height: auto;
+    cursor: pointer;
   }
   .signup-box {
     margin: auto;
@@ -77,4 +78,16 @@
   .signin:hover{
       color: #15788b;
   }
- 
+  .signupErrorContent{
+    color: #a02020;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .signupErrorDiv{
+    background-color: #ffe0e0;
+    width: 20rem;
+    margin-left: 10%;
+    height: auto;
+  }

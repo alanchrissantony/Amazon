@@ -5,7 +5,6 @@ import './login.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { signin } from '../../../actions/userActions'
 import LoadingBox from '../LoadingBox/loadingBox'
-import MessageBox from '../MessageBox/messageBox'
 import { useEffect } from 'react'
 
 function Login() {
@@ -28,9 +27,17 @@ function Login() {
         dispatch(signin(email,password))
     }
 
+    const pathname = window.location.search
+    const pathUrl = pathname.split('=')
+    const path = pathUrl[1]
+
     useEffect(()=>{
         if(userInfo){
-            navigate('/')
+            if(path){
+                navigate(`/${path}`)
+            }else{
+                navigate('/')
+            }
         }
     })
 
@@ -50,13 +57,13 @@ function Login() {
                         <div className="login-box">
                             <p className='signin-text'>Sign-In</p>
                             {loading && <LoadingBox></LoadingBox>}
-                            {error && <p className='loginErrorContent'>{error} !</p>}
-                            <label for="email" className='email-label'>Email address</label>
+                            {error && <div className='loginErrorDiv'><p className='loginErrorContent'>{error} !</p></div> }
+                            <label htmlFor="email" className='email-label'>Email address</label>
                             <br />
                             <input type="email" name="email" placeholder="Enter Email Address" className='email-input'
                                 value={email} onChange={(e) => setEmail(e.target.value)} />
                             <br />
-                            <label for="password" className='password-label'>Password</label>
+                            <label htmlFor="password" className='password-label'>Password</label>
                             <br />
                             <input type="password" name="password" className='password-input'
                                 value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -69,7 +76,7 @@ function Login() {
                             <p className='new-to-amazon-text'>New to Amazon?</p>
                             <button id="create-btn" onClick={(e) => {
                                 e.preventDefault()
-                                navigate('/signup')
+                                navigate(`/signup?redirect=${path}`)
                             }}>Create your Amazon account</button>
 
                         </div>
