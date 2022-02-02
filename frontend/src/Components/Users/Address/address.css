@@ -8,7 +8,10 @@
     margin-bottom: 5rem;
 }
 .newAddressDiv{
-    margin-top: 2rem;
+
+    float: left;
+    width: 50%;
+    height: auto;
 }
 .addressTitleTextDiv{
     margin-top: 2.5rem;
@@ -23,7 +26,7 @@
     color: #333;
 }
 .newAddressFormContainer{
-    width: 50%;
+    width: 95%;
 }
 .addNewAddressText{
     font-size: 21px;
@@ -165,4 +168,12 @@
     border: 1px solid;
     border-color: #bf942b;
     outline: #f69b3c;
+}
+.newAddressLocationDiv{
+    width: 50%;
+    margin-left: 50%;
+}
+.newAddressFormContainerRight{
+    margin-top: 2rem;
+    padding-top: 43px;
 }
