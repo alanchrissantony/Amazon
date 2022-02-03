@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './payment.css'
-import paymentLogo from '../../../Images/checkout-spc-address-banner.png'
+import paymentLogo from '../../../Images/confirm-banner.png'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -91,6 +91,11 @@ function Payment() {
             </div>
             <div className="paymentPlaceSection">
                 <div className="paymentPlaceContainer">
+                <div className="paymentPlaceContinueBtnDiv">
+                        <button className="paymentPlaceContinueBtn" onClick={(e)=>{
+                            e.preventDefault()
+                            paymentContinueHandler()}}>Place your order</button>
+                    </div>
                     <div className="paymentPlaceOrderTitleDiv">
                         <p className="paymentPlaceOrderTitle">Order Summary</p>
                     </div>
@@ -128,12 +133,7 @@ function Payment() {
                             </li>
                         </ul>
                     </div>
-                    <hr />
-                    <div className="paymentPlaceContinueBtnDiv">
-                        <button className="paymentPlaceContinueBtn" onClick={(e)=>{
-                            e.preventDefault()
-                            paymentContinueHandler()}}>Continue</button>
-                    </div>
+
                 </div>
             </div>
         </div>

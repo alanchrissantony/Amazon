@@ -104,7 +104,7 @@
 .paymentPlaceSection{
     float: left;
     margin-left: 1rem;
-    width: 27%;
+    width: 25%;
     height: auto;
     border-style: groove;
     border-width: 0.5px;
@@ -240,7 +240,7 @@
     display: block;
     font-family: Arial,sans-serif;
     border-color: #cba957 #bf942a #aa8326;
-    background: #f0c14b;
+    background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
     border-radius: 3px;
     text-align: center;
     overflow: hidden;
