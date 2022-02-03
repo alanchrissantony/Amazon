@@ -46,6 +46,7 @@ function Address() {
             navigate('/')
         }
     })
+    
 
     return (
         <div className='addressSection'>
@@ -65,7 +66,7 @@ function Address() {
                             <div className="formDivTop">
                                 <label htmlFor="country" className='newAddressLabel labelCountry'>Country/Region</label>
                                 <select name="country" id="" className='selectCountry' value={country} onChange={(e)=> setCountry(e.target.value)}>
-                                    <option value="" className='countryOption'>India</option>
+                                    <option value="India" className='countryOption'>India</option>
                                 </select>
                             </div>
                             <div className="formDiv">
@@ -107,9 +108,9 @@ function Address() {
                             <div className='selectStateDiv'>
                                 <label htmlFor="state" className='newAddressLabel labelState'>State</label>
                                 <br />
-                                <select name="state" id="" className='selectState' defaultValue={state} onChange={(e)=> setState(e.target.value)}>
+                                <select name="state" id="" className='selectState' value={state} onChange={(e)=> setState(e.target.value)}>
                                     <option value="">Choose a state</option>
-                                    <option value="">Kerala</option>
+                                    <option value="Kerala">Kerala</option>
                                 </select>
                             </div>
                             <br />
@@ -117,6 +118,7 @@ function Address() {
                                 <input type="checkbox" className='addressCheckbox' name='defaultAddress' />
                                 <label htmlFor="addressDefault" className='newAddressLabel labelDefaultAddress'>Make this my default address</label>
                             </div>
+                            
                             <div className="deliveryInstructionDiv">
                                 <p className='deliveryInstructionText'>Add delivery instructions</p>
                             </div>
@@ -125,10 +127,10 @@ function Address() {
                             </div>
                             <div className='formDiv'>
                                 <label htmlFor="type" className='newAddressLabel labelType'>Address Type</label>
-                                <select name="addressType" id="" className='selectAddressType' defaultValue={addressType} onChange={(e)=> setAddressType(e.target.value)}>
+                                <select name="addressType" id="selectAddress" className='selectAddressType' value={addressType} onChange={(e)=> setAddressType(e.target.value)}>
                                     <option value="">Select an Address Type</option>
-                                    <option value="">Home (7 am - 9 pm delivery)</option>
-                                    <option value="">Office/Commercial (10 am - 6 pm delivery)</option>
+                                    <option value="Home (7 am - 9 pm delivery)">Home (7 am - 9 pm delivery)</option>
+                                    <option value="Office/Commercial (10 am - 6 pm delivery)">Office/Commercial (10 am - 6 pm delivery)</option>
                                 </select>
                             </div>
                             <div className='useAddressBtnDiv'>

@@ -168,8 +168,9 @@
     height: 30px;
     margin-top: 2rem;
     background-color: #ffd93c;
+    border-color: #FCD200;
+    border-width: 0.5px;
     border-radius: 10px;
-    border: none;
     cursor: pointer;
 }
 .checkOutBtn:hover{

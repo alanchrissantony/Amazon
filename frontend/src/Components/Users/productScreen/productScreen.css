@@ -91,7 +91,7 @@
 .ProductCartBtn{
     background-color: #ffd93c;
     border-color: #FCD200;
-    border-style: dashed;
+    border-width: 0.5px;
     border-radius: 20px;
     width: 232px;
     height: 45px;
@@ -107,7 +107,7 @@
 .ProductBuyBtn{
     background-color: #FFA41C;
     border-color: #FF8F00;
-    border-style: dashed;
+    border-width: 0.5px;
     border-radius: 20px;
     width: 232px;
     height: 45px;

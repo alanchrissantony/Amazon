@@ -1,0 +1,254 @@
+.paymentSection{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: auto;
+    min-height: 530px;
+}
+.paymentTitleDiv{
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.paymentTitle{
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #333;
+}
+.paymentContentContainer{
+    width: 70%;
+    height: auto;
+    min-height: 150px;
+    border-style: groove;
+    border-width: 0.5px;
+    margin-bottom: 2rem;
+    float: left;
+}
+.paymentContentContainerDivSection{
+    margin-top: -5rem;
+}
+.paymentContentImageDiv{
+    float: left;
+}
+.paymentContentImage{
+    margin: 1rem;
+    max-height: 100px;
+}
+.paymentContentContainerDiv{
+    width: 40%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+}
+.paymentContentProductTitleDiv{
+    padding-top: 2rem;
+}
+.paymentContentProductTitle{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+}
+.paymentContentProductPriceDiv{
+    margin-top: 0.2rem;
+}
+.paymentContentProductPrice{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #b12d2a;
+}
+.paymentContentProductQtyDiv{
+    margin-top: 0.2rem;
+}
+.paymentContentProductQtyTitle{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+}
+.paymentContentProductQty{
+    font-weight: 400;
+}
+.paymentContentProductQtyChange{
+    color: #007eb9;
+    font-weight: 400;
+    cursor: pointer;
+}
+.paymentMethodContainerDiv{
+    margin-top: 2rem;
+    margin-left: 70%;
+}
+.paymentMethodTitle{
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+    font-weight: 700;
+}
+.paymentMethodContentDiv{
+    font-size: 13px;
+    line-height: 19px;
+    color: #3f9a0e;
+}
+.ulSection{
+    color: #aaa;
+    list-style-type: disc;
+    margin-left: 2rem;
+    font-size: 13px;
+    line-height: 19px;
+}
+.paymentPlaceSection{
+    float: left;
+    margin-left: 1rem;
+    width: 27%;
+    height: auto;
+    border-style: groove;
+    border-width: 0.5px;
+}
+.paymentPlaceContainer{
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+}
+.paymentPlaceOrderTitle{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #333;
+}
+.paymentPlaceItemsTextDiv{
+    margin-top: 0.25rem;
+}
+.paymentPlaceItemsText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.paymentPlaceItemsPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.paymentPlaceDeliveryTextDiv{
+    margin-top: 0.25rem;
+}
+.paymentPlaceDeliveryText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.paymentPlaceDeliveryPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.paymentPlaceTotalTextDiv{
+    margin-top: 0.25rem;
+}
+.paymentPlaceTotalText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.paymentPlaceTotalPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.paymentPlacePromotionTextDiv{
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.paymentPlacePromotionText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.paymentPlacePromotionPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.paymentPlaceOrderTotalDiv{
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.paymentPlaceOrderTotal{
+    font-size: 17px;
+    line-height: 1.24;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+    color: #b12704;
+    float: left;
+}
+.paymentPlaceOrderTotalPrice{
+    font-size: 17px;
+    line-height: 1.24;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+    color: #b12704;
+    text-align: right;
+}
+.paymentPlaceSavingsTextDiv{
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+.paymentPlaceSavingsText{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #b12704;
+    float: left;
+}
+.paymentPlaceSavingPrice{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #b12704;
+    padding-left: 6rem;
+}
+.liText{
+    color: #333;
+}
+.paymentPlacePrice{
+    text-align: right;
+}
+.paymentPlaceContinueBtnDiv{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.paymentPlaceContinueBtn{
+    width: 90%;
+    height: 31px;
+    outline: 0;
+    color: #111;
+    text-align: center;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    border-color: #cba957 #bf942a #aa8326;
+    background: #f0c14b;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+    max-width: 100%;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.5px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}

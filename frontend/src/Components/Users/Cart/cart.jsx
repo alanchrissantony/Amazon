@@ -60,7 +60,7 @@ function Cart(props) {
                         <p className='CartBoxPriceTitleText'>price</p>
                         <hr className='cartTitleHr' />
                         {cartItems.map(product => (
-                            <div key={product._id} className="cartBox">
+                            <div key={product.product} className="cartBox">
                                 <div className="cartImageDiv">
                                     <img className='cartImage' src={product.image} alt="" />
                                 </div>

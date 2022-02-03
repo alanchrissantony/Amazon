@@ -168,6 +168,7 @@
     border: 1px solid;
     border-color: #bf942b;
     outline: #f69b3c;
+    cursor: pointer;
 }
 .newAddressLocationDiv{
     width: 50%;
