@@ -43,9 +43,9 @@ function Payment() {
         navigate('/')
     }
 
-    const [giftVoucherError, setGiftVoucherError] = useState(false);
+    const [giftVoucherError, setGiftVoucherError] = useState('');
 
-    const giftVoucherHandler = (giftVoucherError)=>{
+    const giftVoucherHandler = ()=>{
         setGiftVoucherError(true) 
     }
 
