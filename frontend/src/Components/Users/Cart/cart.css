@@ -112,6 +112,9 @@
     padding-left: 1rem;
     cursor: pointer;
 }
+.cartDeleteText:hover{
+    text-decoration: underline;
+}
 .cartProductPriceDiv{
     text-align: right;
     width: 140px;

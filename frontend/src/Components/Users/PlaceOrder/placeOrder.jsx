@@ -3,6 +3,7 @@ import './placeOrder.css'
 import placeOrderLogo from '../../../Images/complete-payment-banner.png'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function Payment() {
@@ -42,6 +43,12 @@ function Payment() {
         navigate('/')
     }
 
+    const [giftVoucherError, setGiftVoucherError] = useState(false);
+
+    const giftVoucherHandler = (giftVoucherError)=>{
+        setGiftVoucherError(true) 
+    }
+
 
     return (
         <div className='placeOrderSection'>
@@ -52,8 +59,113 @@ function Payment() {
                 <div className="placeOrderTitleDiv">
                     <p className="placeOrderTitle">Review your order</p>
                 </div>
-                <div className="placeOrderContentContainer">
+
+
+                <div className="placeOrderShippingSection">
+                    <div className="placeOrderShippingAddressContainer">
+                        <div className="placeOrderShippingAddressTitleDiv">
+                            <p className="placeOrderShippingAddressTitle">Shipping address <span className='placeOrderShippingAddressTitleChange'> Change</span></p>
+                        </div>
+                        <div className="placeOrderShippingAddressNameDiv">
+                            <p className="placeOrderShippingAddressName">{shippingAddress.name}</p>
+                        </div>
+                        <div className="placeOrderShippingAddressTextDiv">
+                            <p className="placeOrderShippingAddressText">{shippingAddress.address}, {shippingAddress.landmark}</p>
+                        </div>
+                        <div className="placeOrderShippingAddressPlaceDiv">
+                            <p className="placeOrderShippingAddressPlace">{shippingAddress.place}</p>
+                        </div>
+                        <div className="placeOrderShippingAddressCityDiv">
+                            <p className="placeOrderShippingAddressCity">{shippingAddress.city}, {shippingAddress.state} {shippingAddress.pinCode}</p>
+                        </div>
+                        <div className="placeOrderShippingAddressCountryDiv">
+                            <p className="placeOrderShippingAddressCountry">{shippingAddress.country}</p>
+                        </div>
+                        <div className="placeOrderShippingAddressMobileDiv">
+                            <p className="placeOrderShippingAddressMobile">Phone: {shippingAddress.mobile}</p>
+                        </div>
+                    </div>
+                    <div className="placeOrderPaymentMethodContainer">
+                        <div className="placeOrderPaymentMethodTitleDiv">
+                            <p className="placeOrderPaymentMethodTitle">Shipping address <span className='placeOrderPaymentMethodChange'> Change</span></p>
+                        </div>
+                        <div className="placeOrderPaymentMethodDiv">
+                            <p className="placeOrderPaymentMethod">PayPal</p>
+                        </div>
+                    </div>
                     
+
+                    <div className="placeOrderGiftVoucherContainer">
+                        <div className="placeOrderGiftVoucherTitleDiv">
+                            <p className="placeOrderGiftVoucherTitle">Gift cards, Voucher & Promotional<br />codes</p>
+                        </div>
+                        <div className="placeOrderGiftVoucherDiv">
+                            <input type="text" className='placeOrderGiftVoucherInput' placeholder=' Enter Code'/>
+                            <button className='placeOrderGiftVoucherBtn' onClick={(e)=>{
+                                e.preventDefault()
+                                giftVoucherHandler()
+                            }}>Apply</button>
+                            {giftVoucherError && <p className='placeOrderGiftVoucherCodeOutput'>!  The promotional code you entered is not valid.</p>}
+                        </div>
+                    </div>
+
+
+                </div>
+                
+
+
+                <div className="placeOrderPlaceSection">
+                    <div className="placeOrderPlaceContainer">
+                        <div className="placeOrderPlaceContinueBtnDiv">
+                            <button className="placeOrderPlaceContinueBtn" onClick={(e) => {
+                                e.preventDefault()
+                                placeOrderHandler()
+                            }}>Place your order</button>
+                        </div>
+                        <div className="placeOrderPlaceOrderTitleDiv">
+                            <p className="placeOrderPlaceOrderTitle">Order Summary</p>
+                        </div>
+                        <div className="placeOrderPlaceItemsTextDiv">
+                            <p className="placeOrderPlaceItemsText">Items : </p>
+                            <p className='placeOrderPlaceItemsPrice'>$ {itemsPrice}</p>
+                        </div>
+                        <div className="placeOrderPlaceDeliveryTextDiv">
+                            <p className="placeOrderPlaceDeliveryText">Delivery : </p>
+                            <p className='placeOrderPlaceDeliveryPrice'>$ {deliveryCharge}</p>
+                        </div>
+                        <div className="placeOrderPlaceTotalTextDiv">
+                            <p className="placeOrderPlaceTotalText">Total : </p>
+                            <p className='placeOrderPlaceTotalPrice'>$ {totalPrice}</p>
+                        </div>
+                        <div className="placeOrderPlacePromotionTextDiv">
+                            <p className="placeOrderPlacePromotionText">Promotion Applied :</p>
+                            <p className='placeOrderPlacePromotionPrice'>‒ $ {promotionalPrice}</p>
+                        </div>
+                        <hr />
+                        <div className="placeOrderPlaceOrderTotalDiv">
+                            <p className="placeOrderPlaceOrderTotal">Order Total :</p>
+                            <p className='placeOrderPlaceOrderTotalPrice'>$ {orderTotalPrice}</p>
+                        </div>
+                        <hr />
+                        <div className="placeOrderPlaceSavingsTextDiv">
+                            <p className="placeOrderPlaceSavingsText">Your Savings :</p>
+                            <p className='placeOrderPlaceSavingPrice'>$ {promotionalPrice}</p>
+                            <ul className='ulSection'>
+                                <li>
+                                    <span className='liText'>Free Delivery</span>
+                                </li>
+                                <li>
+                                    <span className='liText'>Item discount</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div className="placeOrderContentContainer">
+
                     <div className="placeOrderContentContainerDivSection">
                         {cartItems.map(product => (
                             <div key={product.product} className="placeOrderContentDiv">
@@ -84,54 +196,7 @@ function Payment() {
 
                 </div>
             </div>
-            <div className="placeOrderPlaceSection">
-                <div className="placeOrderPlaceContainer">
-                    <div className="placeOrderPlaceContinueBtnDiv">
-                        <button className="placeOrderPlaceContinueBtn" onClick={(e) => {
-                            e.preventDefault()
-                            placeOrderHandler()
-                        }}>Place your order</button>
-                    </div>
-                    <div className="placeOrderPlaceOrderTitleDiv">
-                        <p className="placeOrderPlaceOrderTitle">Order Summary</p>
-                    </div>
-                    <div className="placeOrderPlaceItemsTextDiv">
-                        <p className="placeOrderPlaceItemsText">Items : </p>
-                        <p className='placeOrderPlaceItemsPrice'>$ {itemsPrice}</p>
-                    </div>
-                    <div className="placeOrderPlaceDeliveryTextDiv">
-                        <p className="placeOrderPlaceDeliveryText">Delivery : </p>
-                        <p className='placeOrderPlaceDeliveryPrice'>$ {deliveryCharge}</p>
-                    </div>
-                    <div className="placeOrderPlaceTotalTextDiv">
-                        <p className="placeOrderPlaceTotalText">Total : </p>
-                        <p className='placeOrderPlaceTotalPrice'>$ {totalPrice}</p>
-                    </div>
-                    <div className="placeOrderPlacePromotionTextDiv">
-                        <p className="placeOrderPlacePromotionText">Promotion Applied :</p>
-                        <p className='placeOrderPlacePromotionPrice'>‒ $ {promotionalPrice}</p>
-                    </div>
-                    <hr />
-                    <div className="placeOrderPlaceOrderTotalDiv">
-                        <p className="placeOrderPlaceOrderTotal">Order Total :</p>
-                        <p className='placeOrderPlaceOrderTotalPrice'>$ {orderTotalPrice}</p>
-                    </div>
-                    <hr />
-                    <div className="placeOrderPlaceSavingsTextDiv">
-                        <p className="placeOrderPlaceSavingsText">Your Savings :</p>
-                        <p className='placeOrderPlaceSavingPrice'>$ {promotionalPrice}</p>
-                        <ul className='ulSection'>
-                            <li>
-                                <span className='liText'>Free Delivery</span>
-                            </li>
-                            <li>
-                                <span className='liText'>Item discount</span>
-                            </li>
-                        </ul>
-                    </div>
 
-                </div>
-            </div>
         </div>
     )
 }

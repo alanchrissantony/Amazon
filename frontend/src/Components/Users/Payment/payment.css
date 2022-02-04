@@ -22,8 +22,9 @@
     width: 70%;
     height: auto;
     min-height: 150px;
-    border-style: groove;
-    border-width: 0.5px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
     margin-bottom: 2rem;
     float: left;
 }
@@ -79,6 +80,9 @@
     font-weight: 400;
     cursor: pointer;
 }
+.paymentContentProductQtyChange:hover{
+    text-decoration: underline;
+}
 .paymentMethodContainerDiv{
     margin-top: 2rem;
     margin-left: 70%;
@@ -106,8 +110,9 @@
     margin-left: 1rem;
     width: 25%;
     height: auto;
-    border-style: groove;
-    border-width: 0.5px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
 }
 .paymentPlaceContainer{
     margin-top: 2rem;

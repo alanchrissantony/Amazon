@@ -27,7 +27,7 @@ function Address() {
     const [landmark, setLandmark] = useState(shippingAddress && shippingAddress.landmark);
     const [city, setCity] = useState(shippingAddress && shippingAddress.city);
     const [addressType, setAddressType] = useState(shippingAddress && shippingAddress.addressType);
-    const [country, setCountry] = useState(shippingAddress && shippingAddress.country);
+    const [country, setCountry] = useState('India');
     const [state, setState] = useState(shippingAddress && shippingAddress.state);
 
     
