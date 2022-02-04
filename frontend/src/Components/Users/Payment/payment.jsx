@@ -39,7 +39,7 @@ function Payment() {
     })
     
     const paymentContinueHandler = ()=>{
-        navigate('/placeorder')
+        navigate('/place-order')
     }
 
 

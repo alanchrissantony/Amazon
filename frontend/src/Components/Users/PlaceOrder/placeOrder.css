@@ -1,0 +1,241 @@
+.placeOrderSection{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: auto;
+    min-height: 530px;
+}
+.placeOrderTitleDiv{
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.placeOrderTitle{
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #333;
+}
+.placeOrderContentContainer{
+    width: 70%;
+    height: auto;
+    min-height: 150px;
+    border-style: solid;    border-width: 0.1px;
+    margin-bottom: 2rem;
+    border-color: #ddd;
+    float: left;
+}
+.placeOrderContentContainerDivSection{
+    margin-top: 0rem;
+}
+.placeOrderContentImageDiv{
+    float: left;
+}
+.placeOrderContentImage{
+    margin: 1rem;
+    max-height: 100px;
+}
+.placeOrderContentContainerDiv{
+    width: 40%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+}
+.placeOrderContentProductTitleDiv{
+    padding-top: 2rem;
+}
+.placeOrderContentProductTitle{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+}
+.placeOrderContentProductPriceDiv{
+    margin-top: 0.2rem;
+}
+.placeOrderContentProductPrice{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #b12d2a;
+}
+.placeOrderContentProductQtyDiv{
+    margin-top: 0.2rem;
+}
+.placeOrderContentProductQtyTitle{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #333;
+}
+.placeOrderContentProductQty{
+    font-weight: 400;
+}
+.placeOrderContentProductQtyChange{
+    color: #007eb9;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.ulSection{
+    color: #aaa;
+    list-style-type: disc;
+    margin-left: 2rem;
+    font-size: 13px;
+    line-height: 19px;
+}
+.placeOrderPlaceSection{
+    float: left;
+    margin-left: 1rem;
+    width: 25%;
+    height: auto;
+    border-style: solid;
+    border-width: 0.1px;
+    border-color: #ddd;
+}
+.placeOrderPlaceContainer{
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+}
+.placeOrderPlaceOrderTitle{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #333;
+}
+.placeOrderPlaceItemsTextDiv{
+    margin-top: 0.25rem;
+}
+.placeOrderPlaceItemsText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.placeOrderPlaceItemsPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.placeOrderPlaceDeliveryTextDiv{
+    margin-top: 0.25rem;
+}
+.placeOrderPlaceDeliveryText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.placeOrderPlaceDeliveryPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.placeOrderPlaceTotalTextDiv{
+    margin-top: 0.25rem;
+}
+.placeOrderPlaceTotalText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.placeOrderPlaceTotalPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.placeOrderPlacePromotionTextDiv{
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.placeOrderPlacePromotionText{
+    font-size: 12px;
+    color: #333;
+    float: left;
+}
+.placeOrderPlacePromotionPrice{
+    font-size: 12px;
+    color: #333;
+    text-align: right;
+}
+.placeOrderPlaceOrderTotalDiv{
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.placeOrderPlaceOrderTotal{
+    font-size: 17px;
+    line-height: 1.24;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+    color: #b12704;
+    float: left;
+}
+.placeOrderPlaceOrderTotalPrice{
+    font-size: 17px;
+    line-height: 1.24;
+    font-family: Arial,sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+    color: #b12704;
+    text-align: right;
+}
+.placeOrderPlaceSavingsTextDiv{
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+.placeOrderPlaceSavingsText{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #b12704;
+    float: left;
+}
+.placeOrderPlaceSavingPrice{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #b12704;
+    padding-left: 6rem;
+}
+.liText{
+    color: #333;
+}
+.placeOrderPlacePrice{
+    text-align: right;
+}
+.placeOrderPlaceContinueBtnDiv{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.placeOrderPlaceContinueBtn{
+    width: 90%;
+    height: 31px;
+    outline: 0;
+    color: #111;
+    text-align: center;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    border-color: #cba957 #bf942a #aa8326;
+    background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+    max-width: 100%;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.5px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}

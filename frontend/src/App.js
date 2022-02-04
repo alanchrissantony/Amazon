@@ -8,6 +8,7 @@ import Login from './ view/Users/Pages/login';
 import Signup from './ view/Users/Pages/signup';
 import Address from './ view/Users/Pages/address'
 import Payment from './ view/Users/Pages/payment'
+import PlaceOrder from './ view/Users/Pages/placeOrder'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/shipping' element={<Address/>}/>
           <Route path='/payment' element={<Payment/>}/>
+          <Route path='/place-order' element={<PlaceOrder/>}/>
         </Routes>
       </Router>
     </div>
