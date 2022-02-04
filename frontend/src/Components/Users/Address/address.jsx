@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './address.css'
 import checkout from '../../../Images/checkout-spc-address-banner.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { saveShippingAddress } from '../../../actions/cartActions';
+import { savePaymentMethod, saveShippingAddress } from '../../../actions/cartActions';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -30,11 +30,15 @@ function Address() {
     const [country, setCountry] = useState('India');
     const [state, setState] = useState(shippingAddress && shippingAddress.state);
 
+
+    const [paymentMethod, setPaymentMethod] = useState('PayPal');
     
 
     const submitHandler = (e)=>{
         e.preventDefault()
         dispatch(saveShippingAddress({ name, mobile, pinCode, address, place, landmark, city, addressType, state, country }))
+        setPaymentMethod('PayPal')
+        dispatch(savePaymentMethod(paymentMethod));
         navigate('/payment')
     }
 

@@ -18,9 +18,9 @@ orderRouter.post(
         shippingAddress: req.body.shippingAddress,
         paymentMethod: req.body.paymentMethod,
         itemsPrice: req.body.itemsPrice,
-        shippingPrice: req.body.deliveryCharge,
-        discountPrice: req.body.promotionalPrice,
-        totalPrice: req.body.orderTotalPrice,
+        shippingPrice: req.body.shippingPrice,
+        discountPrice: req.body.discountPrice,
+        totalPrice: req.body.totalPrice,
         user: req.user._id,
       });
       const createdOrder = await order.save();

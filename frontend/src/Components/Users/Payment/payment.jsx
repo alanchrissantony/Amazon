@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import './payment.css'
 import paymentLogo from '../../../Images/confirm-banner.png'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { createOrder } from '../../../actions/orderActions';
+import { ORDER_CREATE_RESET } from '../../../constants/orderConstants';
+import LoadingBox from '../LoadingBox/loadingBox';
+
 
 
 function Payment() {
@@ -20,11 +24,21 @@ function Payment() {
     const toPrice = (num) => Number(num.toFixed(2))
 
     const itemsPrice = toPrice(cartItems.reduce((a, c) => a + c.price * c.qty, 0))
-    const deliveryCharge = Math.ceil(cartItems.reduce((a, c) => a + c.price * c.qty * 5 / 100, 0))
-    const totalPrice = itemsPrice + deliveryCharge
-    const promotionalApplied = (totalPrice - deliveryCharge - itemsPrice * 5 / 100)
-    const promotionalPrice = toPrice(totalPrice - promotionalApplied)
-    const orderTotalPrice = toPrice(totalPrice - promotionalPrice)
+    const shippingPrice = Math.ceil(cartItems.reduce((a, c) => a + c.price * c.qty * 5 / 100, 0))
+    const totalOrderPrice = itemsPrice + shippingPrice
+    const promotionalApplied = (totalOrderPrice - shippingPrice - itemsPrice * 5 / 100)
+    const discountPrice = toPrice(totalOrderPrice - promotionalApplied)
+    const totalPrice = toPrice(totalOrderPrice - discountPrice)
+
+
+    const orderCreate = useSelector((state) => state.orderCreate);
+    const { loading, success, error, order } = orderCreate;
+
+    cart.itemsPrice = itemsPrice
+    cart.shippingPrice = shippingPrice
+    cart.discountPrice = discountPrice
+    cart.totalPrice = totalPrice    
+
 
     useEffect(()=>{
         if(!userInfo){
@@ -38,13 +52,23 @@ function Payment() {
         }
     })
     
-    const paymentContinueHandler = ()=>{
-        navigate('/place-order')
+    const dispatch = useDispatch();
+
+    const placeOrderHandler = ()=>{
+        dispatch(createOrder({ ...cart, orderItems: cart.cartItems}));
     }
+    useEffect(() => {
+        if (success) {
+          navigate(`/order/${order._id}`);
+          dispatch({ type: ORDER_CREATE_RESET });
+        }
+      }, [dispatch, order, success, navigate]);
 
 
     return (
         <div className='paymentSection'>
+            {loading && <LoadingBox></LoadingBox>}
+            {error && <div className='ErrorDiv'><p className='ErrorContent'>{error} !</p></div> }
             <div className="paymentContainer">
                 <div className="paymentImageDiv">
                     <img src={paymentLogo} alt="" />
@@ -96,7 +120,7 @@ function Payment() {
                 <div className="paymentPlaceContinueBtnDiv">
                         <button className="paymentPlaceContinueBtn" onClick={(e)=>{
                             e.preventDefault()
-                            paymentContinueHandler()}}>Place your order</button>
+                            placeOrderHandler()}}>Place your order</button>
                     </div>
                     <div className="paymentPlaceOrderTitleDiv">
                         <p className="paymentPlaceOrderTitle">Order Summary</p>
@@ -107,25 +131,25 @@ function Payment() {
                     </div>
                     <div className="paymentPlaceDeliveryTextDiv">
                         <p className="paymentPlaceDeliveryText">Delivery : </p>
-                        <p className='paymentPlaceDeliveryPrice'>$ {deliveryCharge}</p>
+                        <p className='paymentPlaceDeliveryPrice'>$ {shippingPrice}</p>
                     </div>
                     <div className="paymentPlaceTotalTextDiv">
                         <p className="paymentPlaceTotalText">Total : </p>
-                        <p className='paymentPlaceTotalPrice'>$ {totalPrice}</p>
+                        <p className='paymentPlaceTotalPrice'>$ {totalOrderPrice}</p>
                     </div>
                     <div className="paymentPlacePromotionTextDiv">
                         <p className="paymentPlacePromotionText">Promotion Applied :</p>
-                        <p className='paymentPlacePromotionPrice'>‒ $ {promotionalPrice}</p>
+                        <p className='paymentPlacePromotionPrice'>‒ $ {discountPrice}</p>
                     </div>
                     <hr />
                     <div className="paymentPlaceOrderTotalDiv">
                         <p className="paymentPlaceOrderTotal">Order Total :</p>
-                        <p className='paymentPlaceOrderTotalPrice'>$ {orderTotalPrice}</p>
+                        <p className='paymentPlaceOrderTotalPrice'>$ {totalPrice}</p>
                     </div>
                     <hr />
                     <div className="paymentPlaceSavingsTextDiv">
                         <p className="paymentPlaceSavingsText">Your Savings :</p>
-                        <p className='paymentPlaceSavingPrice'>$ {promotionalPrice}</p>
+                        <p className='paymentPlaceSavingPrice'>$ {discountPrice}</p>
                         <ul className='ulSection'>
                             <li>
                                 <span className='liText'>Free Delivery</span>

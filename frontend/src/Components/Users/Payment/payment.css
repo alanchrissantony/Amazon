@@ -257,3 +257,17 @@
     margin-right: auto;
     cursor: pointer;
 }
+.ErrorDiv{
+    background-color: #ffe0e0;
+    width: auto;
+    margin-left: auto;
+    margin-left: auto;
+    height: auto;
+}
+.ErrorContent{
+    color: #a02020;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
