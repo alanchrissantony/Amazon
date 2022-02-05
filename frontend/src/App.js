@@ -24,7 +24,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/shipping' element={<Address/>}/>
           <Route path='/payment' element={<Payment/>}/>
-          <Route path='/place-order' element={<PlaceOrder/>}/>
+          <Route path='/order/:id' element={<PlaceOrder/>}/>
         </Routes>
       </Router>
     </div>

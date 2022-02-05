@@ -31,12 +31,6 @@ function Payment() {
         if (!userInfo) {
             navigate('/login?redirect=shipping')
         }
-        else if (cartItems.length <= 0) {
-            navigate('/')
-        }
-        else if (!shippingAddress) {
-            navigate('/shipping')
-        }
     })
 
     const placeOrderHandler = () => {
@@ -87,7 +81,7 @@ function Payment() {
                     </div>
                     <div className="placeOrderPaymentMethodContainer">
                         <div className="placeOrderPaymentMethodTitleDiv">
-                            <p className="placeOrderPaymentMethodTitle">Shipping address <span className='placeOrderPaymentMethodChange'> Change</span></p>
+                            <p className="placeOrderPaymentMethodTitle">Payment method <span className='placeOrderPaymentMethodChange'> Change</span></p>
                         </div>
                         <div className="placeOrderPaymentMethodDiv">
                             <p className="placeOrderPaymentMethod">PayPal</p>
