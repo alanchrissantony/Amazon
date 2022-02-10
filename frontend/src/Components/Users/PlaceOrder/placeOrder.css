@@ -18,6 +18,12 @@
     text-rendering: optimizeLegibility;
     color: #333;
 }
+.placeOrderIdTitleDiv{
+    margin-bottom: 0.5rem;
+}
+.placeOrderIdTitle{
+    color: #333;
+}
 .placeOrderContentContainer{
     width: 70%;
     height: auto;

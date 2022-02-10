@@ -70,7 +70,9 @@ function PlaceOrder() {
                 <div className="placeOrderTitleDiv">
                     <p className="placeOrderTitle">Review your order</p>
                 </div>
-
+                <div className="placeOrderIdTitleDiv">
+                    <p className="placeOrderIdTitle">Order {order._id}</p>
+                </div>
 
                 <div className="placeOrderShippingSection">
                     <div className="placeOrderShippingAddressContainer">
