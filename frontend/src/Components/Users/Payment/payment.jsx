@@ -13,6 +13,8 @@ function Payment() {
 
     const navigate = useNavigate()
 
+    const orderId = window.location
+
 
     const cart = useSelector((state) => state.cart);
     const { cartItems, shippingAddress } = cart;

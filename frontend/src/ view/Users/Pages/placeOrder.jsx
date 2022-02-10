@@ -2,7 +2,7 @@ import React from 'react';
 import PlaceOrder from '../../../Components/Users/PlaceOrder/placeOrder';
 
 
-function payment() {
+function placeOrder() {
   return (
   <div>
 
@@ -12,4 +12,4 @@ function payment() {
   );
 }
 
-export default payment;
+export default placeOrder;

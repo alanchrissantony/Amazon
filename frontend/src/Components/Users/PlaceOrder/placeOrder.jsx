@@ -4,28 +4,38 @@ import placeOrderLogo from '../../../Images/complete-payment-banner.png'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import Axios from 'axios';
 
 
-function Payment() {
+
+
+function PlaceOrder() {
 
     const navigate = useNavigate()
 
 
-    const cart = useSelector((state) => state.cart);
-    const { cartItems, shippingAddress } = cart;
+    const orderId = window.location.pathname.split('/')[2]
+
+
 
     const userSignIn = useSelector((state) => state.userSignin)
     const { userInfo } = userSignIn;
 
 
-    const toPrice = (num) => Number(num.toFixed(2))
 
-    const itemsPrice = toPrice(cartItems.reduce((a, c) => a + c.price * c.qty, 0))
-    const deliveryCharge = Math.ceil(cartItems.reduce((a, c) => a + c.price * c.qty * 5 / 100, 0))
-    const totalPrice = itemsPrice + deliveryCharge
-    const promotionalApplied = (totalPrice - deliveryCharge - itemsPrice * 5 / 100)
-    const promotionalPrice = toPrice(totalPrice - promotionalApplied)
-    const orderTotalPrice = toPrice(totalPrice - promotionalPrice)
+
+    const data = async (orderId) => {
+        const { data } = await Axios.get(`/api/orders/${orderId}`)
+        localStorage.setItem('orderDetails', JSON.stringify(data));
+    }
+
+    data(orderId)
+
+    const orderDetails = localStorage.getItem('orderDetails')
+    const order = JSON.parse(orderDetails)
+    const { orderItems, shippingAddress,itemsPrice, discountPrice, shippingPrice, totalPrice, paymentMethod } = order;
+
+
 
     useEffect(() => {
         if (!userInfo) {
@@ -39,8 +49,8 @@ function Payment() {
 
     const [giftVoucherError, setGiftVoucherError] = useState('');
 
-    const giftVoucherHandler = ()=>{
-        setGiftVoucherError(true) 
+    const giftVoucherHandler = () => {
+        setGiftVoucherError(true)
     }
 
 
@@ -70,7 +80,7 @@ function Payment() {
                             <p className="placeOrderShippingAddressPlace">{shippingAddress.place}</p>
                         </div>
                         <div className="placeOrderShippingAddressCityDiv">
-                            <p className="placeOrderShippingAddressCity">{shippingAddress.city}, {shippingAddress.state} {shippingAddress.pinCode}</p>
+                            <p className="placeOrderShippingAddressCity">{shippingAddress.city}, {shippingAddress.state}, {shippingAddress.pinCode}</p>
                         </div>
                         <div className="placeOrderShippingAddressCountryDiv">
                             <p className="placeOrderShippingAddressCountry">{shippingAddress.country}</p>
@@ -84,18 +94,18 @@ function Payment() {
                             <p className="placeOrderPaymentMethodTitle">Payment method <span className='placeOrderPaymentMethodChange'> Change</span></p>
                         </div>
                         <div className="placeOrderPaymentMethodDiv">
-                            <p className="placeOrderPaymentMethod">PayPal</p>
+                            <p className="placeOrderPaymentMethod">{paymentMethod}</p>
                         </div>
                     </div>
-                    
+
 
                     <div className="placeOrderGiftVoucherContainer">
                         <div className="placeOrderGiftVoucherTitleDiv">
                             <p className="placeOrderGiftVoucherTitle">Gift cards, Voucher & Promotional<br />codes</p>
                         </div>
                         <div className="placeOrderGiftVoucherDiv">
-                            <input type="text" className='placeOrderGiftVoucherInput' placeholder=' Enter Code'/>
-                            <button className='placeOrderGiftVoucherBtn' onClick={(e)=>{
+                            <input type="text" className='placeOrderGiftVoucherInput' placeholder=' Enter Code' />
+                            <button className='placeOrderGiftVoucherBtn' onClick={(e) => {
                                 e.preventDefault()
                                 giftVoucherHandler()
                             }}>Apply</button>
@@ -105,7 +115,7 @@ function Payment() {
 
 
                 </div>
-                
+
 
 
                 <div className="placeOrderPlaceSection">
@@ -125,25 +135,25 @@ function Payment() {
                         </div>
                         <div className="placeOrderPlaceDeliveryTextDiv">
                             <p className="placeOrderPlaceDeliveryText">Delivery : </p>
-                            <p className='placeOrderPlaceDeliveryPrice'>$ {deliveryCharge}</p>
+                            <p className='placeOrderPlaceDeliveryPrice'>$ {shippingPrice}</p>
                         </div>
                         <div className="placeOrderPlaceTotalTextDiv">
                             <p className="placeOrderPlaceTotalText">Total : </p>
-                            <p className='placeOrderPlaceTotalPrice'>$ {totalPrice}</p>
+                            <p className='placeOrderPlaceTotalPrice'>$ {totalPrice + shippingPrice}</p>
                         </div>
                         <div className="placeOrderPlacePromotionTextDiv">
                             <p className="placeOrderPlacePromotionText">Promotion Applied :</p>
-                            <p className='placeOrderPlacePromotionPrice'>‒ $ {promotionalPrice}</p>
+                            <p className='placeOrderPlacePromotionPrice'>‒ $ {discountPrice}</p>
                         </div>
                         <hr />
                         <div className="placeOrderPlaceOrderTotalDiv">
                             <p className="placeOrderPlaceOrderTotal">Order Total :</p>
-                            <p className='placeOrderPlaceOrderTotalPrice'>$ {orderTotalPrice}</p>
+                            <p className='placeOrderPlaceOrderTotalPrice'>$ {totalPrice}</p>
                         </div>
                         <hr />
                         <div className="placeOrderPlaceSavingsTextDiv">
                             <p className="placeOrderPlaceSavingsText">Your Savings :</p>
-                            <p className='placeOrderPlaceSavingPrice'>$ {promotionalPrice}</p>
+                            <p className='placeOrderPlaceSavingPrice'>$ {discountPrice}</p>
                             <ul className='ulSection'>
                                 <li>
                                     <span className='liText'>Free Delivery</span>
@@ -161,7 +171,7 @@ function Payment() {
                 <div className="placeOrderContentContainer">
 
                     <div className="placeOrderContentContainerDivSection">
-                        {cartItems.map(product => (
+                        {orderItems.map(product => (
                             <div key={product.product} className="placeOrderContentDiv">
                                 <div className="placeOrderContentImageDiv">
                                     <img src={product.image} alt="" className='placeOrderContentImage' />
@@ -195,4 +205,4 @@ function Payment() {
     )
 }
 
-export default Payment;
+export default PlaceOrder;
