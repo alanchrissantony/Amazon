@@ -25,6 +25,12 @@ function ProductScreen(props) {
     const productDetails = useSelector((state) => state.productDetails);
     const { loading, error, product } = productDetails;
 
+    const data = async () => {
+        localStorage.removeItem('orderDetails');
+    }
+
+    data()
+
     useEffect(() => {
         dispatch(detailsProduct(productId));
       }, [dispatch, productId]);

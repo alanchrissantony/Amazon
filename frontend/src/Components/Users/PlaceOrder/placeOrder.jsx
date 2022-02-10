@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import './placeOrder.css'
 import placeOrderLogo from '../../../Images/complete-payment-banner.png'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Axios from 'axios';
+import { detailsOrder } from '../../../actions/orderActions';
+import LoadingBox from '../LoadingBox/loadingBox';
+import MessageBox from '../MessageBox/messageBox';
 
 
 
@@ -12,6 +14,7 @@ import Axios from 'axios';
 function PlaceOrder() {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch();
 
 
     const orderId = window.location.pathname.split('/')[2]
@@ -24,16 +27,15 @@ function PlaceOrder() {
 
 
 
-    const data = async (orderId) => {
-        const { data } = await Axios.get(`/api/orders/${orderId}`)
-        localStorage.setItem('orderDetails', JSON.stringify(data));
-    }
+    useEffect(() => {
+        dispatch(detailsOrder(orderId));
+    }, [dispatch, orderId]);
 
-    data(orderId)
 
-    const orderDetails = localStorage.getItem('orderDetails')
-    const order = JSON.parse(orderDetails)
-    const { orderItems, shippingAddress,itemsPrice, discountPrice, shippingPrice, totalPrice, paymentMethod } = order;
+    const orderDetails = useSelector((state) => state.orderDetails);
+    const { order, loading, error } = orderDetails;
+
+
 
 
 
@@ -56,7 +58,12 @@ function PlaceOrder() {
 
     return (
         <div className='placeOrderSection'>
-            <div className="placeOrderContainer">
+            { loading ? (
+                <LoadingBox></LoadingBox>
+            ) : error ? (
+                <MessageBox>{error}</MessageBox>
+            ) : (
+                <div className="placeOrderContainer">
                 <div className="placeOrderImageDiv">
                     <img src={placeOrderLogo} alt="" />
                 </div>
@@ -71,22 +78,22 @@ function PlaceOrder() {
                             <p className="placeOrderShippingAddressTitle">Shipping address <span className='placeOrderShippingAddressTitleChange'> Change</span></p>
                         </div>
                         <div className="placeOrderShippingAddressNameDiv">
-                            <p className="placeOrderShippingAddressName">{shippingAddress.name}</p>
+                            <p className="placeOrderShippingAddressName">{order.shippingAddress.name}</p>
                         </div>
                         <div className="placeOrderShippingAddressTextDiv">
-                            <p className="placeOrderShippingAddressText">{shippingAddress.address}, {shippingAddress.landmark}</p>
+                            <p className="placeOrderShippingAddressText">{order.shippingAddress.address}, {order.shippingAddress.landmark}</p>
                         </div>
                         <div className="placeOrderShippingAddressPlaceDiv">
-                            <p className="placeOrderShippingAddressPlace">{shippingAddress.place}</p>
+                            <p className="placeOrderShippingAddressPlace">{order.shippingAddress.place}</p>
                         </div>
                         <div className="placeOrderShippingAddressCityDiv">
-                            <p className="placeOrderShippingAddressCity">{shippingAddress.city}, {shippingAddress.state}, {shippingAddress.pinCode}</p>
+                            <p className="placeOrderShippingAddressCity">{order.shippingAddress.city}, {order.shippingAddress.state}, {order.shippingAddress.pinCode}</p>
                         </div>
                         <div className="placeOrderShippingAddressCountryDiv">
-                            <p className="placeOrderShippingAddressCountry">{shippingAddress.country}</p>
+                            <p className="placeOrderShippingAddressCountry">{order.shippingAddress.country}</p>
                         </div>
                         <div className="placeOrderShippingAddressMobileDiv">
-                            <p className="placeOrderShippingAddressMobile">Phone: {shippingAddress.mobile}</p>
+                            <p className="placeOrderShippingAddressMobile">Phone: {order.shippingAddress.mobile}</p>
                         </div>
                     </div>
                     <div className="placeOrderPaymentMethodContainer">
@@ -94,7 +101,7 @@ function PlaceOrder() {
                             <p className="placeOrderPaymentMethodTitle">Payment method <span className='placeOrderPaymentMethodChange'> Change</span></p>
                         </div>
                         <div className="placeOrderPaymentMethodDiv">
-                            <p className="placeOrderPaymentMethod">{paymentMethod}</p>
+                            <p className="placeOrderPaymentMethod">{order.paymentMethod}</p>
                         </div>
                     </div>
 
@@ -131,29 +138,29 @@ function PlaceOrder() {
                         </div>
                         <div className="placeOrderPlaceItemsTextDiv">
                             <p className="placeOrderPlaceItemsText">Items : </p>
-                            <p className='placeOrderPlaceItemsPrice'>$ {itemsPrice}</p>
+                            <p className='placeOrderPlaceItemsPrice'>$ {order.itemsPrice}</p>
                         </div>
                         <div className="placeOrderPlaceDeliveryTextDiv">
                             <p className="placeOrderPlaceDeliveryText">Delivery : </p>
-                            <p className='placeOrderPlaceDeliveryPrice'>$ {shippingPrice}</p>
+                            <p className='placeOrderPlaceDeliveryPrice'>$ {order.shippingPrice}</p>
                         </div>
                         <div className="placeOrderPlaceTotalTextDiv">
                             <p className="placeOrderPlaceTotalText">Total : </p>
-                            <p className='placeOrderPlaceTotalPrice'>$ {totalPrice + shippingPrice}</p>
+                            <p className='placeOrderPlaceTotalPrice'>$ {order.totalPrice + order.shippingPrice}</p>
                         </div>
                         <div className="placeOrderPlacePromotionTextDiv">
                             <p className="placeOrderPlacePromotionText">Promotion Applied :</p>
-                            <p className='placeOrderPlacePromotionPrice'>‒ $ {discountPrice}</p>
+                            <p className='placeOrderPlacePromotionPrice'>‒ $ {order.discountPrice}</p>
                         </div>
                         <hr />
                         <div className="placeOrderPlaceOrderTotalDiv">
                             <p className="placeOrderPlaceOrderTotal">Order Total :</p>
-                            <p className='placeOrderPlaceOrderTotalPrice'>$ {totalPrice}</p>
+                            <p className='placeOrderPlaceOrderTotalPrice'>$ {order.totalPrice}</p>
                         </div>
                         <hr />
                         <div className="placeOrderPlaceSavingsTextDiv">
                             <p className="placeOrderPlaceSavingsText">Your Savings :</p>
-                            <p className='placeOrderPlaceSavingPrice'>$ {discountPrice}</p>
+                            <p className='placeOrderPlaceSavingPrice'>$ {order.discountPrice}</p>
                             <ul className='ulSection'>
                                 <li>
                                     <span className='liText'>Free Delivery</span>
@@ -171,7 +178,7 @@ function PlaceOrder() {
                 <div className="placeOrderContentContainer">
 
                     <div className="placeOrderContentContainerDivSection">
-                        {orderItems.map(product => (
+                        {order.orderItems.map(product => (
                             <div key={product.product} className="placeOrderContentDiv">
                                 <div className="placeOrderContentImageDiv">
                                     <img src={product.image} alt="" className='placeOrderContentImage' />
@@ -200,6 +207,8 @@ function PlaceOrder() {
 
                 </div>
             </div>
+            ) }
+            
 
         </div>
     )

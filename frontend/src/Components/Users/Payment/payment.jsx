@@ -13,7 +13,6 @@ function Payment() {
 
     const navigate = useNavigate()
 
-    const orderId = window.location
 
 
     const cart = useSelector((state) => state.cart);
@@ -39,38 +38,38 @@ function Payment() {
     cart.itemsPrice = itemsPrice
     cart.shippingPrice = shippingPrice
     cart.discountPrice = discountPrice
-    cart.totalPrice = totalPrice    
+    cart.totalPrice = totalPrice
 
 
-    useEffect(()=>{
-        if(!userInfo){
+
+    useEffect(() => {
+        if (!userInfo) {
             navigate('/login?redirect=shipping')
         }
-        else if(cartItems.length <= 0){
+        else if (cartItems.length <= 0) {
             navigate('/')
         }
-        else if(!shippingAddress){
+        else if (!shippingAddress) {
             navigate('/shipping')
         }
     })
-    
+
     const dispatch = useDispatch();
 
-    const placeOrderHandler = ()=>{
-        dispatch(createOrder({ ...cart, orderItems: cart.cartItems}));
+    const placeOrderHandler = () => {
+        dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
     }
     useEffect(() => {
         if (success) {
-          navigate(`/order/${order._id}`);
-          dispatch({ type: ORDER_CREATE_RESET });
+            navigate(`/order/${order._id}`);
+            dispatch({ type: ORDER_CREATE_RESET });
         }
-      }, [dispatch, order, success, navigate]);
+    }, [dispatch, order, success, navigate]);
 
 
     return (
         <div className='paymentSection'>
-            {loading && <LoadingBox></LoadingBox>}
-            {error && <div className='ErrorDiv'><p className='ErrorContent'>{error} !</p></div> }
+            {error && <div className='ErrorDiv'><p className='ErrorContent'>{error} !</p></div>}
             <div className="paymentContainer">
                 <div className="paymentImageDiv">
                     <img src={paymentLogo} alt="" />
@@ -79,7 +78,7 @@ function Payment() {
                     <p className="paymentTitle">Select a payment method</p>
                 </div>
                 <div className="paymentContentContainer">
-                <div className="paymentMethodContainerDiv">
+                    <div className="paymentMethodContainerDiv">
                         <div className="paymentMethodTitleDiv">
                             <p className="paymentMethodTitle">Payment method</p>
                         </div>
@@ -88,30 +87,30 @@ function Payment() {
                         </div>
                     </div>
                     <div className="paymentContentContainerDivSection">
-                    {cartItems.map(product => (
-                        <div key={product.product} className="paymentContentDiv">
-                            <div className="paymentContentImageDiv">
-                                <img src={product.image} alt="" className='paymentContentImage' />
-                            </div>
-                            <div className='paymentContentContainerDiv'>
-                                <div className="paymentContentProductTitleDiv">
-                                    <p className="paymentContentProductTitle">{product.name}</p>
+                        {cartItems.map(product => (
+                            <div key={product.product} className="paymentContentDiv">
+                                <div className="paymentContentImageDiv">
+                                    <img src={product.image} alt="" className='paymentContentImage' />
                                 </div>
-                
-                                <div className="paymentContentProductPriceDiv">
-                                    <p className="paymentContentProductPrice">${product.price}</p>
+                                <div className='paymentContentContainerDiv'>
+                                    <div className="paymentContentProductTitleDiv">
+                                        <p className="paymentContentProductTitle">{product.name}</p>
+                                    </div>
+
+                                    <div className="paymentContentProductPriceDiv">
+                                        <p className="paymentContentProductPrice">${product.price}</p>
+                                    </div>
+                                    <div className="paymentContentProductQtyDiv">
+                                        <p className="paymentContentProductQtyTitle">Quantity: <span className='paymentContentProductQty'>{product.qty} </span> <span className='paymentContentProductQtyChange' onClick={(e) => {
+                                            e.preventDefault()
+                                            navigate('/cart/:id')
+                                        }}> Change</span></p>
+                                    </div>
                                 </div>
-                                <div className="paymentContentProductQtyDiv">
-                                    <p className="paymentContentProductQtyTitle">Quantity: <span className='paymentContentProductQty'>{product.qty} </span> <span className='paymentContentProductQtyChange' onClick={(e)=>{
-                                        e.preventDefault()
-                                        navigate('/cart/:id')
-                                    }}> Change</span></p>
-                                </div>
+
                             </div>
 
-                        </div>
-
-                    ))}
+                        ))}
                     </div>
 
 
@@ -119,10 +118,11 @@ function Payment() {
             </div>
             <div className="paymentPlaceSection">
                 <div className="paymentPlaceContainer">
-                <div className="paymentPlaceContinueBtnDiv">
-                        <button className="paymentPlaceContinueBtn" onClick={(e)=>{
+                    <div className="paymentPlaceContinueBtnDiv">
+                        <button className="paymentPlaceContinueBtn" onClick={(e) => {
                             e.preventDefault()
-                            placeOrderHandler()}}>Place your order</button>
+                            placeOrderHandler()
+                        }}>Place your order</button>
                     </div>
                     <div className="paymentPlaceOrderTitleDiv">
                         <p className="paymentPlaceOrderTitle">Order Summary</p>
@@ -161,7 +161,7 @@ function Payment() {
                             </li>
                         </ul>
                     </div>
-
+                    {loading && <LoadingBox></LoadingBox>}
                 </div>
             </div>
         </div>
