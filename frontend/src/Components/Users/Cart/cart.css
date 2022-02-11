@@ -180,5 +180,8 @@
     background-color: #FCD200;
 }
 .goShoppingLink{
-    color: #333;
+    color: #15788b;
+}
+.goShoppingLink:hover{
+    text-decoration: underline;
 }

@@ -22,6 +22,9 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon', {
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter)
 app.use('/api/orders', orderRouter)
+app.use('/api/config/paypal', (req,res)=>{
+  res.send(process.env.PAYPAL_CLIENT_ID || 'sb')
+})
 
 
 

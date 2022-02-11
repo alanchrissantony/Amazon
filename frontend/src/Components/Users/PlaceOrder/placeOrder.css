@@ -33,7 +33,7 @@
     margin-bottom: 2rem;
     border-color: #ddd;
     float: left;
-    margin-top: -7rem;
+    margin-top: 0rem;
 }
 .placeOrderContentContainerDivSection{
     margin-top: 0rem;
@@ -105,6 +105,9 @@
     border-style: solid;
     border-width: 1px;
     border-color: #ddd;
+    margin-top: -12.5rem;
+    position: static;
+
 }
 .placeOrderPlaceContainer{
     margin-top: 2rem;
@@ -396,4 +399,32 @@
     margin-bottom: 0;
     text-align: left;
     padding-top: 0.5rem;
+}
+.paymentErrorDiv{
+    background-color: #ffe0e0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+.paymentErrorContent{
+    color: #a02020;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.paymentPaidDiv{
+    background-color: #DFF2BF;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+.paymentPaidAt{
+    color: #4F8A10;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }

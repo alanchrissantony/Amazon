@@ -48,6 +48,9 @@ function Cart(props) {
         }
     }
 
+    const toPrice = (num) => Number(num.toFixed(2))
+
+
 
     return (
         <div className='cartSection'>
@@ -96,7 +99,7 @@ function Cart(props) {
 
                                 </div>
                                 <div className="cartProductPriceDiv">
-                                    <p className="cartProductPrice">${product.price}.{product.decimal}</p>
+                                    <p className="cartProductPrice">${toPrice(product.price)}</p>
                                 </div>
                                 <hr className='cartBottomHr' />
 
@@ -105,11 +108,11 @@ function Cart(props) {
 
 
                         <div className="subTotalCartDiv">
-                            <p className="subTotalCartText"><span className='cartSubTotalText'>Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} {cartItems.length <= 1 ? "item" : "items"}) : </span><span className='cartSubTotalPrice'> ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span></p>
+                            <p className="subTotalCartText"><span className='cartSubTotalText'>Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} {cartItems.length <= 1 ? "item" : "items"}) : </span><span className='cartSubTotalPrice'> ${toPrice(cartItems.reduce((a, c) => a + c.price * c.qty, 0))}</span></p>
                         </div>
                     </div>
                     <div className="checkoutBox">
-                        <p className="subTotalText"><span className='checkOutSubTotalText'>Subtotal ({cartItems.reduce((a, c) => (a + c.qty), 0)} {cartItems.length <= 1 ? "item" : "items"}) : </span><span className='checkOutSubTotalPrice'> ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span></p>
+                        <p className="subTotalText"><span className='checkOutSubTotalText'>Subtotal ({cartItems.reduce((a, c) => (a + c.qty), 0)} {cartItems.length <= 1 ? "item" : "items"}) : </span><span className='checkOutSubTotalPrice'> ${toPrice(cartItems.reduce((a, c) => a + c.price * c.qty, 0))}</span></p>
                         <button type='button' className='checkOutBtn' disabled={cartItems.length === 0} onClick={(e) => {
                             e.preventDefault()
                             checkoutHandler()

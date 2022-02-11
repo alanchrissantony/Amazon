@@ -1,8 +1,8 @@
 .alert{
-    margin-top: 5rem;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5rem;
+    margin-bottom: auto;
     border-radius: 1rem;
     color: rgb(255, 0, 0);
     background-color: rgb(255, 233, 233);
@@ -10,5 +10,4 @@
     height: 3rem;
     width: 95%;
     padding-top: 1.3rem;
-    margin-bottom: 400px;
 }
