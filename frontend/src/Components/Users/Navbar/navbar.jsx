@@ -43,10 +43,10 @@ function Home() {
                   <div className='navTextDivAccount'>
                    <a> <p className='navText'>Hello, {userInfo ? userInfo.name : 'Sign in'} <br /><span className='navHighText'>Account & Lists</span></p></a>
                    <ul className='dropdown-content' >
-                     {userInfo ? <button className='navSignOutBtn' onClick={signOutHandler} >Sign out</button> : <button className='navSignInBtn' onClick={(e)=>{
+                     <div className='navSignDiv'> <br /> { userInfo ? <button className='navSignOutBtn' onClick={signOutHandler} >Sign out</button> : <button className='navSignInBtn' onClick={(e)=>{
                        e.preventDefault()
                        navigate('/login')
-                     }} >Sign in</button>}
+                     }} >Sign in</button>}</div>
                    </ul>
                   </div>
                   <div className='navTextDivOrders'>

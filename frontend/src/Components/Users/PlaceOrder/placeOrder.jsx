@@ -48,12 +48,11 @@ function PlaceOrder() {
             }
             document.body.appendChild(script)
         }
-        if(successPay){
+        if (successPay){
             dispatch({ type: ORDER_PAY_RESET });
-            window.location.reload();
+            navigate('/orders')
         }
         if (!order || (order && order._id !== orderId)) {
-            
             dispatch({ type: ORDER_PAY_RESET });
             dispatch(detailsOrder(orderId));
         } else {
@@ -65,7 +64,7 @@ function PlaceOrder() {
                 }
             }
         }
-    }, [dispatch, order, orderId, sdkReady, successPay]);
+    }, [dispatch, order, orderId, sdkReady, successPay, navigate]);
 
 
 
@@ -90,6 +89,10 @@ function PlaceOrder() {
         // TODO: dispatch pay order
         dispatch(payOrder(order, paymentResult));
     };
+
+
+    
+
 
 
     return (
@@ -188,6 +191,7 @@ function PlaceOrder() {
                                                 navigate('/cart/:id')
                                             }}> Change</span></p>
                                         </div>
+                                        
                                     </div>
 
                                 </div>
@@ -251,10 +255,10 @@ function PlaceOrder() {
                                         )}
                                         {loadingPay && <LoadingBox></LoadingBox>}
 
-                                        {!order.isPaid ? <PayPalButton 
+                                        {!order.isPaid && <PayPalButton
                                             amount={order.totalPrice}
                                             onSuccess={successPaymentHandler}
-                                        ></PayPalButton> : <div className='paymentPaidDiv'><p className='paymentPaidAt'>{order.paidAt}</p></div>}
+                                        ></PayPalButton>}
                                     </>
                                 )
 

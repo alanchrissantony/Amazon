@@ -414,17 +414,3 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
-.paymentPaidDiv{
-    background-color: #DFF2BF;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-}
-.paymentPaidAt{
-    color: #4F8A10;
-    text-align: center;
-    margin-bottom: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}

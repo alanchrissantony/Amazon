@@ -99,7 +99,6 @@ a{
 .navSignInBtn{
     display: block;
     height: 33px;
-    margin: 0 10px 0 11px;
     cursor: pointer;
     outline: 0;
     border: 1px solid;
@@ -114,12 +113,12 @@ a{
     line-height: 30px;
     font-size: 13px;
     width: 5rem;
-    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 .navSignOutBtn{
     display: block;
     height: 33px;
-    margin: 0 10px 0 11px;
     cursor: pointer;
     outline: 0;
     border: 1px solid;
@@ -134,7 +133,8 @@ a{
     line-height: 30px;
     font-size: 13px;
     width: 5rem;
-    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 .dropdown-content{
     position: absolute;
@@ -142,4 +142,11 @@ a{
 }
 .navTextDivAccount:hover .dropdown-content{
     display: block;
+}
+.navSignDiv{
+    width: 8rem;
+    height: 4rem;
+    background-color: #ffffff;
+    margin-left: -1rem;
+    margin-top: 1rem;
 }
