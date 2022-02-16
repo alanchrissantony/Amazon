@@ -46,10 +46,16 @@ function Order() {
     const time = new Date
     var paidAt = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
 
-
+    console.log(order);
 
     return (
         <div className='orderSection'>
+            <div className="orderPlaceReturnDiv">
+                <p className="orderPlaceReturn" onClick={(e)=>{
+                    e.preventDefault()
+                    navigate('/')
+                }}>Return to home page {'>'}</p>
+            </div>
             {loading ? (
                 <LoadingBox></LoadingBox>
             ) : error ? (

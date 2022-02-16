@@ -10,6 +10,7 @@ import Address from './ view/Users/Pages/address'
 import Payment from './ view/Users/Pages/payment'
 import PlaceOrder from './ view/Users/Pages/placeOrder'
 import Order from './ view/Users/Pages/order'
+import OrderHistory from './ view/Users/Pages/orderHistory';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/payment' element={<Payment/>}/>
           <Route path='/order/:id' element={<PlaceOrder/>}/>
           <Route path='/orders' element={<Order/>}/>
+          <Route path='/orderhistory' element={<OrderHistory/>}/>
         </Routes>
       </Router>
     </div>

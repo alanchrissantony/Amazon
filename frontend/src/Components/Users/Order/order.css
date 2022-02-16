@@ -146,3 +146,16 @@
     line-height: 19px;
     color: #333;
 }
+.orderPlaceReturnDiv{
+    margin: 1rem;
+}
+.orderPlaceReturn{
+    font-size: 14px;
+    line-height: 20px;
+    color: #007185;
+    cursor: pointer;
+}
+.orderPlaceReturn:hover{
+    text-decoration: underline;
+    color: #C7511F;   
+}
