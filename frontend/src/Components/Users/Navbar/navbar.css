@@ -30,7 +30,7 @@
     background-color: #232f3e;
 }
 .amazonNavLogoDiv{
-    width: 77%;
+    width: 12%;
     height: 60px;
 }
 .amazonNavLogo{
@@ -54,7 +54,7 @@
     width: 7.4%;
 }
 .navText{
-    color: white;
+    color: #ccc;;
     font-size: 12px;
     line-height: 14px;
     height: 14px;
@@ -69,7 +69,9 @@
     font-size: 14px;
     line-height: 15px;
     font-weight: 700;
+    color: #fff;
 }
+
 .cartNavLogo{
     height: 35px;
     width: auto;
@@ -79,6 +81,9 @@
     margin-top: -5px;
     margin-left: 42px;
     color: white;
+}
+.cartNavLogo:hover .cartText{
+    color: #ffa53f;
 }
 .cartText:hover{
     color: #ffa53f;
@@ -147,6 +152,27 @@ a{
     width: 8rem;
     height: 4rem;
     background-color: #ffffff;
-    margin-left: -1rem;
+    margin-left: -0.5rem;
     margin-top: 1rem;
+}
+.locationRowHomeHeader{
+    height: 60px;
+    position: static;
+    float: none;
+    display: flex;
+    background-color: #131921;
+    width: 64%;
+}
+.locationNavLogoDiv{
+    height: 60px;
+}
+.locationNavLogo{
+    max-height: 20px;
+    margin-top: 1.5rem;
+}
+.navShippingAddressDiv{
+    height: 60px;
+    margin-top: 15px;
+    margin-left: 5px;
+    justify-content: space-between;
 }
