@@ -80,7 +80,19 @@ function OrderHistory() {
                                                 <p className="orderHistoryOrderShipText">SHIP TO</p>
                                             </div>
                                             <div className="orderHistoryOrderShippingAddressDiv">
-                                                <p className="orderHistoryOrderShippingAddressText">{order.shippingAddress.name}</p>
+                                                <p className="orderHistoryOrderShippingAddressText">{order.shippingAddress.name} <i class="fas fa-angle-down"></i></p>
+                                                <ul className="orderShippingDropDown">
+                                                    <div className="orderShippingDropDownSection">
+                                                        <div className="orderShippingDropDownDiv">
+                                                            <p className="orderShippingDropDownAddressName">{order.shippingAddress.name}</p>
+                                                            <p className="orderShippingDropDownAddressAddress">{order.shippingAddress.address}</p>
+                                                            <p className="orderShippingDropDownAddressPlace">{order.shippingAddress.place}</p>
+                                                            <p className="orderShippingDropDownAddress"><span className="orderShippingDropDownAddressCity">{order.shippingAddress.city}, </span><span className="orderShippingDropDownAddressState">{order.shippingAddress.state} </span><span className="orderShippingDropDownAddressPinCode">{order.shippingAddress.pinCode}</span></p>
+                                                            <p className="orderShippingDropDownAddressCountry">{order.shippingAddress.country}</p>
+                                                            <p className="orderShippingDropDownPhone">Phone: </p>
+                                                        </div>
+                                                    </div>
+                                                </ul>
                                             </div>
                                             <br />
                                         </div>
