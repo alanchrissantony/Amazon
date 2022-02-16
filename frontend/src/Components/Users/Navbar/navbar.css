@@ -169,6 +169,7 @@ a{
 .locationNavLogo{
     max-height: 20px;
     margin-top: 1.5rem;
+    cursor: pointer;
 }
 .navShippingAddressDiv{
     height: 60px;

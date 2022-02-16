@@ -29,6 +29,7 @@ function Home() {
     dispatch(signout());
   }
 
+  console.log(shippingAddress);
 
   return (
     <div className='navcontainer'>
@@ -45,11 +46,14 @@ function Home() {
               <div className='locationNavLogoDiv'>
                 <a onClick={(e) => {
                   e.preventDefault()
-                  navigate('/')
+                  navigate('/shipping')
                 }}><img className='locationNavLogo' src={Location} alt="" /></a>
               </div>
               <div className="navShippingAddressDiv">
-                <p className="navText">{shippingAddress ? 'Deliver to '+ shippingAddress.name : 'Hello'}<br /><span className="navHighText">{shippingAddress ? 'Deliver to '+ shippingAddress.name : 'Hel'}</span></p>
+                <p onClick={(e) => {
+                  e.preventDefault()
+                  navigate('/shipping')
+                }} className="navText">{userInfo && shippingAddress.name ? 'Deliver to ' + shippingAddress.name : 'Hello'}<br /><span className="navHighText">{userInfo && shippingAddress.name ? shippingAddress.city + ' ' + shippingAddress.pinCode : 'Select your address'}</span></p>
               </div>
             </div>
             <div className='navTextDivAccount'>
