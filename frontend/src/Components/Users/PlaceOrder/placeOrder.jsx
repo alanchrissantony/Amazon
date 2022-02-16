@@ -48,7 +48,7 @@ function PlaceOrder() {
             }
             document.body.appendChild(script)
         }
-        if (successPay){
+        if (successPay) {
             dispatch({ type: ORDER_PAY_RESET });
             navigate('/orders')
         }
@@ -91,7 +91,7 @@ function PlaceOrder() {
     };
 
 
-    
+
 
 
 
@@ -116,7 +116,7 @@ function PlaceOrder() {
                     <div className="placeOrderShippingSection">
                         <div className="placeOrderShippingAddressContainer">
                             <div className="placeOrderShippingAddressTitleDiv">
-                                <p className="placeOrderShippingAddressTitle">Shipping address <span className='placeOrderShippingAddressTitleChange'> Change</span></p>
+                                <p className="placeOrderShippingAddressTitle">Shipping address {!order.isPaid && <span className='placeOrderShippingAddressTitleChange'> Change</span>}</p>
                             </div>
                             <div className="placeOrderShippingAddressNameDiv">
                                 <p className="placeOrderShippingAddressName">{order.shippingAddress.name}</p>
@@ -139,27 +139,28 @@ function PlaceOrder() {
                         </div>
                         <div className="placeOrderPaymentMethodContainer">
                             <div className="placeOrderPaymentMethodTitleDiv">
-                                <p className="placeOrderPaymentMethodTitle">Payment method <span className='placeOrderPaymentMethodChange'> Change</span></p>
+                                <p className="placeOrderPaymentMethodTitle">Payment method {!order.isPaid && <span className='placeOrderPaymentMethodChange'> Change</span>}</p>
                             </div>
                             <div className="placeOrderPaymentMethodDiv">
                                 <p className="placeOrderPaymentMethod">{order.paymentMethod}</p>
                             </div>
                         </div>
 
-
-                        <div className="placeOrderGiftVoucherContainer">
-                            <div className="placeOrderGiftVoucherTitleDiv">
-                                <p className="placeOrderGiftVoucherTitle">Gift cards, Voucher & Promotional<br />codes</p>
+                        {!order.isPaid &&
+                            <div className="placeOrderGiftVoucherContainer">
+                                <div className="placeOrderGiftVoucherTitleDiv">
+                                    <p className="placeOrderGiftVoucherTitle">Gift cards, Voucher & Promotional<br />codes</p>
+                                </div>
+                                <div className="placeOrderGiftVoucherDiv">
+                                    <input type="text" className='placeOrderGiftVoucherInput' placeholder=' Enter Code' />
+                                    <button className='placeOrderGiftVoucherBtn' onClick={(e) => {
+                                        e.preventDefault()
+                                        giftVoucherHandler()
+                                    }}>Apply</button>
+                                    {giftVoucherError && <p className='placeOrderGiftVoucherCodeOutput'>!  The promotional code you entered is not valid.</p>}
+                                </div>
                             </div>
-                            <div className="placeOrderGiftVoucherDiv">
-                                <input type="text" className='placeOrderGiftVoucherInput' placeholder=' Enter Code' />
-                                <button className='placeOrderGiftVoucherBtn' onClick={(e) => {
-                                    e.preventDefault()
-                                    giftVoucherHandler()
-                                }}>Apply</button>
-                                {giftVoucherError && <p className='placeOrderGiftVoucherCodeOutput'>!  The promotional code you entered is not valid.</p>}
-                            </div>
-                        </div>
+                        }
 
 
                     </div>
@@ -186,12 +187,12 @@ function PlaceOrder() {
                                             <p className="placeOrderContentProductPrice">${product.price}</p>
                                         </div>
                                         <div className="placeOrderContentProductQtyDiv">
-                                            <p className="placeOrderContentProductQtyTitle">Quantity: <span className='placeOrderContentProductQty'>{product.qty} </span> <span className='placeOrderContentProductQtyChange' onClick={(e) => {
+                                            <p className="placeOrderContentProductQtyTitle">Quantity: <span className='placeOrderContentProductQty'>{product.qty} </span> {!order.isPaid && <span className='placeOrderContentProductQtyChange' onClick={(e) => {
                                                 e.preventDefault()
                                                 navigate('/cart/:id')
-                                            }}> Change</span></p>
+                                            }}> Change</span>}</p>
                                         </div>
-                                        
+
                                     </div>
 
                                 </div>
@@ -255,10 +256,10 @@ function PlaceOrder() {
                                         )}
                                         {loadingPay && <LoadingBox></LoadingBox>}
 
-                                        {!order.isPaid && <PayPalButton
+                                         <PayPalButton
                                             amount={order.totalPrice}
                                             onSuccess={successPaymentHandler}
-                                        ></PayPalButton>}
+                                        ></PayPalButton>
                                     </>
                                 )
 

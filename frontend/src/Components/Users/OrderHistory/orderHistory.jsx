@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { listOrderMine } from '../../../actions/orderActions';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
@@ -7,6 +8,8 @@ import './orderHistory.css'
 
 
 function OrderHistory() {
+
+    const navigate = useNavigate()
 
     const orderMineList = useSelector((state) => state.orderMineList);
     const { loading, error, orders } = orderMineList;
@@ -81,7 +84,7 @@ function OrderHistory() {
                                             </div>
                                             <div className="orderHistoryOrderShippingAddressDiv">
                                                 <p className="orderHistoryOrderShippingAddressText">{order.shippingAddress.name} <i class="fas fa-angle-down"></i></p>
-                                                <ul className="orderShippingDropDown">
+                                                <ul className="dropdown-content">
                                                     <div className="orderShippingDropDownSection">
                                                         <div className="orderShippingDropDownDiv">
                                                             <p className="orderShippingDropDownAddressName">{order.shippingAddress.name}</p>
@@ -89,7 +92,7 @@ function OrderHistory() {
                                                             <p className="orderShippingDropDownAddressPlace">{order.shippingAddress.place}</p>
                                                             <p className="orderShippingDropDownAddress"><span className="orderShippingDropDownAddressCity">{order.shippingAddress.city}, </span><span className="orderShippingDropDownAddressState">{order.shippingAddress.state} </span><span className="orderShippingDropDownAddressPinCode">{order.shippingAddress.pinCode}</span></p>
                                                             <p className="orderShippingDropDownAddressCountry">{order.shippingAddress.country}</p>
-                                                            <p className="orderShippingDropDownPhone">Phone: </p>
+                                                            <p className="orderShippingDropDownPhone">Phone: {order.shippingAddress.mobile}</p>
                                                         </div>
                                                     </div>
                                                 </ul>
@@ -102,7 +105,10 @@ function OrderHistory() {
                                                 <p className="orderHistoryOrderIdText">ORDER # {order._id}</p>
                                             </div>
                                             <div className="orderHistoryOrderDetailsDiv">
-                                                <p className="orderHistoryOrderDetailsText"><span className='orderHistoryOrderViewDetailsText'>View order details </span> | <span className='orderHistoryOrderInvoiceText'> Invoice</span></p>
+                                                <p className="orderHistoryOrderDetailsText"><span className='orderHistoryOrderViewDetailsText' onClick={(e)=>{
+                                                    e.preventDefault()
+                                                    navigate(`/order/${order._id}`)
+                                                }}>View order details </span> | <span className='orderHistoryOrderInvoiceText'> Invoice</span></p>
                                             </div>
                                             <br />
                                         </div>
