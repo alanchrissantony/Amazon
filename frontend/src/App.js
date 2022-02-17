@@ -15,6 +15,7 @@ import AdminLogin from './ view/Admin/Pages/login';
 import LogInSecurity from './ view/Users/Pages/Login&Security/logInSecurity';
 import Name from './ view/Users/Pages/Login&Security/name';
 import Email from './ view/Users/Pages/Login&Security/email';
+import Password from './ view/Users/Pages/Login&Security/password';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='/login&security' element={<LogInSecurity/>}/>
           <Route path='/changeName' element={<Name/>}/>
           <Route path='/changeEmail' element={<Email/>}/>
+          <Route path='/changePassword' element={<Password/>}/>
 
           <Route path='/admin' element={<AdminLogin/>}/>
         </Routes>

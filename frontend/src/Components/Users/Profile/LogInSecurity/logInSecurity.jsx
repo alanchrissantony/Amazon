@@ -62,7 +62,10 @@ function LogInSecurity() {
                             <p className="logInSecurityPassword">{'***********'}</p>
                         </div>
                         <div className="logInSecurityPasswordBtnDiv">
-                            <button className="logInSecurityPasswordBtn">Edit</button>
+                            <button className="logInSecurityPasswordBtn"  onClick={(e)=>{
+                                e.preventDefault()
+                                navigate('/changePassword')
+                            }}>Edit</button>
                         </div>
                     </div>
                 </div>

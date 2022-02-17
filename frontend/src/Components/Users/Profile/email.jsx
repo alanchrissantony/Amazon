@@ -41,7 +41,7 @@ function Email() {
                 <div className="emailChangeBoxInputDiv">
                   <label htmlFor="email" className="emailChangeBoxLabel">New email address</label>
                   <br />
-                  <input type="text" name='email' className="emailChangeBoxInput" />
+                  <input type="email" name='email' className="emailChangeBoxInput" />
                 </div>
                 <div className="emailChangeBoxBtnDiv">
                   <button className="emailChangeBoxBtn">Continue</button>

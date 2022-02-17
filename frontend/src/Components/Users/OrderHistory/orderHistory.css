@@ -24,6 +24,7 @@
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
+    padding-right: 0.5rem;
 }
 .orderHistoryYourOrdersText{
     color: #c45500;
@@ -31,6 +32,7 @@
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
+    padding-left: 0.5rem;
 }
 .orderHistoryYourAccountText:hover{
     color: #c45500;

@@ -23,6 +23,7 @@
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
+    padding-right: 0.5rem;
 }
 .logInSecurityLogInSecurityText{
     color: #c45500;
@@ -30,6 +31,7 @@
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
+    padding-left: 0.5rem;
 }
 .logInSecurityYourAccountText:hover{
     color: #c45500;
