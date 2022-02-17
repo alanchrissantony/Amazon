@@ -20,3 +20,24 @@
     text-align: center;
     padding-top: 10px;
 }
+.footerBtn{
+    width: 100%;
+    height: 49px;
+    background-color: #232F3E;
+    font-size: 13px;
+    line-height: 19px;
+    color: #FFF;
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #131a22;
+    cursor: pointer;
+}
+.footerBtn:hover{
+    background-color: #37475a;
+}
+.footerBtn:focus{
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #37475a;
+}
