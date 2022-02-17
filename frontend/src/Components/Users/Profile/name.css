@@ -1,0 +1,123 @@
+.nameChangeSection{
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+}
+.nameChangeContainer{
+    width: 54%;
+    margin-top: 0.5rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nameChangeAccountText{
+    color: #555;
+    cursor: pointer;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.nameChangeYourAccountText{
+    color: #007185;
+    cursor: pointer;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.nameChangeLogInSecurityText{
+    color: #007185;
+    cursor: pointer;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.nameChangeNameChangeText{
+    color: #c45500;
+    cursor: pointer;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.nameChangeYourAccountText:hover{
+    color: #c45500;
+    text-decoration: underline;
+}
+.nameChangeLogInSecurityText:hover{
+    color: #c45500;
+    text-decoration: underline;
+}
+.nameChangeTitleDiv{
+    margin-top: 1rem;
+}
+.nameChangeTitle{
+    font-family: "Amazon Ember",Arial,sans-serif;
+    color: #0F1111;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+}
+.nameChangeContainerDiv{
+    margin-top: 1rem;
+    width: 600px;
+    height: 250px;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+    margin-bottom: 2rem;
+}
+.nameChangeDiv{
+    width: 90%;
+    height: auto;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nameChangeBoxText{
+    font-size: 13px;
+    line-height: 19px;
+    color: #111;
+
+}
+.nameChangeBoxInputDiv{
+    margin-top: 2rem;
+}
+.nameChangeBoxLabel{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #111;
+}
+.nameChangeBoxInput{
+    height: 31px;
+    width: 174px;
+    margin-top: 0.25rem;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
+    outline: 0;
+    color: #111;
+}
+.nameChangeSaveBtnDiv{
+    margin-top: 1.5rem;
+}
+.nameChangeSaveBtn{
+    width: 100px;
+    height: 31px;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+.nameChangeSaveBtn:hover{
+
+    background-color: #fdbf1f;
+}
+.nameChangeSaveBtn:focus:hover{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e47911;
+}

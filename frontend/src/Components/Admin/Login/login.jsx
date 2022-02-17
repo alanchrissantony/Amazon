@@ -1,6 +1,7 @@
 import React from 'react'
 import './login.css'
 import logo from '../../../Images/AmazonLogo.png'
+import { Link } from 'react-router-dom'
 
 function adminLogin() {
     return (
@@ -18,7 +19,7 @@ function adminLogin() {
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder='Password' className='passwordInput'/>
                     <br />
-                    <p className='adminLoginReturn'>Return to home page</p>
+                    <Link to={'/'} className='adminLoginReturn'>Return to home page</Link>
                     <button className='btn btn-success'>Login</button>
                 </div>
             </section>

@@ -12,6 +12,9 @@ import PlaceOrder from './ view/Users/Pages/placeOrder'
 import Order from './ view/Users/Pages/order'
 import OrderHistory from './ view/Users/Pages/orderHistory';
 import AdminLogin from './ view/Admin/Pages/login';
+import LogInSecurity from './ view/Users/Pages/Login&Security/logInSecurity';
+import Name from './ view/Users/Pages/Login&Security/name';
+import Email from './ view/Users/Pages/Login&Security/email';
 
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
           <Route path='/order/:id' element={<PlaceOrder/>}/>
           <Route path='/orders' element={<Order/>}/>
           <Route path='/orderhistory' element={<OrderHistory/>}/>
+          <Route path='/login&security' element={<LogInSecurity/>}/>
+          <Route path='/changeName' element={<Name/>}/>
+          <Route path='/changeEmail' element={<Email/>}/>
 
           <Route path='/admin' element={<AdminLogin/>}/>
         </Routes>

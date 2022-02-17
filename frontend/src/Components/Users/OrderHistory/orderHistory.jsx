@@ -44,7 +44,10 @@ function OrderHistory() {
                 <div className="orderHistoryContainer">
                     <div className="orderHistoryContainerSection">
                         <div className="orderHistoryAccountTextDiv">
-                            <p className='orderHistoryAccountText'><span className='orderHistoryYourAccountText'>Your Account </span>{'  '} {'  ›'} <span className='orderHistoryYourOrdersText'> Your Orders</span></p>
+                            <p className='orderHistoryAccountText'><span className='orderHistoryYourAccountText' onClick={(e) => {
+                                e.preventDefault()
+                                navigate('/')
+                            }} >Your Account </span>{'  '} {'  ›'} <span className='orderHistoryYourOrdersText'> Your Orders</span></p>
                         </div>
                         <div className="orderHistoryTitleDiv">
                             <p className="orderHistoryTitle">Your Orders</p>
@@ -105,7 +108,7 @@ function OrderHistory() {
                                                 <p className="orderHistoryOrderIdText">ORDER # {order._id}</p>
                                             </div>
                                             <div className="orderHistoryOrderDetailsDiv">
-                                                <p className="orderHistoryOrderDetailsText"><span className='orderHistoryOrderViewDetailsText' onClick={(e)=>{
+                                                <p className="orderHistoryOrderDetailsText"><span className='orderHistoryOrderViewDetailsText' onClick={(e) => {
                                                     e.preventDefault()
                                                     navigate(`/order/${order._id}`)
                                                 }}>View order details </span> | <span className='orderHistoryOrderInvoiceText'> Invoice</span></p>
@@ -120,10 +123,10 @@ function OrderHistory() {
                                     <div className="orderHistoryProductContentDiv">
                                         <div className="orderHistoryProductContentOrderDiv">
                                             <div className="orderHistoryProductOrderStatusDiv">
-                                                <p className="orderHistoryProductOrderStatus">{"Shipped"}</p>
+                                                <p className="orderHistoryProductOrderStatus">{order.isPaid ? 'Shipped' : 'Complete your payment'}</p>
                                             </div>
                                             <div className="orderHistoryProductOrderStatusTextDiv">
-                                                <p className="orderHistoryProductOrderStatusText">Your product has been shipped.</p>
+                                                <p className="orderHistoryProductOrderStatusText">{order.isPaid ? 'Your product has been shipped.' : 'Complete your transaction'}</p>
                                             </div>
                                             {order.orderItems.map(product => (
                                                 <div key={product._id}>

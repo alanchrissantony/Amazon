@@ -70,8 +70,11 @@
     line-height: 15px;
     font-weight: 700;
     color: #fff;
+    cursor: pointer;
 }
-
+.navHighText:hover .navText{
+    color: #ffa53f;
+}
 .cartNavLogo{
     height: 35px;
     width: auto;
@@ -121,26 +124,6 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
-.navSignOutBtn{
-    display: block;
-    height: 33px;
-    cursor: pointer;
-    outline: 0;
-    border: 1px solid;
-    border-color: #c89411 #b0820f #99710d;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: inset 0 1px 0 0 #fcf3dc;
-    background: -webkit-linear-gradient(top,#f8e3ad,#EEBA37);
-    text-align: center;
-    line-height: 31px;
-    color: #111;
-    text-decoration: none;
-    line-height: 30px;
-    font-size: 13px;
-    width: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-}
 .dropdown-content{
     position: absolute;
     display: none;
@@ -148,12 +131,92 @@ a{
 .navTextDivAccount:hover .dropdown-content{
     display: block;
 }
-.navSignDiv{
+.navSignInDiv{
     width: 8rem;
     height: 4rem;
     background-color: #ffffff;
     margin-left: -0.5rem;
     margin-top: 1rem;
+}
+.navSignOutDiv{
+    width: auto;
+    height: auto;
+    overflow: visible;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 13%);
+    background: #fff;
+    border: 1px solid #bbb;
+    margin-left: -1.5rem;
+    margin-top: 1rem;
+    overflow: auto;
+    border-radius: 3px 3px 3px 3px;
+    z-index: 10000;
+    position: relative;
+}
+.navSignOutContainer{
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+.navSignOutTitle{
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F1111;
+}
+.navSignOutYourAccount{
+    font-size: 13px;
+    color: #444;
+    font-weight: 400;
+    white-space: normal;
+    line-height: 16px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+.navSignOutYourAccount:hover{
+    text-decoration: underline;
+    color: #e47911;
+}
+.navSignOutWishList{
+    font-size: 13px;
+    color: #444;
+    font-weight: 400;
+    white-space: normal;
+    line-height: 16px;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+.navSignOutWishList:hover{
+    text-decoration: underline;
+    color: #e47911;
+}
+.navSignOutOrders{
+    font-size: 13px;
+    color: #444;
+    font-weight: 400;
+    white-space: normal;
+    line-height: 16px;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+.navSignOutOrders:hover{
+    text-decoration: underline;
+    color: #e47911;
+}
+.navSignOutSignOut{
+    font-size: 13px;
+    color: #444;
+    font-weight: 400;
+    white-space: normal;
+    line-height: 16px;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+.navSignOutSignOut:hover{
+    text-decoration: underline;
+    color: #e47911;
 }
 .locationRowHomeHeader{
     height: 60px;

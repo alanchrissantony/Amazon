@@ -59,10 +59,34 @@ function Home() {
             <div className='navTextDivAccount'>
               <a> <p className='navText'>Hello, {userInfo ? userInfo.name : 'Sign in'} <br /><span className='navHighText'>Account & Lists </span><i class="fas fa-caret-down"></i></p></a>
               <ul className='dropdown-content' >
-                <div className='navSignDiv'> <br /> {userInfo ? <button className='navSignOutBtn' onClick={signOutHandler} >Sign out</button> : <button className='navSignInBtn' onClick={(e) => {
-                  e.preventDefault()
-                  navigate('/login')
-                }} >Sign in</button>}</div>
+                {userInfo ?
+                  <div className='navSignOutDiv'>
+                    <br />
+                    <div className="navSignOutContainer">
+                      <p className="navSignOutTitle">Your Account</p>
+                      <p className="navSignOutYourAccount" onClick={(e)=>{
+                        e.preventDefault()
+                        navigate('/login&security')
+                      }} >Your Account</p>
+                      <p className="navSignOutWishList" onClick={(e)=>{
+                        e.preventDefault()
+                        navigate('/cart/:id')
+                      }} >Your Wish List</p>
+                      <p className="navSignOutOrders" onClick={(e)=>{
+                        e.preventDefault()
+                        navigate('/orderhistory')
+                      }} >Your Orders</p>
+                      <p className="navSignOutSignOut" onClick={signOutHandler}>Sign Out</p>
+                    </div>
+                  </div>
+                  : <div className='navSignInDiv'>
+                    <br />
+                    <button className='navSignInBtn' onClick={(e) => {
+                      e.preventDefault()
+                      navigate('/login')
+                    }} >Sign in</button>
+                  </div>
+                }
               </ul>
             </div>
             <div className='navTextDivOrders'>
