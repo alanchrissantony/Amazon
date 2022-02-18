@@ -18,6 +18,7 @@ function Signup() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [rePassword, setRePassword] = useState('')
+    const [matchPassword, setMatchPassword] = useState(null)
 
 
 
@@ -30,8 +31,11 @@ function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password !== rePassword) {
-            alert('Password and confirm password are not match');
+            setMatchPassword('Password and confirm password are not match');
+        }else if (password.length < 8) {
+            setMatchPassword('Passwords must have at least 8 characters');
         } else {
+            setMatchPassword(null)
             dispatch(register(name, email, password));
         }
     };
@@ -65,6 +69,7 @@ function Signup() {
                             <p className='create-account-text'>Create account</p>
                             {loading && <LoadingBox></LoadingBox>}
                             {error && <div className='signupErrorDiv'><p className='signupErrorContent'>{error} !</p></div>}
+                            {matchPassword && <div className='signupErrorDiv'><p className='signupErrorContent'>{matchPassword} !</p></div>}
                             <label htmlFor="name" className='name-label'>Your name</label>
                             <br />
                             <input type="text" name="name" className='input' value={name} onChange={(e) => setName(e.target.value)} />

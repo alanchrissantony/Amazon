@@ -4,15 +4,16 @@ import Logo from '../../../Images/AmazonLogo.png'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
-import { detailsUser } from '../../../actions/userActions'
+import { detailsUser, updateUserProfile } from '../../../actions/userActions'
 import LoadingBox from '../LoadingBox/loadingBox'
 import MessageBox from '../MessageBox/messageBox'
+import { USER_UPDATE_PROFILE_RESET } from '../../../constants/userconstants'
 
 function Email() {
 
   const navigate = useNavigate()
 
-  const [newEmail, setNewEmail] = useState(null)
+  const [email, setEmail] = useState('')
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -20,26 +21,35 @@ function Email() {
   const { loading, error, user } = userDetails;
   const dispatch = useDispatch();
 
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { success: successUpdate, error: errorUpdate, loading: loadingUpdate } = userUpdateProfile;
+
 
   useEffect(() => {
     if (!userInfo) {
       navigate('/login')
+    } else if (!user) {
+      dispatch({ type: USER_UPDATE_PROFILE_RESET });
+      dispatch(detailsUser(userInfo._id));
+    } else {
+      setEmail(user.email);
     }
-    dispatch(detailsUser(userInfo._id));
-  }, [dispatch, userInfo, navigate]);
+  }, [dispatch, userInfo, navigate, userInfo._id, user, user.email]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     // dispatch update profile
-    navigate('/login&security')
-};
+    dispatch(updateUserProfile({ userId: user._id, email }));
+  };
 
   return (
     <div className='emailChangeSection'>
       {loading ? (
         <LoadingBox></LoadingBox>
+      ) : loadingUpdate ? (
+        <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox>{error}</MessageBox>
+        <MessageBox></MessageBox>
       ) : (
         <div className="emailChangeContainer">
           <div className="emailChangeLogoDiv">
@@ -50,6 +60,12 @@ function Email() {
           </div>
           <div className="emailChangeBoxContainer">
             <div className="emailChangeBoxDiv">
+              {errorUpdate && (
+                <div className='emailChangeErrorDiv'><p className='emailChangeErrorContent'>{errorUpdate} !</p></div>
+              )}
+              {successUpdate && (
+                <div className='emailChangeSuccessDiv'><p className='emailChangeSuccessContent'>{'Profile Updated Successfully'}</p></div>
+              )}
               <div className="emailChangeBoxTitleDiv">
                 <p className="emailChangeBoxTitle">Change your email address</p>
               </div>
@@ -62,7 +78,7 @@ function Email() {
               <div className="emailChangeBoxInputDiv">
                 <label htmlFor="email" className="emailChangeBoxLabel">New email address</label>
                 <br />
-                <input type="email" name='email' className="emailChangeBoxInput" onChange={(e) => { setNewEmail(e.target.value) }} />
+                <input type="email" name='email' className="emailChangeBoxInput" onChange={(e) => { setEmail(e.target.value) }} />
               </div>
               <div className="emailChangeBoxBtnDiv">
                 <button className="emailChangeBoxBtn" onClick={submitHandler}>Continue</button>

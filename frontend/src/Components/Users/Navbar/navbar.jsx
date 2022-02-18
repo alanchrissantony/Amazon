@@ -29,7 +29,6 @@ function Home() {
     dispatch(signout());
   }
 
-  console.log(shippingAddress);
 
   return (
     <div className='navcontainer'>

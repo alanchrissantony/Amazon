@@ -16,6 +16,7 @@ import LogInSecurity from './ view/Users/Pages/Login&Security/logInSecurity';
 import Name from './ view/Users/Pages/Login&Security/name';
 import Email from './ view/Users/Pages/Login&Security/email';
 import Password from './ view/Users/Pages/Login&Security/password';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 function App() {
@@ -34,10 +35,10 @@ function App() {
           <Route path='/order/:id' element={<PlaceOrder/>}/>
           <Route path='/orders' element={<Order/>}/>
           <Route path='/orderhistory' element={<OrderHistory/>}/>
-          <Route path='/login&security' element={<LogInSecurity/>}/>
-          <Route path='/changeName' element={<Name/>}/>
-          <Route path='/changeEmail' element={<Email/>}/>
-          <Route path='/changePassword' element={<Password/>}/>
+          <Route path='/login&security' element={<PrivateRoute><LogInSecurity/></PrivateRoute>}/>
+          <Route path='/changeName' element={<PrivateRoute><Name/></PrivateRoute>}/>
+          <Route path='/changeEmail' element={<PrivateRoute><Email/></PrivateRoute>}/>
+          <Route path='/changePassword' element={<PrivateRoute><Password/></PrivateRoute>}/>
 
           <Route path='/admin' element={<AdminLogin/>}/>
         </Routes>

@@ -102,3 +102,42 @@
 .emailChangeBoxBtn:hover{
     background-color: #FDD000;
 }
+.emailChangeErrorContent {
+    color: #721c24;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+  }
+  .emailChangeErrorDiv {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+  .emailChangeSuccessContent {
+    color: #155724;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+  }
+  .emailChangeSuccessDiv {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+  
