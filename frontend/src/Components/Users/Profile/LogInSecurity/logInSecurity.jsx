@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -86,7 +85,7 @@ function LogInSecurity() {
                     <div className="logInSecurityDoneBtnDiv">
                         <button className='logInSecurityDoneBtn' onClick={(e)=>{
                             e.preventDefault()
-                            navigate('')
+                            navigate('/')
                         }}>Done</button>
                     </div>
                 </div>
