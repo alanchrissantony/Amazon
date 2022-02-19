@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './order.css'
 import tick from '../../../Images/checked.png'
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
 
@@ -95,7 +95,7 @@ function Order() {
                                             <p className="orderPlaceDeliveryText">Delivery date</p>
                                         </div>
                                         <div className="orderPlaceReviewDiv">
-                                            <p className="orderPlaceReview">Review your order {'>'}</p>
+                                            <Link to={'/orderhistory'} className="orderPlaceReview">Review your order {'>'}</Link>
                                         </div>
                                     </div>
                                     <div className='orderPlaceProductSection'>

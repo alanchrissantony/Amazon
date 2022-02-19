@@ -73,7 +73,7 @@ orderRouter.get(
   '/mine/history',
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find({ user: req.user._id });
+    const orders = await Order.find({ user: req.user._id }).sort( { _id: -1 } );
     res.send(orders);
   })
 );

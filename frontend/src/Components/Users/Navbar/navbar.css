@@ -37,7 +37,7 @@
     width: 96px;
     margin: 1.1rem;
     height: auto;
-    position: fixed;
+    position: absolute;
     cursor: pointer;
 }
 .navTextDivAccount{

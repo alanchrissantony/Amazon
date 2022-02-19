@@ -86,8 +86,7 @@ function OrderHistory() {
                                                 <p className="orderHistoryOrderShipText">SHIP TO</p>
                                             </div>
                                             <div className="orderHistoryOrderShippingAddressDiv">
-                                                <p className="orderHistoryOrderShippingAddressText">{order.shippingAddress.name} <i class="fas fa-angle-down"></i></p>
-                                                <ul className="dropdown-content">
+                                                <p className="orderHistoryOrderShippingAddressText">{order.shippingAddress.name} <i class="fas fa-angle-down"></i><ul className="dropdown-content">
                                                     <div className="orderShippingDropDownSection">
                                                         <div className="orderShippingDropDownDiv">
                                                             <p className="orderShippingDropDownAddressName">{order.shippingAddress.name}</p>
@@ -98,7 +97,8 @@ function OrderHistory() {
                                                             <p className="orderShippingDropDownPhone">Phone: {order.shippingAddress.mobile}</p>
                                                         </div>
                                                     </div>
-                                                </ul>
+                                                </ul></p>
+
                                             </div>
                                             <br />
                                         </div>
