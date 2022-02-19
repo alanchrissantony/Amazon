@@ -1,0 +1,99 @@
+.containerheader{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: #131921;
+}
+.logo{
+    width: 96px;
+    margin: 1.1rem;
+    position: fixed;
+    cursor: pointer;
+}
+.adminTextDiv{
+    float: left;
+    margin-left: 43%;
+    margin-top: 0.25rem;
+}
+.adminText{
+    text-align: center;
+    font-size: xx-large;
+    color: gray;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+.adminText:hover{
+    color: darkgray;
+}
+.productsText{
+    margin-left: 15rem;
+    margin-top: 1rem;
+    float: left;
+    cursor: pointer;
+}
+.usersText{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    float: left;
+    cursor: pointer;
+}
+.ordersText{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    float: left;
+    cursor: pointer;
+}
+.adminPanelText{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    float: left;
+    cursor: pointer;
+}
+.panelText{
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+.panelText:hover{
+    color: gray;
+}
+.headerSignOutBtn{
+    display: block;
+    height: 33px;
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid;
+    border-color: #c89411 #b0820f #99710d;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: inset 0 1px 0 0 #fcf3dc;
+    background: -webkit-linear-gradient(top,#f8e3ad,#EEBA37);
+    text-align: center;
+    line-height: 31px;
+    color: #111;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 13px;
+    width: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headerSignOutDiv{
+    width: 8rem;
+    height: 4rem;
+    background-color: #fff;
+    z-index: 10000;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 13%);
+    overflow: visible;
+    border: 1px solid #bbb;
+    border-radius: 3px 3px 3px 3px;
+    margin-left: -3.5rem;
+    margin-top: 1rem;
+}
+.dropdown-content{
+    position: absolute;
+    display: none;
+}
+.panelText:hover .dropdown-content{
+    display: block;
+}

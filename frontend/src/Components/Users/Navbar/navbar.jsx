@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css'
-import Logo from '../../../Images/logo.png'
+import Logo from '../../../Images/logo.svg'
 import Location from '../../../Images/location.png'
 import Cart from '../../../Images/cart.png'
 import { useNavigate, Link } from 'react-router-dom'

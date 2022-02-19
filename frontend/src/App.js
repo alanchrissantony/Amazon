@@ -17,9 +17,23 @@ import Name from './ view/Users/Pages/Login&Security/name';
 import Email from './ view/Users/Pages/Login&Security/email';
 import Password from './ view/Users/Pages/Login&Security/password';
 import PrivateRoute from './Components/PrivateRoute';
+import AdminPanel from './ view/Admin/Pages/panel';
+import { useEffect } from 'react';
+import { useContext } from 'react';
+import { AuthContext, FirebaseContext } from './store/FirebaseContext';
 
 
 function App() {
+
+  const { setUser } = useContext(AuthContext)
+  const { firebase } = useContext(FirebaseContext)
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      setUser(user)
+    })
+  })
+
   return (
     <div className="App">
       <Router>
@@ -41,6 +55,7 @@ function App() {
           <Route path='/changePassword' element={<PrivateRoute><Password/></PrivateRoute>}/>
 
           <Route path='/admin' element={<AdminLogin/>}/>
+          <Route path='/adminPanel' element={<AdminPanel/>}/>
         </Routes>
       </Router>
     </div>

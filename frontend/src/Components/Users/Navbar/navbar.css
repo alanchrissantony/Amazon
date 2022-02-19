@@ -34,10 +34,10 @@
     height: 60px;
 }
 .amazonNavLogo{
-    height: 39px;
-    width: auto;
-    margin-left: 28px;
-    margin-top: 12px;
+    width: 96px;
+    margin: 1.1rem;
+    height: auto;
+    position: fixed;
     cursor: pointer;
 }
 .navTextDivAccount{
@@ -134,9 +134,15 @@ a{
 .navSignInDiv{
     width: 8rem;
     height: 4rem;
-    background-color: #ffffff;
+    background-color: #fff;
     margin-left: -0.5rem;
     margin-top: 1rem;
+    z-index: 10000;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 13%);
+    overflow: visible;
+    border: 1px solid #bbb;
+    border-radius: 3px 3px 3px 3px;
 }
 .navSignOutDiv{
     width: auto;

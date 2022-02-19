@@ -1,0 +1,28 @@
+.adminPanelSection{
+    padding-top: 5rem;
+}
+.adminPanelContainer{
+    background-color: rgb(240, 240, 240);
+    width: 28%;
+    height: 450px;
+    float: left;
+    margin: 2rem;
+}
+.adminPanelContainerText{
+    text-align: center;
+    font-size: xx-large;
+    color: gray;
+    padding-top: 1rem;
+}
+.adminPanelContainerImage{
+    margin-left: 4rem;
+}
+.btnProducts{
+    margin-left: 7rem;
+}
+.btnUsers{
+    margin-left: 8rem;
+}
+.btnOrders{
+    margin-left: 8rem;
+}

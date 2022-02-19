@@ -1,6 +1,6 @@
-import firebase from "firebase";
-import 'firebase/firebase-auth'
-import 'firebase/firebase-storage'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyAagmJCqShyEsv-esNz_DiJOKeGW5bvGCQ",
