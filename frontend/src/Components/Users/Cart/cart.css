@@ -179,9 +179,34 @@
 .checkOutBtn:hover{
     background-color: #FCD200;
 }
+.emptyCartDiv{
+    background-color: #fff;
+    width: 60%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.emptyCart{
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.emptyCartContentText{
+    padding-top: 1rem;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    color: #0F1111;
+}
+.emptyCartShoppingLink{
+    text-align: end;
+    padding-top: 3rem;
+}
 .goShoppingLink{
     color: #15788b;
 }
 .goShoppingLink:hover{
     text-decoration: underline;
+    color: #C7511F;   
 }

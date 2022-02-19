@@ -84,7 +84,10 @@ function LogInSecurity() {
                         </div>
                     </div>
                     <div className="logInSecurityDoneBtnDiv">
-                        <button className='logInSecurityDoneBtn'>Done</button>
+                        <button className='logInSecurityDoneBtn' onClick={(e)=>{
+                            e.preventDefault()
+                            navigate('')
+                        }}>Done</button>
                     </div>
                 </div>
             )}

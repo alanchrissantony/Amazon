@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './cart.css'
-import MessageBox from '../MessageBox/messageBox';
 import { addToCart, removeFromCart } from '../../../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -40,10 +39,10 @@ function Cart(props) {
 
 
     const checkoutHandler = () => {
-        if(userInfo){
+        if (userInfo) {
             navigate('/shipping')
         }
-        else{
+        else {
             navigate('/login?redirect=shipping')
         }
     }
@@ -55,7 +54,14 @@ function Cart(props) {
     return (
         <div className='cartSection'>
             {cartItems.length <= 0 ? (
-                <MessageBox>Your cart is empty. <Link to='/' className='goShoppingLink'>Go shopping</Link></MessageBox>
+                <div className='emptyCartDiv'>
+                    <div className="emptyCart">
+                        <p className='emptyCartContentText'>Your Amazon Cart is empty.</p>
+                        <Link to='/' className='goShoppingLink'>
+                            <p className='emptyCartShoppingLink'>Go shopping {'›'}</p>
+                        </Link>
+                    </div>
+                </div>
             ) : (
                 <div className="cartContainer">
                     <div className="cartBoxContainer">
