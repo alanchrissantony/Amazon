@@ -1,224 +1,516 @@
-.adminPanelSectionContainer{
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    min-height: 580px;
+.adminPanelSectionContainer {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  min-height: 580px;
 }
-.adminPanelOverviewSection{
-    width: 90%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+.adminPanelOverviewSection {
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-.adminPanelOverviewContainer{
-    margin-top: 5rem;
-}
-
-
-
-.adminPanelOverviewTitle{
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
-    color: #0F1111;
-}
-.adminPanelOverviewSubTitleDiv{
-    margin-top: 0.5rem;
-}
-.adminPanelOverviewSubTitleText{
-    color: #8798ad;
-    font-size: 12px;
-    text-shadow: none;
-}
-.adminPanelOverviewSubDashboardTitle{
-    margin-right: 0.5rem;
-    cursor: pointer;
-}
-.adminPanelOverviewSubAmazonDashboardTitle{
-    margin-left: 0.5rem;
-    cursor: pointer;
-}
-.adminPanelOverviewBoxContainer{
-    margin-top: 1rem;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.adminPanelOverviewOrdersBoxContainerDiv{
-    width: 320px;
-    height: 102px;
-    display: block;
-    border-radius: 8px;
-    background-color: #fff;
-    border: 1px #D5D9D9 solid;
-    float: left;
-    cursor: pointer;
-}
-.adminPanelOverviewOrdersBoxContainerDiv:hover{
-    background-color: #eeeeee;
-}
-.adminPanelOverviewOrdersBoxDiv{
-    width: 90%;
-    height: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-}
-.adminPanelOverviewOrdersImgDivContainer{
-    float: left;
-}
-.adminPanelOverviewOrdersImg{
-    width: 66px;
-    height: auto;
-}
-.adminPanelOverviewOrdersText{
-    color: #111;
-    font-size: 17px;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
-    line-height: 32px;
-    cursor: pointer;
-}
-.adminPanelOverviewOrdersSubText{
-    color: #565959;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 20px;
-}
-.adminPanelOverviewOrdersTextDivContainer{
-    margin-left: 1rem;
-    float: left;
+.adminPanelOverviewContainer {
+  margin-top: 5rem;
 }
 
+.adminPanelOverviewTitle {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  color: #0f1111;
+}
+.adminPanelDashOrdersBoxContainerSection{
+    padding-top: 8rem;
+}
+.adminPanelOverviewSubTitleDiv {
+  margin-top: 0.5rem;
+}
+.adminPanelOverviewSubTitleText {
+  color: #8798ad;
+  font-size: 12px;
+  text-shadow: none;
+}
+.adminPanelOverviewSubDashboardTitle {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.adminPanelOverviewSubAmazonDashboardTitle {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.adminPanelOverviewBoxContainer {
+  margin-top: 1rem;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelOverviewOrdersBoxContainerDiv {
+  width: 320px;
+  height: 102px;
+  display: block;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px #d5d9d9 solid;
+  float: left;
+  cursor: pointer;
+}
+.adminPanelOverviewOrdersBoxContainerDiv:hover {
+  background-color: #eeeeee;
+}
+.adminPanelOverviewOrdersBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.adminPanelOverviewOrdersImgDivContainer {
+  float: left;
+}
+.adminPanelOverviewOrdersImg {
+  width: 66px;
+  height: auto;
+}
+.adminPanelOverviewOrdersText {
+  color: #111;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 32px;
+  cursor: pointer;
+}
+.adminPanelOverviewOrdersSubText {
+  color: #565959;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+}
+.adminPanelOverviewOrdersTextDivContainer {
+  margin-left: 1rem;
+  float: left;
+}
 
-.adminPanelOverviewUsersBoxContainerDiv{
-    width: 320px;
-    height: 102px;
-    display: block;
-    border-radius: 8px;
-    background-color: #fff;
-    border: 1px #D5D9D9 solid;
-    float: left;
-    margin-left: 1.5rem;
-    cursor: pointer;
+.adminPanelOverviewUsersBoxContainerDiv {
+  width: 320px;
+  height: 102px;
+  display: block;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px #d5d9d9 solid;
+  float: left;
+  margin-left: 1.5rem;
+  cursor: pointer;
 }
-.adminPanelOverviewUsersBoxContainerDiv:hover{
-    background-color: #eeeeee;
+.adminPanelOverviewUsersBoxContainerDiv:hover {
+  background-color: #eeeeee;
 }
-.adminPanelOverviewUsersBoxDiv{
-    width: 90%;
-    height: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
+.adminPanelOverviewUsersBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
-.adminPanelOverviewUsersImgDivContainer{
-    float: left;
+.adminPanelOverviewUsersImgDivContainer {
+  float: left;
 }
-.adminPanelOverviewUsersImg{
-    width: 66px;
-    height: auto;
+.adminPanelOverviewUsersImg {
+  width: 66px;
+  height: auto;
 }
-.adminPanelOverviewUsersText{
-    color: #111;
-    font-size: 17px;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
-    line-height: 32px;
-    cursor: pointer;
+.adminPanelOverviewUsersText {
+  color: #111;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 32px;
+  cursor: pointer;
 }
-.adminPanelOverviewUsersSubText{
-    color: #565959;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 20px;
+.adminPanelOverviewUsersSubText {
+  color: #565959;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
 }
-.adminPanelOverviewUsersTextDivContainer{
-    margin-left: 1rem;
-    float: left;
+.adminPanelOverviewUsersTextDivContainer {
+  margin-left: 1rem;
+  float: left;
 }
 
+.adminPanelOverviewProductsBoxContainerDiv {
+  width: 320px;
+  height: 102px;
+  display: block;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px #d5d9d9 solid;
+  float: left;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+.adminPanelOverviewProductsBoxContainerDiv:hover {
+  background-color: #eeeeee;
+}
+.adminPanelOverviewProductsBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.adminPanelOverviewProductsImgDivContainer {
+  float: left;
+}
+.adminPanelOverviewProductsImg {
+  width: 66px;
+  height: auto;
+}
+.adminPanelOverviewProductsText {
+  color: #111;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 32px;
+  cursor: pointer;
+}
+.adminPanelOverviewProductsSubText {
+  color: #565959;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+}
+.adminPanelOverviewProductsTextDivContainer {
+  margin-left: 1rem;
+  float: left;
+}
 
-.adminPanelOverviewProductsBoxContainerDiv{
-    width: 320px;
-    height: 102px;
-    display: block;
-    border-radius: 8px;
-    background-color: #fff;
-    border: 1px #D5D9D9 solid;
-    float: left;
-    margin-left: 1.5rem;
-    cursor: pointer;
+.adminPanelDashContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.adminPanelOverviewProductsBoxContainerDiv:hover{
-    background-color: #eeeeee;
+.adminPanelDashOrdersBoxContainer {
+  width: 230px;
+  height: 203px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(51, 10, 84, 1) 46%
+  );
+  float: left;
 }
-.adminPanelOverviewProductsBoxDiv{
-    width: 90%;
-    height: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
+.adminPanelDashOrdersBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.adminPanelOverviewProductsImgDivContainer{
-    float: left;
+.adminPanelDashOrdersTextBoxDiv {
+  padding-top: 2rem;
+  float: left;
+  margin-left: 1rem;
 }
-.adminPanelOverviewProductsImg{
-    width: 66px;
-    height: auto;
+.adminPanelDashOrdersBoxTitle {
+  color: #fff;
+  text-shadow: none;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
-.adminPanelOverviewProductsText{
-    color: #111;
-    font-size: 17px;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: none;
-    text-decoration: none;
-    line-height: 32px;
-    cursor: pointer;
+.adminPanelDashOrdersBoxValueDiv {
+  margin-top: 0.25rem;
 }
-.adminPanelOverviewProductsSubText{
-    color: #565959;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 20px;
+.adminPanelDashOrdersBoxValue {
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "roboto", sans-serif;
+  text-shadow: none;
+  color: #fff;
 }
-.adminPanelOverviewProductsTextDivContainer{
-    margin-left: 1rem;
-    float: left;
+.adminPanelDashOrdersImgBoxDiv {
+  float: left;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
 }
-/* .adminPanelDepartmentSection{
-    padding-top: 5rem;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+.adminPanelDashOrdersBoxImg {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: auto;
 }
-.adminPanelDepartmentContainer{
-    background-color: rgb(240, 240, 240);
-    width: 28%;
-    height: 450px;
-    float: left;
-    margin: 2rem;
+.adminPanelDashOrdersBoxIncreaseText {
+  font-size: 12px;
+  font-family: "roboto", sans-serif;
+  color: #fff;
 }
-.adminPanelDepartmentContainerText{
-    text-align: center;
-    font-size: xx-large;
-    color: gray;
-    padding-top: 1rem;
+
+.adminPanelDashTotalIncomeBoxContainer {
+  width: 230px;
+  height: 203px;
+  background: rgb(51, 10, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(51, 10, 84, 1) 0%,
+    rgba(3, 43, 121, 1) 100%
+  );
+  float: left;
+  margin-left: 1rem;
 }
-.adminPanelDepartmentContainerImage{
-    margin-left: 4rem;
+.adminPanelDashTotalIncomeBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.btnProducts{
-    margin-left: 7rem;
+.adminPanelDashTotalIncomeTextBoxDiv {
+  padding-top: 2rem;
+  float: left;
+  margin-left: 1rem;
 }
-.btnUsers{
-    margin-left: 8rem;
+.adminPanelDashTotalIncomeBoxTitle {
+  color: #fff;
+  text-shadow: none;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
-.btnOrders{
-    margin-left: 8rem;
-} */
+.adminPanelDashTotalIncomeBoxValueDiv {
+  margin-top: 0.25rem;
+}
+.adminPanelDashTotalIncomeBoxValue {
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "roboto", sans-serif;
+  text-shadow: none;
+  color: #fff;
+}
+.adminPanelDashTotalIncomeImgBoxDiv {
+  float: left;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+.adminPanelDashTotalIncomeBoxImg {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: auto;
+}
+.adminPanelDashTotalIncomeBoxIncreaseText {
+  font-size: 12px;
+  font-family: "roboto", sans-serif;
+  color: #fff;
+}
+
+.adminPanelDashProductsBoxContainer {
+  width: 230px;
+  height: 203px;
+  background: rgb(10, 26, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 26, 59, 1) 0%,
+    rgba(3, 81, 121, 1) 100%
+  );
+  float: left;
+  margin-left: 1rem;
+}
+.adminPanelDashProductsBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelDashProductsTextBoxDiv {
+  padding-top: 2rem;
+  float: left;
+  margin-left: 1rem;
+}
+.adminPanelDashProductsBoxTitle {
+  color: #fff;
+  text-shadow: none;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.adminPanelDashProductsBoxValueDiv {
+  margin-top: 0.25rem;
+}
+.adminPanelDashProductsBoxValue {
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "roboto", sans-serif;
+  text-shadow: none;
+  color: #fff;
+}
+.adminPanelDashProductsImgBoxDiv {
+  float: left;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+.adminPanelDashProductsBoxImg {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: auto;
+}
+.adminPanelDashProductsBoxIncreaseText {
+  font-size: 12px;
+  font-family: "roboto", sans-serif;
+  color: #fff;
+}
+
+.adminPanelDashUsersBoxContainer {
+  width: 230px;
+  height: 203px;
+  background: rgb(7, 12, 15);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 12, 15, 1) 0%,
+    rgba(4, 117, 124, 1) 100%
+  );
+  float: left;
+  margin-left: 1rem;
+}
+.adminPanelDashUsersBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelDashUsersTextBoxDiv {
+  padding-top: 2rem;
+  float: left;
+  margin-left: 1rem;
+}
+.adminPanelDashUsersBoxTitle {
+  color: #fff;
+  text-shadow: none;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.adminPanelDashUsersBoxValueDiv {
+  margin-top: 0.25rem;
+}
+.adminPanelDashUsersBoxValue {
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "roboto", sans-serif;
+  text-shadow: none;
+  color: #fff;
+}
+.adminPanelDashUsersImgBoxDiv {
+  float: left;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+.adminPanelDashUsersBoxImg {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: auto;
+}
+.adminPanelDashUsersBoxIncreaseText {
+  font-size: 12px;
+  font-family: "roboto", sans-serif;
+  color: #fff;
+}
+
+.adminPanelDashProfitBoxContainer {
+  width: 230px;
+  height: 203px;
+  background: rgb(0, 84, 103);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 84, 103, 1) 0%,
+    rgba(99, 0, 0, 1) 100%
+  );
+
+  margin-left: 1rem;
+  float: left;
+}
+.adminPanelDashProfitBoxDiv {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelDashProfitTextBoxDiv {
+  padding-top: 2rem;
+  float: left;
+  margin-left: 1rem;
+}
+.adminPanelDashProfitBoxTitle {
+  color: #fff;
+  text-shadow: none;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.adminPanelDashProfitBoxValueDiv {
+  margin-top: 0.25rem;
+}
+.adminPanelDashProfitBoxValue {
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "roboto", sans-serif;
+  text-shadow: none;
+  color: #fff;
+}
+.adminPanelDashProfitImgBoxDiv {
+  float: left;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+.adminPanelDashProfitBoxImg {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: auto;
+}
+.adminPanelDashProfitBoxIncreaseText {
+  font-size: 12px;
+  font-family: "roboto", sans-serif;
+  color: #fff;
+}
