@@ -1,20 +1,216 @@
-.adminPanelSection{
-    padding-top: 5rem;
+.adminPanelSectionContainer{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    min-height: 580px;
 }
-.adminPanelContainer{
+.adminPanelOverviewSection{
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adminPanelOverviewContainer{
+    margin-top: 5rem;
+}
+
+
+
+.adminPanelOverviewTitle{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    color: #0F1111;
+}
+.adminPanelOverviewSubTitleDiv{
+    margin-top: 0.5rem;
+}
+.adminPanelOverviewSubTitleText{
+    color: #8798ad;
+    font-size: 12px;
+    text-shadow: none;
+}
+.adminPanelOverviewSubDashboardTitle{
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.adminPanelOverviewSubAmazonDashboardTitle{
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+.adminPanelOverviewBoxContainer{
+    margin-top: 1rem;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adminPanelOverviewOrdersBoxContainerDiv{
+    width: 320px;
+    height: 102px;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px #D5D9D9 solid;
+    float: left;
+    cursor: pointer;
+}
+.adminPanelOverviewOrdersBoxContainerDiv:hover{
+    background-color: #eeeeee;
+}
+.adminPanelOverviewOrdersBoxDiv{
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.adminPanelOverviewOrdersImgDivContainer{
+    float: left;
+}
+.adminPanelOverviewOrdersImg{
+    width: 66px;
+    height: auto;
+}
+.adminPanelOverviewOrdersText{
+    color: #111;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 32px;
+    cursor: pointer;
+}
+.adminPanelOverviewOrdersSubText{
+    color: #565959;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+}
+.adminPanelOverviewOrdersTextDivContainer{
+    margin-left: 1rem;
+    float: left;
+}
+
+
+.adminPanelOverviewUsersBoxContainerDiv{
+    width: 320px;
+    height: 102px;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px #D5D9D9 solid;
+    float: left;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+.adminPanelOverviewUsersBoxContainerDiv:hover{
+    background-color: #eeeeee;
+}
+.adminPanelOverviewUsersBoxDiv{
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.adminPanelOverviewUsersImgDivContainer{
+    float: left;
+}
+.adminPanelOverviewUsersImg{
+    width: 66px;
+    height: auto;
+}
+.adminPanelOverviewUsersText{
+    color: #111;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 32px;
+    cursor: pointer;
+}
+.adminPanelOverviewUsersSubText{
+    color: #565959;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+}
+.adminPanelOverviewUsersTextDivContainer{
+    margin-left: 1rem;
+    float: left;
+}
+
+
+.adminPanelOverviewProductsBoxContainerDiv{
+    width: 320px;
+    height: 102px;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px #D5D9D9 solid;
+    float: left;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+.adminPanelOverviewProductsBoxContainerDiv:hover{
+    background-color: #eeeeee;
+}
+.adminPanelOverviewProductsBoxDiv{
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.adminPanelOverviewProductsImgDivContainer{
+    float: left;
+}
+.adminPanelOverviewProductsImg{
+    width: 66px;
+    height: auto;
+}
+.adminPanelOverviewProductsText{
+    color: #111;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 32px;
+    cursor: pointer;
+}
+.adminPanelOverviewProductsSubText{
+    color: #565959;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+}
+.adminPanelOverviewProductsTextDivContainer{
+    margin-left: 1rem;
+    float: left;
+}
+/* .adminPanelDepartmentSection{
+    padding-top: 5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adminPanelDepartmentContainer{
     background-color: rgb(240, 240, 240);
     width: 28%;
     height: 450px;
     float: left;
     margin: 2rem;
 }
-.adminPanelContainerText{
+.adminPanelDepartmentContainerText{
     text-align: center;
     font-size: xx-large;
     color: gray;
     padding-top: 1rem;
 }
-.adminPanelContainerImage{
+.adminPanelDepartmentContainerImage{
     margin-left: 4rem;
 }
 .btnProducts{
@@ -25,4 +221,4 @@
 }
 .btnOrders{
     margin-left: 8rem;
-}
+} */

@@ -1,7 +1,7 @@
 .containerheader{
     height: 60px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     background-color: #131921;
 }
 .logo{
@@ -10,23 +10,11 @@
     position: absolute;
     cursor: pointer;
 }
-.adminTextDiv{
-    float: left;
-    margin-left: 43%;
-    margin-top: 0.25rem;
-}
-.adminText{
-    text-align: center;
-    font-size: xx-large;
-    color: gray;
-    margin-top: .3rem;
-    cursor: pointer;
-}
-.adminText:hover{
-    color: darkgray;
+.panelTextDiv{
+    margin-left: 70%;
 }
 .productsText{
-    margin-left: 15rem;
+    margin-left: 2rem;
     margin-top: 1rem;
     float: left;
     cursor: pointer;
@@ -43,7 +31,7 @@
     float: left;
     cursor: pointer;
 }
-.adminPanelText{
+.adminText{
     margin-left: 2rem;
     margin-top: 1rem;
     float: left;
@@ -87,7 +75,7 @@
     overflow: visible;
     border: 1px solid #bbb;
     border-radius: 3px 3px 3px 3px;
-    margin-left: -3.5rem;
+    margin-left: -2.5rem;
     margin-top: 1rem;
 }
 .dropdown-content{
