@@ -516,8 +516,13 @@
   color: #fff;
 }
 
+
+.adminPanelTopSellingProductSection{
+  float: left;
+  margin-left: 1rem;
+}
 .adminPanelTopSellingProductContainer {
-  margin-top: 14rem;
+  margin-top: 1rem;
 }
 .adminPanelTopSellingProductDiv {
   width: 477px;
@@ -638,4 +643,142 @@
   font-size: 0.875rem;
   line-height: 1.8;
   font-family: "roboto", sans-serif;
+}
+
+
+
+.adminPanelOrderActivitySection{
+  float: left;
+}
+.adminPanelOrderActivityContainer{
+  margin-top: 1rem;
+}
+.adminPanelOrderActivityDiv {
+  width: 722px;
+  height: auto;
+  overflow: auto;
+}
+.adminPanelOrderActivityBox {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+.adminPanelOrderActivityBoxTitleContainer {
+  width: 100%;
+  height: 4rem;
+  border-bottom: 2px solid #dee2e6;
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.adminPanelOrderActivityBoxTitleDiv {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelOrderActivityBoxTitle {
+  font-family: "roboto", sans-serif;
+  font-weight: 600;
+  color: #212229;
+  font-size: 14px;
+  padding-top: 1.5rem;
+
+}
+.adminPanelOrderActivityBoxContentContainer{
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+.adminPanelOrderActivityBoxContentDiv{
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  height: auto;
+  overflow: auto;
+}
+.adminPanelOrderActivityBoxContentUserImgContainer{
+  width: 55px;
+  height: 55px;
+  float: left;
+}
+.adminPanelOrderActivityBoxContentUserImgDiv{
+  width: 55px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelOrderActivityBoxContentUserImg{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.adminPanelOrderActivityBoxContentUserContentContainer{
+  float: left;
+  width: 40%;
+}
+.adminPanelOrderActivityBoxContentUserContentDiv{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.adminPanelOrderActivityBoxContentUserName{
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "roboto", sans-serif;
+  color: #212529;
+}
+.adminPanelOrderActivityBoxContentUserOrderTimeDiv{
+  margin-top: 0.05rem;
+}
+.adminPanelOrderActivityBoxContentUserOrderTime{
+  color: #8798ad ;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  font-family: "roboto", sans-serif;
+}
+.adminPanelOrderActivityBoxContentOrderContentContainer{
+  float: left;
+  margin-bottom: 1rem;
+}
+.adminPanelOrderActivityBoxContentOrderImgContainer{
+  width: 55px;
+  height: 55px;
+  float: left;
+}
+.adminPanelOrderActivityBoxContentOrderImgDiv{
+  width: 55px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adminPanelOrderActivityBoxContentOrderImg{
+  width: 55px;
+  height: 55px;
+}
+.adminPanelOrderActivityBoxContentOrderContentContainer{
+  float: left;
+  width: 48%;
+}
+.adminPanelOrderActivityBoxContentOrderContentDiv{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.adminPanelOrderActivityBoxContentOrderContentName{
+  font-weight: 600;
+  font-size: 1.0625rem;
+  font-family: "roboto", sans-serif;
+  color: #212529;
+}
+.adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv{
+  margin-top: 0.25rem;
+}
+.adminPanelOrderActivityBoxContentOrderContentOrderCategory{
+  line-height: 10px;
+  color: #6c757d;
+  font-size: 0.875rem;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
 }
