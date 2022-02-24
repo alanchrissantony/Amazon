@@ -235,6 +235,7 @@
   font-family: "roboto", sans-serif;
   text-shadow: none;
   color: #fff;
+  text-align: center;
 }
 .adminPanelDashOrdersImgBoxDiv {
   float: left;
@@ -516,8 +517,7 @@
   color: #fff;
 }
 
-
-.adminPanelTopSellingProductSection{
+.adminPanelTopSellingProductSection {
   float: left;
   margin-left: 1rem;
 }
@@ -552,92 +552,91 @@
   color: #212229;
   font-size: 14px;
   padding-top: 1.5rem;
-
 }
-.adminPanelTopSellingProductContentContainer{
+.adminPanelTopSellingProductContentContainer {
   width: 100%;
   height: auto;
   overflow: auto;
   border-bottom: 1px solid #dee2e6;
 }
-.adminPanelTopSellingProductContentDiv{
+.adminPanelTopSellingProductContentDiv {
   margin-top: 1.5rem;
   margin-left: 1rem;
   margin-bottom: 2rem;
   height: auto;
   overflow: auto;
 }
-.adminPanelTopSellingProductContentImgDiv{
+.adminPanelTopSellingProductContentImgDiv {
   width: 80px;
   height: 55px;
   border: 1px solid #dee2e6;
   float: left;
 }
-.adminPanelTopSellingProductContentImgDivCon{
+.adminPanelTopSellingProductContentImgDivCon {
   width: 45px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.25rem;
 }
-.adminPanelTopSellingProductContentImg{
+.adminPanelTopSellingProductContentImg {
   width: 45px;
   height: auto;
 }
-.adminPanelTopSellingProductContentTextContainer{
+.adminPanelTopSellingProductContentTextContainer {
   width: 59%;
   height: auto;
   float: left;
 }
-.adminPanelTopSellingProductContentTextDiv{
+.adminPanelTopSellingProductContentTextDiv {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-.adminPanelTopSellingProductContentTextTitle{
+.adminPanelTopSellingProductContentTextTitle {
   font-weight: 600;
   font-size: 1.0625rem;
   font-family: "roboto", sans-serif;
   color: #212529;
 }
-.adminPanelTopSellingProductContentTextCategoryDiv{
+.adminPanelTopSellingProductContentTextCategoryDiv {
   margin-top: 0.25rem;
 }
-.adminPanelTopSellingProductContentTextCategory{
+.adminPanelTopSellingProductContentTextCategory {
   line-height: 10px;
   color: #6c757d;
   font-size: 0.875rem;
   font-family: "roboto", sans-serif;
   font-weight: 400;
 }
-.adminPanelTopSellingProductContentTextDescriptionDiv{
+.adminPanelTopSellingProductContentTextDescriptionDiv {
   margin-top: 0.25rem;
 }
-.adminPanelTopSellingProductContentTextDescription{
+.adminPanelTopSellingProductContentTextDescription {
   color: #6c757d;
   font-size: 12px;
   line-height: 1.8;
   font-family: "roboto", sans-serif;
 }
-.adminPanelTopSellingProductContentPriceSection{
+.adminPanelTopSellingProductContentPriceSection {
   width: 23%;
   height: auto;
   float: left;
 }
-.adminPanelTopSellingProductContentPriceContainer{
+.adminPanelTopSellingProductContentPriceContainer {
   width: 80%;
 }
-.adminPanelTopSellingProductContentPrice{
+.adminPanelTopSellingProductContentPrice {
   text-align: right;
   font-size: 1.25rem;
   font-family: "roboto", sans-serif;
   color: #212529;
   font-weight: 550;
 }
-.adminPanelTopSellingProductContentReviewsDiv{
+.adminPanelTopSellingProductContentReviewsDiv {
   margin-top: 0.25rem;
 }
-.adminPanelTopSellingProductContentReviews{
+.adminPanelTopSellingProductContentReviews {
   text-align: center;
   color: #8798ad !important;
   font-size: 0.875rem;
@@ -645,12 +644,10 @@
   font-family: "roboto", sans-serif;
 }
 
-
-
-.adminPanelOrderActivitySection{
+.adminPanelOrderActivitySection {
   float: left;
 }
-.adminPanelOrderActivityContainer{
+.adminPanelOrderActivityContainer {
   margin-top: 1rem;
 }
 .adminPanelOrderActivityDiv {
@@ -681,104 +678,104 @@
   color: #212229;
   font-size: 14px;
   padding-top: 1.5rem;
-
 }
-.adminPanelOrderActivityBoxContentContainer{
+.adminPanelOrderActivityBoxContentContainer {
   width: 100%;
   height: auto;
   overflow: auto;
 }
-.adminPanelOrderActivityBoxContentDiv{
+.adminPanelOrderActivityBoxContentDiv {
   margin-top: 1.5rem;
   margin-left: 1rem;
   margin-bottom: 2rem;
   height: auto;
   overflow: auto;
 }
-.adminPanelOrderActivityBoxContentUserImgContainer{
+.adminPanelOrderActivityBoxContentUserImgContainer {
   width: 55px;
   height: 55px;
   float: left;
 }
-.adminPanelOrderActivityBoxContentUserImgDiv{
+.adminPanelOrderActivityBoxContentUserImgDiv {
   width: 55px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-.adminPanelOrderActivityBoxContentUserImg{
+.adminPanelOrderActivityBoxContentUserImg {
   width: 55px;
   height: 55px;
   border-radius: 50%;
 }
-.adminPanelOrderActivityBoxContentUserContentContainer{
+.adminPanelOrderActivityBoxContentUserContentContainer {
   float: left;
   width: 40%;
 }
-.adminPanelOrderActivityBoxContentUserContentDiv{
+.adminPanelOrderActivityBoxContentUserContentDiv {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
 }
-.adminPanelOrderActivityBoxContentUserName{
+.adminPanelOrderActivityBoxContentUserName {
   font-weight: 600;
   font-size: 1rem;
   font-family: "roboto", sans-serif;
   color: #212529;
 }
-.adminPanelOrderActivityBoxContentUserOrderTimeDiv{
+.adminPanelOrderActivityBoxContentUserOrderTimeDiv {
   margin-top: 0.05rem;
 }
-.adminPanelOrderActivityBoxContentUserOrderTime{
-  color: #8798ad ;
+.adminPanelOrderActivityBoxContentUserOrderTime {
+  color: #8798ad;
   font-size: 0.875rem;
   line-height: 1.8;
   font-family: "roboto", sans-serif;
 }
-.adminPanelOrderActivityBoxContentOrderContentContainer{
+.adminPanelOrderActivityBoxContentOrderContentContainer {
   float: left;
   margin-bottom: 1rem;
 }
-.adminPanelOrderActivityBoxContentOrderImgContainer{
+.adminPanelOrderActivityBoxContentOrderImgContainer {
   width: 55px;
   height: 55px;
   float: left;
 }
-.adminPanelOrderActivityBoxContentOrderImgDiv{
+.adminPanelOrderActivityBoxContentOrderImgDiv {
   width: 55px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-.adminPanelOrderActivityBoxContentOrderImg{
+.adminPanelOrderActivityBoxContentOrderImg {
   width: 55px;
   height: 55px;
 }
-.adminPanelOrderActivityBoxContentOrderContentContainer{
+.adminPanelOrderActivityBoxContentOrderContentContainer {
   float: left;
   width: 48%;
 }
-.adminPanelOrderActivityBoxContentOrderContentDiv{
+.adminPanelOrderActivityBoxContentOrderContentDiv {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
   margin-left: 1rem;
 }
-.adminPanelOrderActivityBoxContentOrderContentName{
+.adminPanelOrderActivityBoxContentOrderContentName {
   font-weight: 600;
   font-size: 1.0625rem;
   font-family: "roboto", sans-serif;
   color: #212529;
 }
-.adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv{
+.adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv {
   margin-top: 0.25rem;
 }
-.adminPanelOrderActivityBoxContentOrderContentOrderCategory{
+.adminPanelOrderActivityBoxContentOrderContentOrderCategory {
   line-height: 10px;
   color: #6c757d;
   font-size: 0.875rem;
   font-family: "roboto", sans-serif;
   font-weight: 400;
 }
+
