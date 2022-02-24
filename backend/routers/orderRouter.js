@@ -83,7 +83,7 @@ orderRouter.get(
 
 orderRouter.get('/admin/total&orders',
 expressAsyncHandler(async (req,res) => {
-  const orders = await Order.estimatedDocumentCount();
+  const orders = await Order.find();
   res.send(orders)
 })
 )

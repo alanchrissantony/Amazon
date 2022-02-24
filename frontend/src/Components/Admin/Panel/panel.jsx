@@ -15,13 +15,14 @@ import profitImg from "../../../Images/profits.png";
 import { useDispatch, useSelector } from "react-redux";
 import { adminTotalListOrder } from "../../../actions/orderActions";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
+import MessageBox from "../../Users/MessageBox/messageBox";
 
 function AdminPanel() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const adminOrderList = useSelector((state) => state.adminOrderList);
-  const { loading, error, orders } = adminOrderList;
+  const { loading, error, adminInfo } = adminOrderList;
 
   const AdminSignIn = () => {
     const { user } = useContext(AuthContext);
@@ -34,21 +35,22 @@ function AdminPanel() {
 
 
 
-
   useEffect(() => {
     const user = localStorage.getItem("adminInfo");
     if (!user) {
       navigate("/admin");
-    } else if (user) {
+    } else if(user){
       dispatch(adminTotalListOrder());
     }
-  }, [navigate]);
+  },[navigate]);
 
   return (
     <div className="adminPanelSectionContainer">
       {loading ? (
         <LoadingBox></LoadingBox>
-      ) : (
+      ) : error ? (
+        <MessageBox>{error}</MessageBox>
+    ) : (
         <section className="adminPanelOverviewSection">
           <div className="adminPanelOverviewContainer">
             <div className="adminPanelOverviewTitleDiv">
@@ -149,7 +151,7 @@ function AdminPanel() {
                           </p>
                         </div>
                         <div className="adminPanelDashOrdersBoxValueDiv">
-                          <p className="adminPanelDashOrdersBoxValue">{error ? error.split(':')[1] : 0}</p>
+                          <p className="adminPanelDashOrdersBoxValue">{adminInfo ? adminInfo.length : 0}</p>
                         </div>
                         <div className="adminPanelDashOrdersBoxIncreaseTextDiv">
                           <p className="adminPanelDashOrdersBoxIncreaseText">
