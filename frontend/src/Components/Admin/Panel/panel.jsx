@@ -13,16 +13,26 @@ import packageImg from "../../../Images/package.png";
 import userImg from "../../../Images/user.png";
 import profitImg from "../../../Images/profits.png";
 import { useDispatch, useSelector } from "react-redux";
-import { adminTotalListOrder } from "../../../actions/orderActions";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
+import {
+  adminTotalListOrder,
+  adminTotalListUsers,
+} from "../../../actions/adminActions";
+import { listProducts } from "../../../actions/productActions";
 
 function AdminPanel() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const adminOrderList = useSelector((state) => state.adminOrderList);
-  const { loading, error, adminInfo } = adminOrderList;
+  const { loading : orderLoading, error : orderError, adminInfo } = adminOrderList;
+
+  const productList = useSelector((state) => state.productList);
+  const { loading : productLoading, error : productError, products } = productList;
+
+  const adminUserList = useSelector((state) => state.adminUserList);
+  const { loading : userLoading, error : userError, adminInfo : userList } = adminUserList;
 
   const AdminSignIn = () => {
     const { user } = useContext(AuthContext);
@@ -34,23 +44,47 @@ function AdminPanel() {
   AdminSignIn();
 
 
-
   useEffect(() => {
     const user = localStorage.getItem("adminInfo");
     if (!user) {
       navigate("/admin");
-    } else if(user){
+    } else if (user) {
       dispatch(adminTotalListOrder());
+      dispatch(listProducts());
+      dispatch(adminTotalListUsers());
     }
-  },[navigate]);
+  }, [navigate]);
+
+  
+  const salesFunction = ()=>{
+    let totalSales = 0
+    for (var i=0; i < adminInfo.length; i++) {
+        totalSales = totalSales + adminInfo[i].totalPrice
+        }
+        localStorage.setItem("totalSales", JSON.stringify(totalSales));
+  }
+
+  
+  if(adminInfo){
+    salesFunction()
+  }
+  
 
   return (
     <div className="adminPanelSectionContainer">
-      {loading ? (
+      {orderLoading ? (
         <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox>{error}</MessageBox>
-    ) : (
+      ) : productLoading ? (
+        <LoadingBox></LoadingBox>
+      ) : userLoading ? (
+        <LoadingBox></LoadingBox>
+      ) : orderError ? (
+        <MessageBox>{orderError}</MessageBox>
+      ) : productError ? (
+        <MessageBox>{productError}</MessageBox>
+      ) : userError ? (
+        <MessageBox>{userError}</MessageBox>
+      ) : (
         <section className="adminPanelOverviewSection">
           <div className="adminPanelOverviewContainer">
             <div className="adminPanelOverviewTitleDiv">
@@ -151,7 +185,9 @@ function AdminPanel() {
                           </p>
                         </div>
                         <div className="adminPanelDashOrdersBoxValueDiv">
-                          <p className="adminPanelDashOrdersBoxValue">{adminInfo ? adminInfo.length : 0}</p>
+                          <p className="adminPanelDashOrdersBoxValue">
+                            {adminInfo ? adminInfo.length : 0}
+                          </p>
                         </div>
                         <div className="adminPanelDashOrdersBoxIncreaseTextDiv">
                           <p className="adminPanelDashOrdersBoxIncreaseText">
@@ -180,7 +216,7 @@ function AdminPanel() {
                         </div>
                         <div className="adminPanelDashTotalIncomeBoxValueDiv">
                           <p className="adminPanelDashTotalIncomeBoxValue">
-                            $14,966
+                            $100
                           </p>
                         </div>
                         <div className="adminPanelDashTotalIncomeBoxIncreaseTextDiv">
@@ -214,7 +250,7 @@ function AdminPanel() {
                         </div>
                         <div className="adminPanelDashProductsBoxValueDiv">
                           <p className="adminPanelDashProductsBoxValue">
-                            24680
+                            {products ? products.length : 0}
                           </p>
                         </div>
                         <div className="adminPanelDashProductsBoxIncreaseTextDiv">
@@ -241,7 +277,7 @@ function AdminPanel() {
                           <p className="adminPanelDashUsersBoxTitle">Users</p>
                         </div>
                         <div className="adminPanelDashUsersBoxValueDiv">
-                          <p className="adminPanelDashUsersBoxValue">24680</p>
+                          <p className="adminPanelDashUsersBoxValue">{userList ? userList.length : 0}</p>
                         </div>
                         <div className="adminPanelDashUsersBoxIncreaseTextDiv">
                           <p className="adminPanelDashUsersBoxIncreaseText">

@@ -93,4 +93,13 @@ userRouter.put(
   })
 );
 
+
+userRouter.get('/admin/total&users',
+expressAsyncHandler(async (req,res) => {
+  const orders = await User.find();
+  res.send(orders)
+})
+)
+
+
 export default userRouter;

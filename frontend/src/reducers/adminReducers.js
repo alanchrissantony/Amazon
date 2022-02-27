@@ -1,5 +1,5 @@
 
-import { ORDER_TOTAL_ADMIN_LIST_FAIL, ORDER_TOTAL_ADMIN_LIST_REQUEST, ORDER_TOTAL_ADMIN_LIST_SUCCESS } from "../constants/orderConstants";
+
 
 
 // export const adminSigninReducer = (state = {}, action) => {
@@ -17,6 +17,8 @@ import { ORDER_TOTAL_ADMIN_LIST_FAIL, ORDER_TOTAL_ADMIN_LIST_REQUEST, ORDER_TOTA
 //     }
 // };
 
+import { ADMIN_TOTAL_USERS_LIST_FAIL, ADMIN_TOTAL_USERS_LIST_REQUEST, ADMIN_TOTAL_USERS_LIST_SUCCESS, ORDER_TOTAL_ADMIN_LIST_FAIL, ORDER_TOTAL_ADMIN_LIST_REQUEST, ORDER_TOTAL_ADMIN_LIST_SUCCESS } from "../constants/adminConstants";
+
 
 export const adminTotalListOrderReducer = (state = {}, action) => {
     switch (action.type) {
@@ -25,6 +27,19 @@ export const adminTotalListOrderReducer = (state = {}, action) => {
         case ORDER_TOTAL_ADMIN_LIST_SUCCESS:
             return { loading: false, adminInfo: action.payload };
         case ORDER_TOTAL_ADMIN_LIST_FAIL:
+            return { loading: false, error: action.payload };
+        default:
+            return state;
+    }
+};
+
+export const adminTotalListUserReducer = (state = {}, action) => {
+    switch (action.type) {
+        case ADMIN_TOTAL_USERS_LIST_REQUEST:
+            return { loading: true };
+        case ADMIN_TOTAL_USERS_LIST_SUCCESS:
+            return { loading: false, adminInfo: action.payload };
+        case ADMIN_TOTAL_USERS_LIST_FAIL:
             return { loading: false, error: action.payload };
         default:
             return state;

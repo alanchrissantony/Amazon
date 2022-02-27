@@ -45,6 +45,7 @@
     height: 60px;
     margin-top: 15px;
     justify-content: space-between;
+    margin-left: 2rem;
 }
 .navTextDivOrders{
     width: 6.2%;
@@ -230,7 +231,7 @@ a{
     float: none;
     display: flex;
     background-color: #131921;
-    width: 64%;
+    width: auto;
 }
 .locationNavLogoDiv{
     height: 60px;
@@ -245,4 +246,29 @@ a{
     margin-top: 15px;
     margin-left: 5px;
     justify-content: space-between;
+}
+.navSearchBarDiv{
+    margin-left: 2rem;
+    margin-top: 0.65rem;
+}
+.navSearchBar{
+    height: 36px;
+    width: 600px;
+    outline: none;
+}
+.searchIconContainer{
+    background-color: #febd69;
+    width: 40px;
+    height: 40px;
+    float: right;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+.searchIconContainer:hover{
+    background-color: #f90;
+}
+.searchIconDiv{
+    margin-left: 8px;
+    margin-top: 8px;
 }
