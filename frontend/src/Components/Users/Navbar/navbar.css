@@ -255,15 +255,18 @@ a{
     height: 36px;
     width: 600px;
     outline: none;
+    border-right: none;
 }
 .searchIconContainer{
     background-color: #febd69;
     width: 40px;
-    height: 40px;
+    height: 37px;
     float: right;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    border-left: none;
     cursor: pointer;
+    margin-top: 2px;
 }
 .searchIconContainer:hover{
     background-color: #f90;
