@@ -4,6 +4,7 @@ import axios from 'axios';
 import Department from './department';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
+import Banner from '../Banner/Banner';
 
 
 function Departments() {
@@ -32,14 +33,14 @@ function Departments() {
   
 
   return (
-      <div>
+      <div className='departmentRootSection'>
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
           <MessageBox>{error}</MessageBox>
         ) : (
           <div>
-            <img src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" className='departmentBackgroundImg' alt="" />
+            <Banner/>
           <section className='departmentsSectionContainer'>
             
             <div className="departmentsDivContainer">

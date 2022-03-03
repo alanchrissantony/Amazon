@@ -1,21 +1,17 @@
-.departmentsSectionContainer{
+.departmentRootSection{
     background-color: #eaeded;
-    background: linear-gradient(to top, #eaeded, rgb(255, 255, 255));;
     width: 100%;
+}
+.departmentsSectionContainer{
     height: 900px;
     min-height: 900px;
     overflow: auto;
-}
-.departmentBackgroundImg{
-    width: 100%;
-    height: auto;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 .departmentsDivContainer{
     width: 95.34%;
     margin: auto;
     height: auto;
+    z-index: 100;
 }
 .departmentBox{
     height: 420px;
