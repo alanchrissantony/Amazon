@@ -1,0 +1,272 @@
+.adminPanelDashOrdersBoxContainerSection {
+  width: 100%;
+  height: auto;
+  background-color: #e9eef7;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminPanelDashContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .adminPanelDashOrdersBoxContainer {
+    width: 230px;
+    height: 203px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 84, 103, 1) 0%,
+      rgba(99, 0, 0, 1) 100%
+    );
+    float: left;
+  }
+  .adminPanelDashOrdersBoxDiv {
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelDashOrdersTextBoxDiv {
+    padding-top: 2rem;
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashOrdersBoxTitle {
+    color: #fff;
+    text-shadow: none;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .adminPanelDashOrdersBoxValueDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelDashOrdersBoxValue {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: "roboto", sans-serif;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+  }
+  .adminPanelDashOrdersImgBoxDiv {
+    float: left;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  .adminPanelDashOrdersBoxImg {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+  .adminPanelDashOrdersBoxIncreaseText {
+    font-size: 12px;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+  }
+  
+  .adminPanelDashTotalIncomeBoxContainer {
+    width: 230px;
+    height: 203px;
+    background: rgb(51, 10, 84);
+    background: linear-gradient(
+      90deg,
+      rgba(51, 10, 84, 1) 0%,
+      rgba(3, 43, 121, 1) 100%
+    );
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashTotalIncomeBoxDiv {
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelDashTotalIncomeTextBoxDiv {
+    padding-top: 2rem;
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashTotalIncomeBoxTitle {
+    color: #fff;
+    text-shadow: none;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .adminPanelDashTotalIncomeBoxValueDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelDashTotalIncomeBoxValue {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: "roboto", sans-serif;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+  }
+  .adminPanelDashTotalIncomeImgBoxDiv {
+    float: left;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  .adminPanelDashTotalIncomeBoxImg {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+  .adminPanelDashTotalIncomeBoxIncreaseText {
+    font-size: 12px;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+  }
+  
+  .adminPanelDashProductsBoxContainer {
+    width: 230px;
+    height: 203px;
+    background: rgb(10, 26, 59);
+    background: linear-gradient(
+      90deg,
+      rgba(10, 26, 59, 1) 0%,
+      rgba(3, 81, 121, 1) 100%
+    );
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashProductsBoxDiv {
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelDashProductsTextBoxDiv {
+    padding-top: 2rem;
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashProductsBoxTitle {
+    color: #fff;
+    text-shadow: none;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .adminPanelDashProductsBoxValueDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelDashProductsBoxValue {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: "roboto", sans-serif;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+  }
+  .adminPanelDashProductsImgBoxDiv {
+    float: left;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  .adminPanelDashProductsBoxImg {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+  .adminPanelDashProductsBoxIncreaseText {
+    font-size: 12px;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+  }
+  
+  .adminPanelDashUsersBoxContainer {
+    width: 230px;
+    height: 203px;
+    background: rgb(7, 12, 15);
+    background: linear-gradient(
+      90deg,
+      rgba(7, 12, 15, 1) 0%,
+      rgba(4, 117, 124, 1) 100%
+    );
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashUsersBoxDiv {
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelDashUsersTextBoxDiv {
+    padding-top: 2rem;
+    float: left;
+    margin-left: 1rem;
+  }
+  .adminPanelDashUsersBoxTitle {
+    color: #fff;
+    text-shadow: none;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .adminPanelDashUsersBoxValueDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelDashUsersBoxValue {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: "roboto", sans-serif;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+  }
+  .adminPanelDashUsersImgBoxDiv {
+    float: left;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  .adminPanelDashUsersBoxImg {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+  .adminPanelDashUsersBoxIncreaseText {
+    font-size: 12px;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+  }
+  

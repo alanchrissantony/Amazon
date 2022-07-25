@@ -1,0 +1,413 @@
+.orderactivity{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    background-color: #e9eef7;
+    padding-bottom: 2rem;
+}
+.orderactivitycontainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adminPanelOrderActivitySection {
+    float: left;
+    width: 60%;
+  }
+  .adminPanelOrderActivityContainer {
+    margin-top: 0rem;
+    padding-left: 0rem;
+  }
+  .adminPanelOrderActivityDiv {
+    width: 95%;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelOrderActivityBox {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 2rem;
+  }
+  .adminPanelOrderActivityBoxTitleContainer {
+    width: 100%;
+    height: 4rem;
+    border-bottom: 2px solid #dee2e6;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  }
+  .adminPanelOrderActivityBoxTitleDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelOrderActivityBoxTitle {
+    font-family: "roboto", sans-serif;
+    font-weight: 600;
+    color: #212229;
+    font-size: 14px;
+    padding-top: 1.5rem;
+  }
+  .adminPanelOrderActivityBoxContentContainer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelOrderActivityBoxContentDiv {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelOrderActivityBoxContentUserImgContainer {
+    width: 55px;
+    height: 55px;
+    float: left;
+  }
+  .adminPanelOrderActivityBoxContentUserImgDiv {
+    width: 55px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelOrderActivityBoxContentUserImg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+  .adminPanelOrderActivityBoxContentUserContentContainer {
+    float: left;
+    width: 40%;
+    padding-bottom: 1rem;
+  }
+  .adminPanelOrderActivityBoxContentUserContentDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .adminPanelOrderActivityBoxContentUserName {
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+  }
+  .adminPanelOrderActivityBoxContentUserOrderTimeDiv {
+    margin-top: 0.05rem;
+  }
+  .adminPanelOrderActivityBoxContentUserOrderTime {
+    color: #8798ad;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    font-family: "roboto", sans-serif;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentContainer {
+    float: left;
+    padding-bottom: 1rem;
+  }
+  .adminPanelOrderActivityBoxContentOrderImgContainer {
+    width: 55px;
+    height: 55px;
+    float: left;
+  }
+  .adminPanelOrderActivityBoxContentOrderImgDiv {
+    width: 55px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelOrderActivityBoxContentOrderImg {
+    width: 55px;
+    height: 55px;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentContainer {
+    float: left;
+    width: 48%;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentName {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelOrderActivityBoxContentOrderContentOrderCategory {
+    line-height: 10px;
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+  }
+
+
+
+
+  .adminPanelTopSellingProductSection {
+    float: left;
+    width: 40%;
+    height: auto;
+    background-color: #e9eef7;
+    padding-bottom: 2rem;
+  }
+  .adminPanelTopSellingProductContainer {
+    margin-top: 1rem;
+  }
+  .adminPanelTopSellingProductDiv {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelTopSellingProductBox {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 2rem;
+  }
+  .adminPanelTopSellingProductTitleContainer {
+    width: 100%;
+    height: 4rem;
+    border-bottom: 2px solid #dee2e6;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  }
+  .adminPanelTopSellingProductTitleDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelTopSellingProductTitle {
+    font-family: "roboto", sans-serif;
+    font-weight: 600;
+    color: #212229;
+    font-size: 14px;
+    padding-top: 1.5rem;
+  }
+  .adminPanelTopSellingProductContentContainer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    border-bottom: 1px solid #dee2e6;
+  }
+  .adminPanelTopSellingProductContentDiv {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelTopSellingProductContentImgDiv {
+    width: 80px;
+    height: 55px;
+    border: 1px solid #dee2e6;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentImgDivCon {
+    width: 45px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentImg {
+    width: 45px;
+    height: auto;
+  }
+  .adminPanelTopSellingProductContentTextContainer {
+    width: 59%;
+    height: auto;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentTextDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelTopSellingProductContentTextTitle {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+  }
+  .adminPanelTopSellingProductContentTextCategoryDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentTextCategory {
+    line-height: 10px;
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+  }
+  .adminPanelTopSellingProductContentTextDescriptionDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentTextDescription {
+    color: #6c757d;
+    font-size: 12px;
+    line-height: 1.8;
+    font-family: "roboto", sans-serif;
+  }
+  .adminPanelTopSellingProductContentPriceSection {
+    width: 23%;
+    height: auto;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentPriceContainer {
+    width: 80%;
+  }
+  .adminPanelTopSellingProductContentPrice {
+    text-align: right;
+    font-size: 1.25rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+    font-weight: 550;
+  }
+  .adminPanelTopSellingProductContentReviewsDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentReviews {
+    text-align: center;
+    color: #8798ad !important;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    font-family: "roboto", sans-serif;
+  }
+  
+
+
+
+.adminPanelTopSellingProductSection {
+    float: left;
+    width: 30%;
+  }
+  .adminPanelTopSellingProductContainer {
+    margin-top: 0rem;
+  }
+  .adminPanelTopSellingProductDiv {
+    width: 477px;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelTopSellingProductBox {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 2rem;
+  }
+  .adminPanelTopSellingProductTitleContainer {
+    width: 100%;
+    height: 4rem;
+    border-bottom: 2px solid #dee2e6;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  }
+  .adminPanelTopSellingProductTitleDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelTopSellingProductTitle {
+    font-family: "roboto", sans-serif;
+    font-weight: 600;
+    color: #212229;
+    font-size: 14px;
+    padding-top: 1.5rem;
+  }
+  .adminPanelTopSellingProductContentContainer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    border-bottom: 1px solid #dee2e6;
+  }
+  .adminPanelTopSellingProductContentDiv {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    height: auto;
+    overflow: auto;
+  }
+  .adminPanelTopSellingProductContentImgDiv {
+    width: 80px;
+    height: 55px;
+    border: 1px solid #dee2e6;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentImgDivCon {
+    width: 45px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentImg {
+    width: 45px;
+    height: auto;
+  }
+  .adminPanelTopSellingProductContentTextContainer {
+    width: 59%;
+    height: auto;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentTextDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adminPanelTopSellingProductContentTextTitle {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+  }
+  .adminPanelTopSellingProductContentTextCategoryDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentTextCategory {
+    line-height: 10px;
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+  }
+  .adminPanelTopSellingProductContentTextDescriptionDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentTextDescription {
+    color: #6c757d;
+    font-size: 12px;
+    line-height: 1.8;
+    font-family: "roboto", sans-serif;
+  }
+  .adminPanelTopSellingProductContentPriceSection {
+    width: 23%;
+    height: auto;
+    float: left;
+  }
+  .adminPanelTopSellingProductContentPriceContainer {
+    width: 80%;
+  }
+  .adminPanelTopSellingProductContentPrice {
+    text-align: right;
+    font-size: 1.25rem;
+    font-family: "roboto", sans-serif;
+    color: #212529;
+    font-weight: 550;
+  }
+  .adminPanelTopSellingProductContentReviewsDiv {
+    margin-top: 0.25rem;
+  }
+  .adminPanelTopSellingProductContentReviews {
+    text-align: center;
+    color: #8798ad !important;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    font-family: "roboto", sans-serif;
+  }
+  

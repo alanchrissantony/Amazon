@@ -7,11 +7,7 @@ import { useNavigate } from "../../../../node_modules/react-router/index";
 import dashOrderImg from "../../../Images/Box.png";
 import dashUserImg from "../../../Images/users.png";
 import dashProductImg from "../../../Images/products.png";
-import basket from "../../../Images/shopping-basket.png";
-import dollar from "../../../Images/dollar-symbol.png";
-import packageImg from "../../../Images/package.png";
-import userImg from "../../../Images/user.png";
-import profitImg from "../../../Images/profits.png";
+
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
@@ -26,13 +22,25 @@ function AdminPanel() {
   const dispatch = useDispatch();
 
   const adminOrderList = useSelector((state) => state.adminOrderList);
-  const { loading : orderLoading, error : orderError, adminInfo } = adminOrderList;
+  const {
+    loading: orderLoading,
+    error: orderError,
+    adminInfo,
+  } = adminOrderList;
 
   const productList = useSelector((state) => state.productList);
-  const { loading : productLoading, error : productError, products } = productList;
+  const {
+    loading: productLoading,
+    error: productError,
+    products,
+  } = productList;
 
   const adminUserList = useSelector((state) => state.adminUserList);
-  const { loading : userLoading, error : userError, adminInfo : userList } = adminUserList;
+  const {
+    loading: userLoading,
+    error: userError,
+    adminInfo: userList,
+  } = adminUserList;
 
   const AdminSignIn = () => {
     const { user } = useContext(AuthContext);
@@ -42,7 +50,6 @@ function AdminPanel() {
   };
 
   AdminSignIn();
-
 
   useEffect(() => {
     const user = localStorage.getItem("adminInfo");
@@ -55,20 +62,17 @@ function AdminPanel() {
     }
   }, [navigate]);
 
-  
-  const salesFunction = ()=>{
-    let totalSales = 0
-    for (var i=0; i < adminInfo.length; i++) {
-        totalSales = totalSales + adminInfo[i].totalPrice
-        }
-        localStorage.setItem("totalSales", JSON.stringify(totalSales));
-  }
+  const salesFunction = () => {
+    let totalSales = 0;
+    for (var i = 0; i < adminInfo.length; i++) {
+      totalSales = totalSales + adminInfo[i].totalPrice;
+    }
+    localStorage.setItem("totalSales", JSON.stringify(totalSales));
+  };
 
-  
-  if(adminInfo){
-    salesFunction()
+  if (adminInfo) {
+    salesFunction();
   }
-  
 
   return (
     <div className="adminPanelSectionContainer">
@@ -104,7 +108,7 @@ function AdminPanel() {
             <div className="adminPanelDashSection">
               <div className="adminPanelDashContainer">
                 <div className="adminPanelOverviewBoxContainer">
-                  <div className="adminPanelOverviewOrdersBoxContainerDiv">
+                  <div className="adminPanelOverviewOrdersBoxContainerDiv justify-content-lg-center">
                     <div className="adminPanelOverviewOrdersBoxDiv">
                       <div className="adminPanelOverviewOrdersImgDivContainer">
                         <img
@@ -169,336 +173,6 @@ function AdminPanel() {
                           <p className="adminPanelOverviewProductsSubText">
                             Add, edit, or manage products
                           </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="adminPanelDashOrdersBoxContainerSection">
-                  <div className="adminPanelDashOrdersBoxContainer">
-                    <div className="adminPanelDashOrdersBoxDiv">
-                      <div className="adminPanelDashOrdersTextBoxDiv">
-                        <div className="adminPanelDashOrdersBoxTitleDiv">
-                          <p className="adminPanelDashOrdersBoxTitle">
-                            TOTAL ORDERS
-                          </p>
-                        </div>
-                        <div className="adminPanelDashOrdersBoxValueDiv">
-                          <p className="adminPanelDashOrdersBoxValue">
-                            {adminInfo ? adminInfo.length : 0}
-                          </p>
-                        </div>
-                        <div className="adminPanelDashOrdersBoxIncreaseTextDiv">
-                          <p className="adminPanelDashOrdersBoxIncreaseText">
-                            2.00% (30 days)
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelDashOrdersImgBoxDiv">
-                        <img
-                          src={basket}
-                          alt=""
-                          className="adminPanelDashOrdersBoxImg"
-                        />
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-
-                  <div className="adminPanelDashTotalIncomeBoxContainer">
-                    <div className="adminPanelDashTotalIncomeBoxDiv">
-                      <div className="adminPanelDashTotalIncomeTextBoxDiv">
-                        <div className="adminPanelDashTotalIncomeBoxTitleDiv">
-                          <p className="adminPanelDashTotalIncomeBoxTitle">
-                            TOTAL SALES
-                          </p>
-                        </div>
-                        <div className="adminPanelDashTotalIncomeBoxValueDiv">
-                          <p className="adminPanelDashTotalIncomeBoxValue">
-                            $100
-                          </p>
-                        </div>
-                        <div className="adminPanelDashTotalIncomeBoxIncreaseTextDiv">
-                          <p className="adminPanelDashTotalIncomeBoxIncreaseText">
-                            Increased by 7.35%
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelDashTotalIncomeImgBoxDiv">
-                        <img
-                          src={dollar}
-                          alt=""
-                          className="adminPanelDashTotalIncomeBoxImg"
-                        />
-                      </div>
-                      <div className="adminPanelDashTotalIncomeCanvasConatner">
-                        <div className="adminPanelDashTotalIncomeCanvasDiv">
-                          <canvas className="adminPanelDashTotalIncomeCanvas" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="adminPanelDashProductsBoxContainer">
-                    <div className="adminPanelDashProductsBoxDiv">
-                      <div className="adminPanelDashProductsTextBoxDiv">
-                        <div className="adminPanelDashProductsBoxTitleDiv">
-                          <p className="adminPanelDashProductsBoxTitle">
-                            Products
-                          </p>
-                        </div>
-                        <div className="adminPanelDashProductsBoxValueDiv">
-                          <p className="adminPanelDashProductsBoxValue">
-                            {products ? products.length : 0}
-                          </p>
-                        </div>
-                        <div className="adminPanelDashProductsBoxIncreaseTextDiv">
-                          <p className="adminPanelDashProductsBoxIncreaseText">
-                            Increased by 7.35%
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelDashProductsImgBoxDiv">
-                        <img
-                          src={packageImg}
-                          alt=""
-                          className="adminPanelDashProductsBoxImg"
-                        />
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-
-                  <div className="adminPanelDashUsersBoxContainer">
-                    <div className="adminPanelDashUsersBoxDiv">
-                      <div className="adminPanelDashUsersTextBoxDiv">
-                        <div className="adminPanelDashUsersBoxTitleDiv">
-                          <p className="adminPanelDashUsersBoxTitle">Users</p>
-                        </div>
-                        <div className="adminPanelDashUsersBoxValueDiv">
-                          <p className="adminPanelDashUsersBoxValue">{userList ? userList.length : 0}</p>
-                        </div>
-                        <div className="adminPanelDashUsersBoxIncreaseTextDiv">
-                          <p className="adminPanelDashUsersBoxIncreaseText">
-                            Increased by 7.35%
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelDashUsersImgBoxDiv">
-                        <img
-                          src={userImg}
-                          alt=""
-                          className="adminPanelDashUsersBoxImg"
-                        />
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-
-                  <div className="adminPanelDashProfitBoxContainer">
-                    <div className="adminPanelDashProfitBoxDiv">
-                      <div className="adminPanelDashProfitTextBoxDiv">
-                        <div className="adminPanelDashProfitBoxTitleDiv">
-                          <p className="adminPanelDashProfitBoxTitle">Profit</p>
-                        </div>
-                        <div className="adminPanelDashProfitBoxValueDiv">
-                          <p className="adminPanelDashProfitBoxValue">$54690</p>
-                        </div>
-                        <div className="adminPanelDashProfitBoxIncreaseTextDiv">
-                          <p className="adminPanelDashProfitBoxIncreaseText">
-                            Increased by 7.35%
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelDashProfitImgBoxDiv">
-                        <img
-                          src={profitImg}
-                          alt=""
-                          className="adminPanelDashProfitBoxImg"
-                        />
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="adminPanelOrderActivitySection">
-              <div className="adminPanelOrderActivityContainer">
-                <div className="adminPanelOrderActivityDiv">
-                  <div className="adminPanelOrderActivityBox">
-                    <div className="adminPanelOrderActivityBoxContainer">
-                      <div className="adminPanelOrderActivityBoxTitleContainer">
-                        <div className="adminPanelOrderActivityBoxTitleDiv">
-                          <p className="adminPanelOrderActivityBoxTitle">
-                            Order Activity
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelOrderActivityBoxContentContainer">
-                        <div className="adminPanelOrderActivityBoxContentDiv">
-                          <div className="adminPanelOrderActivityBoxContentUserImgContainer">
-                            <div className="adminPanelOrderActivityBoxContentUserImgDiv">
-                              <img
-                                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt=""
-                                className="adminPanelOrderActivityBoxContentUserImg"
-                              />
-                            </div>
-                          </div>
-                          <div className="adminPanelOrderActivityBoxContentUserContentSection">
-                            <div className="adminPanelOrderActivityBoxContentUserContentContainer">
-                              <div className="adminPanelOrderActivityBoxContentUserContentDiv">
-                                <div className="adminPanelOrderActivityBoxContentUserNameDiv">
-                                  <p className="adminPanelOrderActivityBoxContentUserName">
-                                    Lottie Arnold
-                                  </p>
-                                </div>
-                                <div className="adminPanelOrderActivityBoxContentUserOrderTimeDiv">
-                                  <p className="adminPanelOrderActivityBoxContentUserOrderTime">
-                                    25 mins ago
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
-                            <div className="adminPanelOrderActivityBoxContentOrderImgContainer">
-                              <div className="adminPanelOrderActivityBoxContentOrderImgDiv">
-                                <img
-                                  src={dashProductImg}
-                                  alt=""
-                                  className="adminPanelOrderActivityBoxContentOrderImg"
-                                />
-                              </div>
-                            </div>
-                            <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
-                              <div className="adminPanelOrderActivityBoxContentOrderContentDiv">
-                                <div className="adminPanelOrderActivityBoxContentOrderContentNameDiv">
-                                  <p className="adminPanelOrderActivityBoxContentOrderContentName">
-                                    Iphone X Mobile
-                                  </p>
-                                </div>
-                                <div className="adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv">
-                                  <p className="adminPanelOrderActivityBoxContentOrderContentOrderCategory">
-                                    USB, wireless
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="adminPanelTopSellingProductSection">
-              <div className="adminPanelTopSellingProductContainer">
-                <div className="adminPanelTopSellingProductDiv">
-                  <div className="adminPanelTopSellingProductBox">
-                    <div className="adminPanelTopSellingProductBoxContainer">
-                      <div className="adminPanelTopSellingProductTitleContainer">
-                        <div className="adminPanelTopSellingProductTitleDiv">
-                          <p className="adminPanelTopSellingProductTitle">
-                            Top Selling Products
-                          </p>
-                        </div>
-                      </div>
-                      <div className="adminPanelTopSellingProductContentContainer">
-                        <div className="adminPanelTopSellingProductContentDiv">
-                          <div className="adminPanelTopSellingProductContentImgDiv">
-                            <div className="adminPanelTopSellingProductContentImgDivCon">
-                              <img
-                                src={dashProductImg}
-                                alt=""
-                                className="adminPanelTopSellingProductContentImg"
-                              />
-                            </div>
-                          </div>
-
-                          <div className="adminPanelTopSellingProductContentTextContainer">
-                            <div className="adminPanelTopSellingProductContentTextDiv">
-                              <div className="adminPanelTopSellingProductContentTextTitleDiv">
-                                <p className="adminPanelTopSellingProductContentTextTitle">
-                                  Homepod
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentTextCategoryDiv">
-                                <p className="adminPanelTopSellingProductContentTextCategory">
-                                  USB, wireless
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentTextDescriptionDiv">
-                                <p className="adminPanelTopSellingProductContentTextDescription">
-                                  White • Slate fabric • Hands-free
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentPriceSection">
-                            <div className="adminPanelTopSellingProductContentPriceContainer">
-                              <div className="adminPanelTopSellingProductContentPriceDiv">
-                                <p className="adminPanelTopSellingProductContentPrice">
-                                  $129.76
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentReviewsDiv">
-                                <p className="adminPanelTopSellingProductContentReviews">
-                                  Sales
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="adminPanelTopSellingProductContentContainer">
-                        <div className="adminPanelTopSellingProductContentDiv">
-                          <div className="adminPanelTopSellingProductContentImgDiv">
-                            <div className="adminPanelTopSellingProductContentImgDivCon">
-                              <img
-                                src={dashProductImg}
-                                alt=""
-                                className="adminPanelTopSellingProductContentImg"
-                              />
-                            </div>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentTextContainer">
-                            <div className="adminPanelTopSellingProductContentTextDiv">
-                              <div className="adminPanelTopSellingProductContentTextTitleDiv">
-                                <p className="adminPanelTopSellingProductContentTextTitle">
-                                  Homepod
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentTextCategoryDiv">
-                                <p className="adminPanelTopSellingProductContentTextCategory">
-                                  USB, wireless
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentTextDescriptionDiv">
-                                <p className="adminPanelTopSellingProductContentTextDescription">
-                                  White • Slate fabric • Hands-free
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentPriceSection">
-                            <div className="adminPanelTopSellingProductContentPriceContainer">
-                              <div className="adminPanelTopSellingProductContentPriceDiv">
-                                <p className="adminPanelTopSellingProductContentPrice">
-                                  $129.76
-                                </p>
-                              </div>
-                              <div className="adminPanelTopSellingProductContentReviewsDiv">
-                                <p className="adminPanelTopSellingProductContentReviews">
-                                  Sales
-                                </p>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
