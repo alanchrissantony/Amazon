@@ -6,10 +6,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .adminPanelDashContainer {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
   }
   .adminPanelDashOrdersBoxContainer {
     width: 230px;
@@ -85,7 +93,6 @@
       rgba(3, 43, 121, 1) 100%
     );
     float: left;
-    margin-left: 1rem;
   }
   .adminPanelDashTotalIncomeBoxDiv {
     width: 90%;
@@ -150,7 +157,6 @@
       rgba(3, 81, 121, 1) 100%
     );
     float: left;
-    margin-left: 1rem;
   }
   .adminPanelDashProductsBoxDiv {
     width: 90%;
@@ -215,7 +221,6 @@
       rgba(4, 117, 124, 1) 100%
     );
     float: left;
-    margin-left: 1rem;
   }
   .adminPanelDashUsersBoxDiv {
     width: 90%;

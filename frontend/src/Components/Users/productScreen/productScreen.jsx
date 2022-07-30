@@ -43,7 +43,6 @@ function ProductScreen(props) {
                 title: product.title,
                 image: product.image,
                 price: product.price,
-                decimal: product.decimal,
                 quantity: qty
             }
         ])

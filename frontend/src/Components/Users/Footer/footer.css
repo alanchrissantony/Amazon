@@ -19,6 +19,8 @@
     font-size: small;
     text-align: center;
     padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .footerBtn{
     width: 100%;

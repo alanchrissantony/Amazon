@@ -2,6 +2,7 @@
     width: 100%;
     margin: 0%;
     padding: 0%;
+    margin-left: 15px;
 }
 .navbarContainer{
     width: 100%;
@@ -252,10 +253,12 @@ a{
     margin-top: 0.65rem;
 }
 .navSearchBar{
-    height: 36px;
+    height: 39px;
     width: 600px;
     outline: none;
     border-right: none;
+    box-shadow: none;
+    border-bottom: none;
 }
 .searchIconContainer{
     background-color: #febd69;

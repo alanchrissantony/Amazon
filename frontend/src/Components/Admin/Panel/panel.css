@@ -13,7 +13,7 @@
   margin-right: auto;
 }
 .adminPanelOverviewContainer {
-  margin-top: 5rem;
+  margin-top: 0rem;
 }
 
 .adminPanelOverviewTitle {
@@ -36,17 +36,23 @@
 }
 .adminPanelOverviewSubAmazonDashboardTitle {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 .adminPanelOverviewBoxContainer {
   margin-top: 1rem;
-  width: 85%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
 }
 .adminPanelOverviewOrdersBoxContainerDiv {
   width: 320px;
-  height: 102px;
+  min-height: 102px;
+  height: auto;
   display: block;
   border-radius: 8px;
   background-color: #fff;
@@ -78,14 +84,12 @@
   font-style: normal;
   text-transform: none;
   text-decoration: none;
-  line-height: 32px;
   cursor: pointer;
 }
 .adminPanelOverviewOrdersSubText {
   color: #565959;
   cursor: pointer;
   font-size: 14px;
-  line-height: 20px;
 }
 .adminPanelOverviewOrdersTextDivContainer {
   margin-left: 1rem;
@@ -94,13 +98,13 @@
 
 .adminPanelOverviewUsersBoxContainerDiv {
   width: 320px;
-  height: 102px;
+  min-height: 102px;
+  height: auto;
   display: block;
   border-radius: 8px;
   background-color: #fff;
   border: 1px #d5d9d9 solid;
   float: left;
-  margin-left: 1.5rem;
   cursor: pointer;
 }
 .adminPanelOverviewUsersBoxContainerDiv:hover {
@@ -143,13 +147,13 @@
 
 .adminPanelOverviewProductsBoxContainerDiv {
   width: 320px;
-  height: 102px;
+  min-height: 102px;
+  height: auto;
   display: block;
   border-radius: 8px;
   background-color: #fff;
   border: 1px #d5d9d9 solid;
   float: left;
-  margin-left: 1.5rem;
   cursor: pointer;
 }
 .adminPanelOverviewProductsBoxContainerDiv:hover {
@@ -189,4 +193,11 @@
   margin-left: 1rem;
   float: left;
 }
-
+.container-fluid {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}

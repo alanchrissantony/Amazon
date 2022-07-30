@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './ view/Users/Pages/home';
 import Products from './ view/Users/Pages/products';
 import ProductScreen from './ view/Users/Pages/productScreen';
@@ -18,9 +18,13 @@ import Email from './ view/Users/Pages/Login&Security/email';
 import Password from './ view/Users/Pages/Login&Security/password';
 import PrivateRoute from './Components/PrivateRoute';
 import AdminPanel from './ view/Admin/Pages/panel';
+import ProductsView from './ view/Admin/Pages/products';
+import AddProducts from './ view/Admin/Pages/AddProducts';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
+
+import Container from "react-bootstrap/Container";
 
 
 function App() {
@@ -36,28 +40,32 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path='/' element={<Home/>}/>
-          <Route path='/products' element={<Products/>}/>
-          <Route path='/products/:id' element={<ProductScreen/>}/>
-          <Route path='/cart/:id' element={<Cart/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/shipping' element={<Address/>}/>
-          <Route path='/payment' element={<Payment/>}/>
-          <Route path='/order/:id' element={<PlaceOrder/>}/>
-          <Route path='/orders' element={<Order/>}/>
-          <Route path='/orderhistory' element={<OrderHistory/>}/>
-          <Route path='/login&security' element={<PrivateRoute><LogInSecurity/></PrivateRoute>}/>
-          <Route path='/changeName' element={<PrivateRoute><Name/></PrivateRoute>}/>
-          <Route path='/changeEmail' element={<PrivateRoute><Email/></PrivateRoute>}/>
-          <Route path='/changePassword' element={<PrivateRoute><Password/></PrivateRoute>}/>
+      <Container fluid>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/products/:id' element={<ProductScreen />} />
+            <Route path='/cart/:id' element={<Cart />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/shipping' element={<Address />} />
+            <Route path='/payment' element={<Payment />} />
+            <Route path='/order/:id' element={<PlaceOrder />} />
+            <Route path='/orders' element={<Order />} />
+            <Route path='/orderhistory' element={<OrderHistory />} />
+            <Route path='/login&security' element={<PrivateRoute><LogInSecurity /></PrivateRoute>} />
+            <Route path='/changeName' element={<PrivateRoute><Name /></PrivateRoute>} />
+            <Route path='/changeEmail' element={<PrivateRoute><Email /></PrivateRoute>} />
+            <Route path='/changePassword' element={<PrivateRoute><Password /></PrivateRoute>} />
 
-          <Route path='/admin' element={<AdminLogin/>}/>
-          <Route path='/adminPanel' element={<AdminPanel/>}/>
-        </Routes>
-      </Router>
+            <Route path='/admin' element={<AdminLogin />} />
+            <Route path='/adminPanel' element={<AdminPanel />} />
+            <Route path='/admin/products' element={<ProductsView />} />
+            <Route path='/admin/addProducts' element={<AddProducts />} />
+          </Routes>
+        </Router>
+      </Container>
     </div>
   );
 }

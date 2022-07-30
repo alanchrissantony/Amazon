@@ -1,0 +1,8 @@
+.CircularProgressbar{
+    height: 10rem;
+    width: auto;
+    margin-bottom: 2rem;
+}
+.circleProgressBarDiv{
+    background-color: #e9eef7;
+}

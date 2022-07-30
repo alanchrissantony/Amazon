@@ -1,0 +1,57 @@
+.AddProductContainer{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.addProductSubTitle{
+    margin-bottom: 0rem;
+}
+.addProductInputContainer{
+    margin-top: 0rem;
+}
+.addProductInputLabel{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 700;
+}
+.addProductFormLeft{
+    width: 50%;
+    float: left;
+}
+.addProductFormRight{
+    width: 50%;
+    float: left;
+}
+.selectDepartment{
+    width: 94%;
+    outline: 0;
+    color: #111;
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+    display: inline-block;
+    height: 31px;
+    border: 1px solid;
+    border-color: #bcc1c8 #bababa #adb2bb;
+    background-color: #f1f2f4;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+}
+.inputSpaceDescription{
+    width: 94%;
+    height: 100px;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #bbb;
+    outline-color: #f69b3c;
+    outline-width: thin;
+}
+.btn-addProduct{
+    float: right;
+}

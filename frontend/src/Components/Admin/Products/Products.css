@@ -1,0 +1,18 @@
+section{
+    padding-top: 5rem;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+.productAddBtnDiv{
+    margin-bottom: 2rem;
+}
+.btn-product-option{
+    float: left;
+}
+.btn-delete{
+    margin-left: 1rem;
+}
+.productIcon{
+    font-size: 1rem;
+}

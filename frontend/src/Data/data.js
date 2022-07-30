@@ -91,7 +91,6 @@ const data={
             title:'MYao Magnetic Wireless Power Bank, 15W Wireless Portable Phone Charger 10000mAh, 4 Output PD 20W',
             image:'https://s.alicdn.com/@sc04/kf/Hdcb7ea9a3c8b4767bc46f8fde3a99ad9u.png_300x300.png',
             price:'49',
-            decimal:'99',
             review:'237',
             rating:2
         },
@@ -100,7 +99,6 @@ const data={
             title:'ADCB POW1 - Emergency USB Battery Powered Power Bank Compact Portable 4 AA Batteries Ideal',
             image:'https://gardibazar.com/wp-content/uploads/2019/04/full_1301-250x300.jpg',
             price:'24',
-            decimal:'99',
             review:'68',
             rating:5
         },
@@ -109,7 +107,6 @@ const data={
             title:'mophie snap+ juice pack mini - Magnetic and portable wireless charger containing a 5,000mAh internal battery. - Black',
             image:'https://20fd661yccar325znz1e9bdl-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/anker-20100mah-powercore-high-capacity-power-bank-power-bank-250x300.jpg',
             price:'18',
-            decimal:'56',
             review:'492',
             rating:4.5
         },
@@ -118,7 +115,6 @@ const data={
             title:'Hermitshell Hard EVA Travel Case Fits Anker PowerCore 13000 Portable Charger - Compact 13000mAh',
             image:'https://images-eu.ssl-images-amazon.com/images/I/3173lBxbF3L._SX300_SY300_QL70_ML2_.jpg',
             price:'32',
-            decimal:'27',
             review:'1354',
             rating:3
         },
@@ -127,7 +123,6 @@ const data={
             title:'Portable Bluetooth Speakers, IPX7 Waterproof Wireless Bluetooth Speaker, Outdoor Mini Speaker',
             image:'https://s.alicdn.com/@sc04/kf/Hdcb7ea9a3c8b4767bc46f8fde3a99ad9u.png_300x300.png',
             price:'149',
-            decimal:'98',
             review:'674',
             rating:3.5
         },
@@ -136,7 +131,6 @@ const data={
             title:'Sony SRS-XB13 Extra BASS Wireless Portable Compact Speaker IP67 Waterproof Bluetooth, Light Blue',
             image:'https://i.ebayimg.com/thumbs/images/g/FJcAAOSwRglhWFGi/s-l300.jpg',
             price:'312',
-            decimal:'95',
             review:'4859',
             rating:4.5
         },
@@ -145,7 +139,6 @@ const data={
             title:'New Bose SoundLink Flex Bluetooth Portable Speaker, Wireless Waterproof Speaker for Outdoor Travel - Black',
             image:'https://images-na.ssl-images-amazon.com/images/I/81WI54kMFoL.__AC_SX300_SY300_QL70_ML2_.jpg',
             price:'499',
-            decimal:'99',
             review:'4',
             rating:4
         },
@@ -154,7 +147,6 @@ const data={
             title:'JBL Flip 4, Black - Waterproof, Portable & Durable Bluetooth Speaker - Up to 12 Hours of Wireless Streaming ',
             image:'https://www.cellcom.com/resources/phones/5706_JBL_Flip5_big.jpg',
             price:'278',
-            decimal:'99',
             review:'912',
             rating:5
         }
