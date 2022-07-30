@@ -1,10 +1,7 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./login.css";
 import logo from "../../../Images/AmazonLogo.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useNavigate } from "../../../../node_modules/react-router/index";
-import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FirebaseContext } from "../../../store/FirebaseContext";
 
 function AdminLogin() {

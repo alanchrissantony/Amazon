@@ -82,7 +82,7 @@ function Name() {
                                 <input type="text" name='name' className='nameChangeBoxInput' defaultValue={name} onChange={(e) => { setName(e.target.value) }} />
                             </div>
                             <div className="nameChangeSaveBtnDiv">
-                                <button className='nameChangeSaveBtn' onClick={submitHandler}>Save changes</button>
+                                <button className='nameChangeSaveBtn' onClick={submitHandler}>Save Changes</button>
                             </div>
                         </div>
                     </div>

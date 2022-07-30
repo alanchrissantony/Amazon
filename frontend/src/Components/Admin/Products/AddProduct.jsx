@@ -48,7 +48,7 @@ function AddProduct() {
 
   return (
     <div>
-      <section>
+      <section className="adminAddProductSection">
         <div className="AddProductContainer">
           <div className="adminPanelOverviewTitleDiv">
             <p className="adminPanelOverviewTitle">Add Products</p>
@@ -195,6 +195,11 @@ function AddProduct() {
                 <label htmlFor="" className="addProductInputLabel">
                   Image
                 </label>
+                <img
+                    src={image}
+                    style={{ height: "8.5rem", width: "auto" }}
+                    alt=""
+                  />
                 <br />
                 <input
                   type="text"

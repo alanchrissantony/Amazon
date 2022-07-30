@@ -1,8 +1,9 @@
-section{
+.adminProductsSection{
     padding-top: 5rem;
     width: 100%;
     height: auto;
     overflow: auto;
+    margin-bottom: 2rem;
 }
 .productAddBtnDiv{
     margin-bottom: 2rem;

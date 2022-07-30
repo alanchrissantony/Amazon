@@ -25,6 +25,8 @@ import { useContext } from 'react';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
 
 import Container from "react-bootstrap/Container";
+import EditProducts from './ view/Admin/Pages/EditProducts';
+import OrderDetails from './ view/Admin/Pages/OrderDetails';
 
 
 function App() {
@@ -63,6 +65,8 @@ function App() {
             <Route path='/adminPanel' element={<AdminPanel />} />
             <Route path='/admin/products' element={<ProductsView />} />
             <Route path='/admin/addProducts' element={<AddProducts />} />
+            <Route path='/admin/editProduct/:id' element={<EditProducts />} />
+            <Route path='/admin/orders' element={<OrderDetails />} />
           </Routes>
         </Router>
       </Container>

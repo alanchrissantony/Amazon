@@ -33,6 +33,14 @@ orderRouter.post(
 );
 
 
+orderRouter.post('/admin',
+  expressAsyncHandler(async (req, res) => {
+    const orders = await Order.find({});
+    res.send(orders);
+  })
+);
+
+
 orderRouter.get(
   '/:id',
   isAuth,

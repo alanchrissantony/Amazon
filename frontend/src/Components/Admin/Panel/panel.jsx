@@ -1,15 +1,11 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./panel.css";
-import { useContext } from "react";
 import { AuthContext } from "../../../store/FirebaseContext";
-import { useEffect } from "react";
-import { useNavigate } from "../../../../node_modules/react-router/index";
 import dashOrderImg from "../../../Images/Box.png";
 import dashUserImg from "../../../Images/users.png";
 import dashProductImg from "../../../Images/products.png";
-
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-
 
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
@@ -20,9 +16,16 @@ import {
 } from "../../../actions/adminActions";
 import { listProducts } from "../../../actions/productActions";
 
+
+
+
+
+
 function AdminPanel() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [userErr, setUserErr] = useState(true)
 
   const adminOrderList = useSelector((state) => state.adminOrderList);
   const {
@@ -59,6 +62,7 @@ function AdminPanel() {
     if (!user) {
       navigate("/admin");
     } else if (user) {
+      setUserErr(false)
       dispatch(adminTotalListOrder());
       dispatch(listProducts());
       dispatch(adminTotalListUsers());
@@ -79,7 +83,7 @@ function AdminPanel() {
 
   return (
     <div className="adminPanelSectionContainer">
-      {/* {orderLoading ? (
+      {orderLoading ? (
         <LoadingBox></LoadingBox>
       ) : productLoading ? (
         <LoadingBox></LoadingBox>
@@ -91,113 +95,115 @@ function AdminPanel() {
         <MessageBox>{productError}</MessageBox>
       ) : userError ? (
         <MessageBox>{userError}</MessageBox>
-      ) : ( */}
-      <section className="adminPanelOverviewSection">
-        <div className="adminPanelOverviewContainer">
-          <div className="adminPanelOverviewTitleDiv">
-            <p className="adminPanelOverviewTitle">Amazon Dashboard</p>
-          </div>
-          <div className="adminPanelOverviewSubTitleDiv">
-            <p className="adminPanelOverviewSubTitleText">
-              <span className="adminPanelOverviewSubDashboardTitle">
-                Dashboard
-              </span>
-              {">"}
-              <span className="adminPanelOverviewSubAmazonDashboardTitle">
-                Amazon Dashboard
-              </span>
-            </p>
-          </div>
-          <div className="adminPanelDashSection">
-            <div className="adminPanelDashContainer">
-              <Container>
-                <div className="adminPanelOverviewBoxContainer">
-                  <div className="row">
-                    <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                      <div className="adminPanelOverviewOrdersBoxContainerDiv">
-                        <div className="adminPanelOverviewOrdersBoxDiv">
-                          <div className="adminPanelOverviewOrdersImgDivContainer">
-                            <img
-                              className="adminPanelOverviewOrdersImg"
-                              src={dashOrderImg}
-                              alt=""
-                            />
-                          </div>
-                          <div className="adminPanelOverviewOrdersTextDivContainer">
-                            <div className="adminPanelOverviewOrdersTextDiv">
-                              <p className="adminPanelOverviewOrdersText">
-                                Orders
-                              </p>
+      ) : userErr ? (
+        <LoadingBox></LoadingBox>
+      ) : (
+        <section className="adminPanelOverviewSection">
+          <div className="adminPanelOverviewContainer">
+            <div className="adminPanelOverviewTitleDiv">
+              <p className="adminPanelOverviewTitle">Amazon Dashboard</p>
+            </div>
+            <div className="adminPanelOverviewSubTitleDiv">
+              <p className="adminPanelOverviewSubTitleText">
+                <span className="adminPanelOverviewSubDashboardTitle">
+                  Dashboard
+                </span>
+                {">"}
+                <span className="adminPanelOverviewSubAmazonDashboardTitle">
+                  Amazon Dashboard
+                </span>
+              </p>
+            </div>
+            <div className="adminPanelDashSection">
+              <div className="adminPanelDashContainer">
+                <Container>
+                  <div className="adminPanelOverviewBoxContainer">
+                    <div className="row">
+                      <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div className="adminPanelOverviewOrdersBoxContainerDiv">
+                          <div className="adminPanelOverviewOrdersBoxDiv">
+                            <div className="adminPanelOverviewOrdersImgDivContainer">
+                              <img
+                                className="adminPanelOverviewOrdersImg"
+                                src={dashOrderImg}
+                                alt=""
+                              />
                             </div>
-                            <div className="adminPanelOverviewOrdersSubTextDiv">
-                              <p className="adminPanelOverviewOrdersSubText">
-                                Track, return, or manage orders
-                              </p>
+                            <div className="adminPanelOverviewOrdersTextDivContainer">
+                              <div className="adminPanelOverviewOrdersTextDiv">
+                                <p className="adminPanelOverviewOrdersText">
+                                  Orders
+                                </p>
+                              </div>
+                              <div className="adminPanelOverviewOrdersSubTextDiv">
+                                <p className="adminPanelOverviewOrdersSubText">
+                                  Track, return, or manage orders
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      </div>
 
                       <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                      <div className="adminPanelOverviewUsersBoxContainerDiv">
-                        <div className="adminPanelOverviewUsersBoxDiv">
-                          <div className="adminPanelOverviewUsersImgDivContainer">
-                            <img
-                              className="adminPanelOverviewUsersImg"
-                              src={dashUserImg}
-                              alt=""
-                            />
-                          </div>
-                          <div className="adminPanelOverviewUsersTextDivContainer">
-                            <div className="adminPanelOverviewUsersTextDiv">
-                              <p className="adminPanelOverviewUsersText">
-                                Users
-                              </p>
+                        <div className="adminPanelOverviewUsersBoxContainerDiv">
+                          <div className="adminPanelOverviewUsersBoxDiv">
+                            <div className="adminPanelOverviewUsersImgDivContainer">
+                              <img
+                                className="adminPanelOverviewUsersImg"
+                                src={dashUserImg}
+                                alt=""
+                              />
                             </div>
-                            <div className="adminPanelOverviewUsersSubTextDiv">
-                              <p className="adminPanelOverviewUsersSubText">
-                                View all users, or manage users
-                              </p>
+                            <div className="adminPanelOverviewUsersTextDivContainer">
+                              <div className="adminPanelOverviewUsersTextDiv">
+                                <p className="adminPanelOverviewUsersText">
+                                  Users
+                                </p>
+                              </div>
+                              <div className="adminPanelOverviewUsersSubTextDiv">
+                                <p className="adminPanelOverviewUsersSubText">
+                                  View all users, or manage users
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      </div>
 
                       <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                      <div className="adminPanelOverviewProductsBoxContainerDiv">
-                        <div className="adminPanelOverviewProductsBoxDiv">
-                          <div className="adminPanelOverviewProductsImgDivContainer">
-                            <img
-                              className="adminPanelOverviewProductsImg"
-                              src={dashProductImg}
-                              alt=""
-                            />
-                          </div>
-                          <div className="adminPanelOverviewProductsTextDivContainer">
-                            <div className="adminPanelOverviewProductsTextDiv">
-                              <p className="adminPanelOverviewProductsText">
-                                Products
-                              </p>
+                        <div className="adminPanelOverviewProductsBoxContainerDiv">
+                          <div className="adminPanelOverviewProductsBoxDiv">
+                            <div className="adminPanelOverviewProductsImgDivContainer">
+                              <img
+                                className="adminPanelOverviewProductsImg"
+                                src={dashProductImg}
+                                alt=""
+                              />
                             </div>
-                            <div className="adminPanelOverviewProductsSubTextDiv">
-                              <p className="adminPanelOverviewProductsSubText">
-                                Add, edit, or manage products
-                              </p>
+                            <div className="adminPanelOverviewProductsTextDivContainer">
+                              <div className="adminPanelOverviewProductsTextDiv">
+                                <p className="adminPanelOverviewProductsText">
+                                  Products
+                                </p>
+                              </div>
+                              <div className="adminPanelOverviewProductsSubTextDiv">
+                                <p className="adminPanelOverviewProductsSubText">
+                                  Add, edit, or manage products
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Container>
+                </Container>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* )} */}
+        </section>
+      )}
     </div>
   );
 }
