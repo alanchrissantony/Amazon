@@ -44,9 +44,13 @@ function Header() {
           <a className="usersText">
             <span className="panelText">Users</span>
           </a>
-          <a className="ordersText">
+          <Link
+            to="/admin/orders"
+            style={{ textDecoration: "none" }}
+            className="ordersText"
+          >
             <span className="panelText">Orders</span>
-          </a>
+          </Link>
           <a className="adminText">
             <span className="panelText">
               Admin

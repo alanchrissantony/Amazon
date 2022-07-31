@@ -59,10 +59,7 @@ function AddProduct() {
                 Dashboard
               </span>
               {">"}
-              <span className="adminPanelOverviewSubAmazonDashboardTitle">
-                Amazon Dashboard
-              </span>
-              {">"}
+              
               <span className="adminPanelOverviewSubAmazonDashboardTitle">
                 Products
               </span>

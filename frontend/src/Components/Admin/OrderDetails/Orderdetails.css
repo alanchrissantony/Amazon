@@ -1,0 +1,11 @@
+.adminOrderDetailsSection{
+    padding-top: 5rem;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin-bottom: 2rem;
+}
+.orderDetailsProductContentOrderDiv{
+    width: 50%;
+    
+}
