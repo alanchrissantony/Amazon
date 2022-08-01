@@ -25,7 +25,7 @@ function Products() {
     const proId = {
       id: id,
     };
-    let url = "/api/products/delete";
+    let url = "/api/users/delete";
 
     axios.post(url, proId).then(() => dispatch(listProducts()));
   };

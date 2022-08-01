@@ -27,6 +27,7 @@ import { AuthContext, FirebaseContext } from './store/FirebaseContext';
 import Container from "react-bootstrap/Container";
 import EditProducts from './ view/Admin/Pages/EditProducts';
 import OrderDetails from './ view/Admin/Pages/OrderDetails';
+import Users from './ view/Admin/Pages/Users';
 
 
 function App() {
@@ -61,12 +62,13 @@ function App() {
             <Route path='/changeEmail' element={<PrivateRoute><Email /></PrivateRoute>} />
             <Route path='/changePassword' element={<PrivateRoute><Password /></PrivateRoute>} />
 
-            <Route path='/admin' element={<AdminLogin />} />
-            <Route path='/adminPanel' element={<AdminPanel />} />
+            <Route path='/admin/login' element={<AdminLogin />} />
+            <Route path='/admin' element={<AdminPanel />} />
             <Route path='/admin/products' element={<ProductsView />} />
             <Route path='/admin/addProducts' element={<AddProducts />} />
             <Route path='/admin/editProduct/:id' element={<EditProducts />} />
             <Route path='/admin/orders' element={<OrderDetails />} />
+            <Route path='/admin/users' element={<Users />} />
           </Routes>
         </Router>
       </Container>

@@ -94,12 +94,22 @@ userRouter.put(
 );
 
 
-userRouter.get('/admin/total&users',
+userRouter.post('/admin/total&users',
 expressAsyncHandler(async (req,res) => {
-  const orders = await User.find();
-  res.send(orders)
+  const users = await User.find();
+  res.send(users)
 })
-)
+);
+
+
+userRouter.post('/delete',
+  expressAsyncHandler(async (req, res) =>{
+    const data = req.body
+    const deletedUser = await User.deleteOne({ _id: data.id });
+    res.send({ deletedUser });
+  })
+
+);
 
 
 export default userRouter;

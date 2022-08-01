@@ -33,7 +33,7 @@ function OrderDetails() {
           {!orders ? (
             <LoadingBox></LoadingBox>
           ) : error ? (
-            <MessageBox>{error}</MessageBox>
+            <MessageBox>{error.message}</MessageBox>
           ) : (
             <div className="orderHistoryContainer">
               <div className="orderHistoryContainerSection">

@@ -20,7 +20,7 @@ function Header() {
           alt=""
           onClick={(e) => {
             e.preventDefault();
-            navigate("/adminPanel");
+            navigate("/admin");
           }}
         />
 
@@ -41,9 +41,13 @@ function Header() {
           >
             <span className="panelText">Products</span>
           </Link>
-          <a className="usersText">
+          <Link
+            to="/admin/users"
+            className="usersText"
+            style={{ textDecoration: "none" }}
+          >
             <span className="panelText">Users</span>
-          </a>
+          </Link>
           <Link
             to="/admin/orders"
             style={{ textDecoration: "none" }}
@@ -63,7 +67,7 @@ function Header() {
                       e.preventDefault();
                       firebase.auth().signOut();
                       localStorage.removeItem("adminInfo");
-                      navigate("/admin");
+                      navigate("/admin/login");
                     }}
                   >
                     Sign out

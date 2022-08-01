@@ -47,7 +47,7 @@ function Signup() {
     useEffect(()=>{
         if(userInfo){
             if(path){
-                navigate(`/${path}`)
+                navigate(`/`)
             }else{
                 navigate('/')
             }

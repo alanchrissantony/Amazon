@@ -18,7 +18,7 @@ function AdminLogin() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        navigate("/adminPanel");
+        navigate("/admin");
       })
       .catch((error) => {
         alert(error.message);
