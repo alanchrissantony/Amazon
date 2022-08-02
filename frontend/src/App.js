@@ -28,6 +28,7 @@ import Container from "react-bootstrap/Container";
 import EditProducts from './ view/Admin/Pages/EditProducts';
 import OrderDetails from './ view/Admin/Pages/OrderDetails';
 import Users from './ view/Admin/Pages/Users';
+import Departments from './ view/Admin/Pages/Departments';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <Route path='/admin/editProduct/:id' element={<EditProducts />} />
             <Route path='/admin/orders' element={<OrderDetails />} />
             <Route path='/admin/users' element={<Users />} />
+            <Route path='/admin/departments' element={<Departments />} />
           </Routes>
         </Router>
       </Container>

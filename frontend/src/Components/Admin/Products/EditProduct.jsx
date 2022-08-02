@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { detailsProduct } from "../../../actions/productActions";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
@@ -19,6 +20,9 @@ function EditProduct() {
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+
+  const [departments, setDepartments] = useState(false);
+  const [DepError, setError] = useState(false);
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
@@ -46,20 +50,35 @@ function EditProduct() {
     ],
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(productId, product._id);
-    if(productId === product._id){
-        setTitle(product.name)
-        setPrice(product.price)
-        setBrand(product.brand)
-        setCategory(product.category)
-        setDepartment(product.department)
-        setDescription(product.description)
-        setStock(product.stock)
-        setImage(product.image)
-        setProductErr(false)
+    if (productId === product._id) {
+      setTitle(product.name);
+      setPrice(product.price);
+      setBrand(product.brand);
+      setCategory(product.category);
+      setDepartment(product.department);
+      setDescription(product.description);
+      setStock(product.stock);
+      setImage(product.image);
+      setProductErr(false);
     }
-  }, [setProductErr])
+  }, [setProductErr]);
+
+  const department_list = async () => {
+    try {
+      const url = "/api/departments";
+      const { data } = await axios.post(url);
+      setDepartments(data);
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    department_list();
+  }, []);
 
   return (
     <div>
@@ -77,14 +96,18 @@ function EditProduct() {
             </div>
             <div className="adminPanelOverviewSubTitleDiv addProductSubTitle">
               <p className="adminPanelOverviewSubTitleText">
-                <span className="adminPanelOverviewSubDashboardTitle">
-                  Dashboard
-                </span>
+                <Link to="/admin" style={{ textDecoration: "none" }}>
+                  <span className="adminPanelOverviewSubDashboardTitle">
+                    Dashboard
+                  </span>
+                </Link>
                 {">"}
-                
-                <span className="adminPanelOverviewSubAmazonDashboardTitle">
-                  Products
-                </span>
+
+                <Link to="/admin/products" style={{ textDecoration: "none" }}>
+                  <span className="adminPanelOverviewSubAmazonDashboardTitle">
+                    Products
+                  </span>
+                </Link>
                 {">"}
                 <span className="adminPanelOverviewSubAmazonDashboardTitle">
                   Edit Products
@@ -159,29 +182,30 @@ function EditProduct() {
                   />
                   <br />
                   <br />
-
-                  <label htmlFor="" className="addProductInputLabel">
+                  {departments && (
+                    <>
+                    <label htmlFor="" className="addProductInputLabel">
                     Department
                   </label>
-                  <br />
-                  <select
-                    name="department"
+                <br />
+                <select
+                  name="department"
                     id="department"
                     className="selectDepartment"
                     value={department}
                     onChange={(e) => {
                       setDepartment(e.target.value);
                     }}
-                  >
-                    <option value="">Select</option>
-                    <option value="smartphones">Smartphones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothings">Clothings</option>
-                    <option value="footwares">Footwares</option>
-                    <option value="others">Others</option>
-                  </select>
-                  <br />
+                >
+                  {departments.map((department, index) =>{
+                    return(
+                      <option value={department.name}>{department.name}</option>
+                    )
+                  })}
+                </select>
+                <br />
+                    </>
+                  )}
                 </div>
                 <div className="addProductFormRight">
                   <label htmlFor="" className="addProductInputLabel">
@@ -221,7 +245,7 @@ function EditProduct() {
                   </label>
                   <img
                     src={image}
-                    style={{ height: "8.5rem", width: "auto" }}
+                    style={{ height: "8.5rem", width: "auto", marginLeft: "1rem" }}
                     alt=""
                   />
                   <br />

@@ -19,7 +19,7 @@ function Departments() {
 
       try{
         setLoading(true)
-        const{data}=await axios.get('/api/departments')
+        const {data} =await axios.post('/api/departments')
         setLoading(false)
         setDepartments(data)
       }catch(err){

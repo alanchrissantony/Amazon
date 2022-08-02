@@ -1,12 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AddProduct.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import random from "../../../../node_modules/random/dist/cjs/index";
 
 function AddProduct() {
   const navigate = useNavigate();
+
+
+  const [departments, setDepartments] = useState(false);
+  const [error, setError] = useState(false);
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
@@ -40,11 +44,26 @@ function AddProduct() {
     const url = "/api/products/add";
     axios
       .post(url, data)
-      .then(navigate('/admin/products'))
+      .then(navigate("/admin/products"))
       .catch(function (error) {
         console.log(error);
       });
   };
+
+  const department_list = async () => {
+    try {
+      const url = "/api/departments";
+      const { data } = await axios.post(url);
+      setDepartments(data);
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    department_list();
+  }, []);
 
   return (
     <div>
@@ -55,14 +74,18 @@ function AddProduct() {
           </div>
           <div className="adminPanelOverviewSubTitleDiv addProductSubTitle">
             <p className="adminPanelOverviewSubTitleText">
-              <span className="adminPanelOverviewSubDashboardTitle">
-                Dashboard
-              </span>
+              <Link to="/admin" style={{ textDecoration: "none" }}>
+                <span className="adminPanelOverviewSubDashboardTitle">
+                  Dashboard
+                </span>
+              </Link>
               {">"}
-              
-              <span className="adminPanelOverviewSubAmazonDashboardTitle">
-                Products
-              </span>
+
+              <Link to="/admin/products" style={{ textDecoration: "none" }}>
+                <span className="adminPanelOverviewSubAmazonDashboardTitle">
+                  Products
+                </span>
+              </Link>
               {">"}
               <span className="adminPanelOverviewSubAmazonDashboardTitle">
                 Add Products
@@ -135,8 +158,9 @@ function AddProduct() {
                 />
                 <br />
                 <br />
-
-                <label htmlFor="" className="addProductInputLabel">
+                  {departments && (
+                    <>
+                    <label htmlFor="" className="addProductInputLabel">
                   Department
                 </label>
                 <br />
@@ -148,15 +172,15 @@ function AddProduct() {
                     setDepartment(e.target.value);
                   }}
                 >
-                  <option value="">Select</option>
-                  <option value="smartphones">Smartphones</option>
-                  <option value="laptops">Laptops</option>
-                  <option value="electronics">Electronics</option>
-                  <option value="clothings">Clothings</option>
-                  <option value="footwares">Footwares</option>
-                  <option value="others">Others</option>
+                  {departments.map((department, index) =>{
+                    return(
+                      <option value={department.name}>{department.name}</option>
+                    )
+                  })}
                 </select>
                 <br />
+                    </>
+                  )}
               </div>
               <div className="addProductFormRight">
                 <label htmlFor="" className="addProductInputLabel">
@@ -193,10 +217,10 @@ function AddProduct() {
                   Image
                 </label>
                 <img
-                    src={image}
-                    style={{ height: "8.5rem", width: "auto" }}
-                    alt=""
-                  />
+                  src={image}
+                  style={{ height: "8.5rem", width: "auto", marginLeft: "1rem" }}
+                  alt=""
+                />
                 <br />
                 <input
                   type="text"

@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Products.css";
 import { PencilSquare, Plus, Trash } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../../actions/productActions";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
@@ -44,9 +42,11 @@ function Products() {
             </div>
             <div className="adminPanelOverviewSubTitleDiv">
               <p className="adminPanelOverviewSubTitleText">
+                <Link to='/admin' style={{ textDecoration: "none" }}>
                 <span className="adminPanelOverviewSubDashboardTitle">
                   Dashboard
                 </span>
+                </Link>
                 {">"}
                 
                 <span className="adminPanelOverviewSubAmazonDashboardTitle">
@@ -58,6 +58,13 @@ function Products() {
               <Link to="/admin/addProducts">
                 <button className="btn btn-success product-btn">
                   Add Product <Plus className="productIcon" />
+                </button>
+              </Link>
+            </div>
+            <div className="productAddBtnDiv departmentAddBtnDiv">
+              <Link to="/admin/departments">
+                <button className="btn btn-warning product-btn">
+                  Departments
                 </button>
               </Link>
             </div>

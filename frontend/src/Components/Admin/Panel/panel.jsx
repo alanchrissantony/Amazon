@@ -4,7 +4,7 @@ import { AuthContext } from "../../../store/FirebaseContext";
 import dashOrderImg from "../../../Images/Box.png";
 import dashUserImg from "../../../Images/users.png";
 import dashProductImg from "../../../Images/products.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -15,11 +15,6 @@ import {
   adminTotalListUsers,
 } from "../../../actions/adminActions";
 import { listProducts } from "../../../actions/productActions";
-
-
-
-
-
 
 function AdminPanel() {
   const navigate = useNavigate();
@@ -98,28 +93,29 @@ function AdminPanel() {
       ) : userErr ? (
         <LoadingBox></LoadingBox>
       ) : ( */}
-        <section className="adminPanelOverviewSection">
-          <div className="adminPanelOverviewContainer">
-            <div className="adminPanelOverviewTitleDiv">
-              <p className="adminPanelOverviewTitle">Amazon Dashboard</p>
-            </div>
-            <div className="adminPanelOverviewSubTitleDiv">
-              <p className="adminPanelOverviewSubTitleText">
-                <span className="adminPanelOverviewSubDashboardTitle">
-                  Dashboard
-                </span>
-                {">"}
-                <span className="adminPanelOverviewSubAmazonDashboardTitle">
-                  Amazon Dashboard
-                </span>
-              </p>
-            </div>
-            <div className="adminPanelDashSection">
-              <div className="adminPanelDashContainer">
-                <Container>
-                  <div className="adminPanelOverviewBoxContainer">
-                    <div className="row">
-                      <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+      <section className="adminPanelOverviewSection">
+        <div className="adminPanelOverviewContainer">
+          <div className="adminPanelOverviewTitleDiv">
+            <p className="adminPanelOverviewTitle">Amazon Dashboard</p>
+          </div>
+          <div className="adminPanelOverviewSubTitleDiv">
+            <p className="adminPanelOverviewSubTitleText">
+              <span className="adminPanelOverviewSubDashboardTitle">
+                Dashboard
+              </span>
+              {">"}
+              <span className="adminPanelOverviewSubAmazonDashboardTitle">
+                Amazon Dashboard
+              </span>
+            </p>
+          </div>
+          <div className="adminPanelDashSection">
+            <div className="adminPanelDashContainer">
+              <Container>
+                <div className="adminPanelOverviewBoxContainer">
+                  <div className="row">
+                    <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <Link to="/admin/orders">
                         <div className="adminPanelOverviewOrdersBoxContainerDiv">
                           <div className="adminPanelOverviewOrdersBoxDiv">
                             <div className="adminPanelOverviewOrdersImgDivContainer">
@@ -143,9 +139,11 @@ function AdminPanel() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
+                    </div>
 
-                      <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <Link to="/admin/users">
                         <div className="adminPanelOverviewUsersBoxContainerDiv">
                           <div className="adminPanelOverviewUsersBoxDiv">
                             <div className="adminPanelOverviewUsersImgDivContainer">
@@ -169,9 +167,11 @@ function AdminPanel() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
+                    </div>
 
-                      <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div className="col-sm-12 col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <Link to="/admin/products">
                         <div className="adminPanelOverviewProductsBoxContainerDiv">
                           <div className="adminPanelOverviewProductsBoxDiv">
                             <div className="adminPanelOverviewProductsImgDivContainer">
@@ -195,14 +195,15 @@ function AdminPanel() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
-                </Container>
-              </div>
+                </div>
+              </Container>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       {/* )} */}
     </div>
   );

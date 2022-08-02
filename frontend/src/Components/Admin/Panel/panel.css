@@ -34,11 +34,13 @@
 .adminPanelOverviewSubDashboardTitle {
   margin-right: 0.5rem;
   cursor: pointer;
+  color: #8798ad;
 }
 .adminPanelOverviewSubAmazonDashboardTitle {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   cursor: pointer;
+  color: #8798ad;
 }
 .adminPanelOverviewBoxContainer {
   margin-top: 1rem;

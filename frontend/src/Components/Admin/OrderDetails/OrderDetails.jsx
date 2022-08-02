@@ -43,7 +43,7 @@ function OrderDetails() {
                       className="orderHistoryYourAccountText"
                       onClick={(e) => {
                         e.preventDefault();
-                        navigate("/adminPanel");
+                        navigate("/admin");
                       }}
                     >
                       Dashboard{" "}

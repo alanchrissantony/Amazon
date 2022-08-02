@@ -5,6 +5,10 @@ import data from './Data/data.js'
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js'
 import orderRouter from './routers/orderRouter.js';
+import departmentRouter from './routers/departmentRouter.js';
+
+
+
 
 
 dotenv.config();
@@ -22,15 +26,13 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon', {
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter)
 app.use('/api/orders', orderRouter)
+app.use('/api/departments', departmentRouter)
 app.use('/api/config/paypal', (req,res)=>{
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb')
 })
 
 
 
-app.get('/api/departments', (req, res) => {
-  res.send(data.departments)
-})
 
 app.get('/api/phones', (req, res) => {
   res.send(data.phones)

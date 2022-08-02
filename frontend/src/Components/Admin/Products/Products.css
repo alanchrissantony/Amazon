@@ -7,6 +7,10 @@
 }
 .productAddBtnDiv{
     margin-bottom: 2rem;
+    float: left;
+}
+.departmentAddBtnDiv{
+    margin-left: 1rem;
 }
 .btn-product-option{
     float: left;
