@@ -3,14 +3,15 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
-import { JournalRichtext, Trash } from "react-bootstrap-icons";
+import { JournalRichtext, Trash, XCircle } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 
 function Users() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [users, setUsers] = useState(false);
+  const [viewUser, setViewUser] = useState(false);
+  const [userPopup, setUserPopup] = useState(false);
   const [error, setError] = useState(false);
 
   const users_list = async () => {
@@ -36,6 +37,18 @@ function Users() {
 
     axios.post(url, userId).then(() => dispatch(users_list()));
   };
+
+
+  const view_toggle = async(id) =>{
+    const data = await axios.get(`/api/users/${id}`)
+    setViewUser(data.data)
+    setUserPopup(true)
+  };
+
+  const close_toggle = ()=>{
+    setUserPopup(false)
+  }
+
 
   return (
     <div>
@@ -63,6 +76,47 @@ function Users() {
                 </span>
               </p>
             </div>
+          {userPopup && (
+            <section className="addDepartmentSection">
+            <div className="addDepartmentContainer">
+              <form action="">
+                <XCircle
+                  className="addNewDepartmentTitleIcon"
+                  onClick={close_toggle}
+                />
+                <p className="addNewAddressText addNewDepartmentTitle">
+                  User Detials
+                </p>
+                <label htmlFor="" className="addProductInputLabel">
+                  Name : {viewUser.name}
+                </label>
+                
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Email : {viewUser.email}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  ID : {viewUser._id}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Created At : {viewUser.createdAt}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Updated At : {viewUser.updatedAt}
+                </label>
+                <br />
+                <br />
+              </form>
+            </div>
+          </section>
+          )}
 
             <table className="table table-striped">
               <thead>
@@ -88,7 +142,7 @@ function Users() {
                         <button
                           className="btn btn-secondary btn-product-option btn-edit product-btn"
                           onClick={() => {
-                            navigate(`/admin/editProduct/${user._id}`);
+                            view_toggle(user._id);
                           }}
                         >
                           View <JournalRichtext className="productIcon" />

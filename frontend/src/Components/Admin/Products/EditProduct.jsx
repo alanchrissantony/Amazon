@@ -126,7 +126,7 @@ function EditProduct() {
                   <input
                     type="text"
                     className="inputSpace"
-                    value={title}
+                    defaultValue={title}
                     placeholder="Product title"
                     onChange={(e) => {
                       setTitle(e.target.value);
@@ -142,7 +142,7 @@ function EditProduct() {
                   <input
                     type="number"
                     className="inputSpace"
-                    value={price}
+                    defaultValue={price}
                     placeholder="Price"
                     onChange={(e) => {
                       setPrice(e.target.value);
@@ -158,7 +158,7 @@ function EditProduct() {
                   <input
                     type="text"
                     className="inputSpace"
-                    value={category}
+                    defaultValue={category}
                     placeholder="Category"
                     onChange={(e) => {
                       setCategory(e.target.value);
@@ -174,7 +174,7 @@ function EditProduct() {
                   <input
                     type="text"
                     className="inputSpace"
-                    value={brand}
+                    defaultValue={brand}
                     placeholder="Brand"
                     onChange={(e) => {
                       setBrand(e.target.value);
@@ -192,14 +192,14 @@ function EditProduct() {
                   name="department"
                     id="department"
                     className="selectDepartment"
-                    value={department}
+                    defaultValue={department}
                     onChange={(e) => {
                       setDepartment(e.target.value);
                     }}
                 >
                   {departments.map((department, index) =>{
                     return(
-                      <option value={department.name}>{department.name}</option>
+                      <option defaultValue={department.name}>{department.name}</option>
                     )
                   })}
                 </select>
@@ -215,7 +215,7 @@ function EditProduct() {
                   <textarea
                     type="text"
                     className="inputSpaceDescription"
-                    value={description}
+                    defaultValue={description}
                     placeholder="Description"
                     onChange={(e) => {
                       setDescription(e.target.value);
@@ -231,7 +231,7 @@ function EditProduct() {
                   <input
                     type="number"
                     className="inputSpace"
-                    value={stock}
+                    defaultValue={stock}
                     placeholder="Stock"
                     onChange={(e) => {
                       setStock(e.target.value);

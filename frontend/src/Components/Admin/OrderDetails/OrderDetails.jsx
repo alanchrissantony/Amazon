@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
+import { XCircle } from "react-bootstrap-icons";
 import './Orderdetails.css'
 
 function OrderDetails() {
@@ -10,6 +11,8 @@ function OrderDetails() {
 
   const [orders, setOrders] = useState(false);
   const [error, setError] = useState(false);
+  const [user, setUser] = useState(false);
+  const [userPopup, setUserPopup] = useState(false);
 
   const orders_list = async () => {
     try {
@@ -21,6 +24,16 @@ function OrderDetails() {
       setError(error.message);
     }
   };
+
+  const view_toggle = async(id) =>{
+    const data = await axios.get(`/api/users/${id}`)
+    setUser(data.data)
+    setUserPopup(true)
+  };
+
+  const close_toggle = ()=>{
+    setUserPopup(false)
+  }
 
   useEffect(() => {
     orders_list();
@@ -67,6 +80,49 @@ function OrderDetails() {
                     <span className="orderHistoryOrderNumberText">placed</span>
                   </p>
                 </div>
+
+                {userPopup && (
+            <section className="addDepartmentSection">
+            <div className="addDepartmentContainer">
+              <form action="">
+                <XCircle
+                  className="addNewDepartmentTitleIcon"
+                  onClick={close_toggle}
+                />
+                <p className="addNewAddressText addNewDepartmentTitle">
+                  User Detials
+                </p>
+                <label htmlFor="" className="addProductInputLabel">
+                  Name : {user.name}
+                </label>
+                
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Email : {user.email}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  ID : {user._id}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Created At : {user.createdAt}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Updated At : {user.updatedAt}
+                </label>
+                <br />
+                <br />
+              </form>
+            </div>
+          </section>
+          )}
+
                 {orders.map((order) => (
                   <div className="orderHistoryProductContainer" key={order._id}>
                     <div className="orderHistoryProductHeadContainer">
@@ -155,7 +211,7 @@ function OrderDetails() {
                                 className="orderHistoryOrderViewDetailsText"
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  navigate(`/order/${order._id}`);
+                                  view_toggle(order.user);
                                 }}
                               >
                                 View user details{" "}

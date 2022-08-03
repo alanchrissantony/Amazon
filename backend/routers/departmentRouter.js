@@ -10,6 +10,7 @@ const departmentRouter = express.Router();
 departmentRouter.post('/',
   expressAsyncHandler(async (req, res) => {
     const departments = await Department.find({});
+    console.log(departments);
     res.send(departments);
   })
 );
@@ -32,6 +33,36 @@ departmentRouter.post('/delete',
     res.send({ deletedDepartment });
   })
 
+);
+
+
+departmentRouter.post('/edit',
+  expressAsyncHandler(async (req, res) =>{
+    const data = req.body
+    const department = await Department.findById(data._id);
+    if(department){
+      department.name = data.name || department.name;
+      department.image = data.image || department.image;
+      const updated = await department.save()
+      res.send({ updated });
+    }
+    
+    
+  })
+
+);
+
+
+departmentRouter.post(
+  '/:id',
+  expressAsyncHandler(async (req, res) => {
+    const department = await Department.findById(req.params.id);
+    if (department) {
+      res.send(department);
+    } else {
+      res.status(404).send({ message: 'Department Not Found' });
+    }
+  })
 );
 
 

@@ -4,18 +4,21 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
-import { Plus, Trash, XCircle } from "react-bootstrap-icons";
+import { Plus, Trash, XCircle, PencilSquare } from "react-bootstrap-icons";
 import axios from "axios";
 
 function Departments() {
   const dispatch = useDispatch();
 
-
   const [departments, setDepartments] = useState(false);
   const [error, setError] = useState(false);
   const [addPopup, setAddPopup] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [editPopup, setEditPopup] = useState(false);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
+  const [editTitle, setEditTitle] = useState("");
+  const [editImage, setEditImage] = useState("");
 
   const data = {
     department: [
@@ -43,28 +46,47 @@ function Departments() {
 
   const add_department = (data) => {
     const url = "/api/departments/add";
-    axios
-      .post(url, data)
-      .then(() => dispatch(add_toggle()))
-      .catch(function (error) {
-        console.log(error);
-      });
+    axios.post(url, data)
+    close_add_toggle()
+      dispatch(department_list());
   };
 
-  const removeDepartment = (id) => {
+  const removeDepartment = async(id) => {
     const departmentId = {
       id: id,
     };
     let url = "/api/departments/delete";
 
-    axios.post(url, departmentId).then(() => dispatch(department_list()));
+    await axios.post(url, departmentId);
+    dispatch(department_list())
   };
 
   const add_toggle = () => {
-    setAddPopup(!addPopup);
+    setAddPopup(true);
   };
 
-  
+  const close_add_toggle = () => {
+    setAddPopup(false);
+  };
+
+  const view_toggle = async (id) => {
+    const data = await axios.post(`/api/departments/${id}`);
+    setEdit(data.data);
+    setEditPopup(true);
+  };
+
+
+
+  const close_toggle = () => {
+    setEditPopup(false);
+  };
+
+  const save_edit = async(data) =>{
+    let url = "/api/departments/edit"
+    await axios.post(url, data)
+    close_toggle()
+    dispatch(department_list())
+  }
 
   return (
     <div>
@@ -151,6 +173,7 @@ function Departments() {
                     <button
                       className="btn btn-primary btn-addNewDepartment"
                       onClick={(e) => {
+                        e.preventDefault()
                         add_department(data);
                       }}
                     >
@@ -160,7 +183,77 @@ function Departments() {
                 </div>
               </section>
             )}
-            
+            {editPopup && (
+              <section className="addDepartmentSection">
+                <div className="addDepartmentContainer">
+                  <form action="">
+                    <XCircle
+                      className="addNewDepartmentTitleIcon"
+                      onClick={close_toggle}
+                    />
+                    <p className="addNewAddressText addNewDepartmentTitle">
+                      Edit department
+                    </p>
+                    <label htmlFor="" className="addProductInputLabel">
+                      Title
+                    </label>
+                    <br />
+                    <input
+                      type="text"
+                      className="inputSpace"
+                      placeholder="Department title"
+                      defaultValue={edit.name}
+                      onChange={(e) => {
+                        setEditTitle(e.target.value);
+                      }}
+                    />
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Image
+                    </label>
+                    <img
+                      src={image}
+                      style={{
+                        height: "8.5rem",
+                        width: "auto",
+                        marginLeft: "1rem",
+                      }}
+                      alt=""
+                    />
+                    <br />
+                    <input
+                      type="text"
+                      className="inputSpace"
+                      placeholder="Image URL"
+                      defaultValue={edit.image}
+                      onChange={(e) => {
+                        setEditImage(e.target.value);
+                      }}
+                    />
+                    <br />
+                    <br />
+                    <button
+                      className="btn btn-warning btn-addNewDepartment"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        const editedData = {
+                          
+                              _id: edit._id,
+                              name: editTitle,
+                              image: editImage,
+
+                        };
+                        save_edit(editedData);
+                      }}
+                    >
+                      Save
+                    </button>
+                  </form>
+                </div>
+              </section>
+            )}
+
             <table className="table table-striped">
               <thead>
                 <tr>
@@ -185,7 +278,15 @@ function Departments() {
                       </td>
                       <td>
                         <button
-                          className="btn btn-danger"
+                          className="btn btn-secondary btn-product-option btn-edit product-btn"
+                          onClick={() => {
+                            view_toggle(department._id)
+                          }}
+                        >
+                          Edit <PencilSquare className="productIcon" />
+                        </button>
+                        <button
+                          className="btn btn-danger btn-delete"
                           onClick={() => {
                             alert("Do you intend to delete?");
                             removeDepartment(department._id);
