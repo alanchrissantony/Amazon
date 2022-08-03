@@ -22,33 +22,19 @@ function EditProduct() {
   const { loading, error, product } = productDetails;
 
   const [departments, setDepartments] = useState(false);
-  const [DepError, setError] = useState(false);
 
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState();
   const [category, setCategory] = useState("");
   const [department, setDepartment] = useState("");
   const [description, setDescription] = useState("");
-  const [stock, setStock] = useState("");
+  const [stock, setStock] = useState();
   const [brand, setBrand] = useState("");
   const [image, setImage] = useState("");
 
   const [productErr, setProductErr] = useState(true);
 
-  const data = {
-    product: [
-      {
-        name: title,
-        image: image,
-        brand: brand,
-        category: category,
-        department: department,
-        description: description,
-        price: price,
-        countInStock: stock,
-      },
-    ],
-  };
+
 
   useEffect(() => {
     console.log(productId, product._id);
@@ -59,11 +45,11 @@ function EditProduct() {
       setCategory(product.category);
       setDepartment(product.department);
       setDescription(product.description);
-      setStock(product.stock);
+      setStock(product.countInStock);
       setImage(product.image);
       setProductErr(false);
     }
-  }, [setProductErr]);
+  }, []);
 
   const department_list = async () => {
     try {
@@ -72,9 +58,14 @@ function EditProduct() {
       setDepartments(data);
     } catch (error) {
       console.log(error.message);
-      setError(error.message);
     }
   };
+
+  const save_edit = async(data) =>{
+    let url = "/api/products/edit"
+    await axios.post(url, data)
+    navigate('/admin/products')
+  }
 
   useEffect(() => {
     department_list();
@@ -253,6 +244,7 @@ function EditProduct() {
                     type="text"
                     className="inputSpace"
                     placeholder="Image url"
+                    defaultValue={image}
                     onChange={(e) => {
                       setImage(e.target.value);
                     }}
@@ -262,10 +254,23 @@ function EditProduct() {
                   <button
                     className="btn btn-warning btn-addProduct"
                     onClick={(e) => {
-                      console.log(data);
+                      e.preventDefault()
+                      const data = {
+                            _id: product._id,
+                            name: title,
+                            image: image,
+                            brand: brand,
+                            category: category,
+                            department: department,
+                            description: description,
+                            price: parseFloat(price),
+                            countInStock: parseInt(stock),
+
+                      };
+                      save_edit(data)
                     }}
                   >
-                    Add
+                    Save
                   </button>
                 </div>
               </form>

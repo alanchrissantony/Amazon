@@ -51,6 +51,7 @@
     width: 100%;
     height: auto;
     overflow: auto;
+    border-bottom: 2px solid #dee2e6;
   }
   .adminPanelOrderActivityBoxContentDiv {
     margin-top: 1.5rem;
@@ -335,7 +336,7 @@
   }
   .adminPanelTopSellingProductContentImgDiv {
     width: 80px;
-    height: 55px;
+    height: 60px;
     border: 1px solid #dee2e6;
     float: left;
   }

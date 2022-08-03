@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Products.css";
-import { PencilSquare, Plus, Trash } from "react-bootstrap-icons";
+import { PencilSquare, Plus, Trash, JournalRichtext, XCircle } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../../actions/productActions";
@@ -11,6 +11,9 @@ import axios from "axios";
 function Products() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [viewProduct, setViewProduct] = useState(false)
+  const [popup, setPopup] = useState(false)
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -23,10 +26,20 @@ function Products() {
     const proId = {
       id: id,
     };
-    let url = "/api/users/delete";
+    let url = "/api/products/delete";
 
     axios.post(url, proId).then(() => dispatch(listProducts()));
   };
+
+  const view_toggle = async(id) =>{
+    const data = await axios.get(`/api/products/${id}`)
+    setViewProduct(data.data)
+    setPopup(true)
+  };
+
+  const close_toggle = ()=>{
+    setPopup(false)
+  }
 
   return (
     <div>
@@ -68,6 +81,55 @@ function Products() {
                 </button>
               </Link>
             </div>
+
+            {popup && (
+            <section className="addDepartmentSection">
+            <div className="addDepartmentContainer">
+              <form action="">
+                <XCircle
+                  className="addNewDepartmentTitleIcon"
+                  onClick={close_toggle}
+                />
+                <p className="addNewAddressText addNewDepartmentTitle">
+                  Product Detials
+                </p>
+                <label htmlFor="" className="addProductInputLabel">
+                  Name : {viewProduct.name}
+                </label>
+                
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Brand : {viewProduct.email}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                  Price : ${viewProduct.price}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                Category : {viewProduct.category}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                Department : {viewProduct.department}
+                </label>
+                <br />
+                <br />
+                <label htmlFor="" className="addProductInputLabel">
+                Description : {viewProduct.description}
+                </label>
+                
+                <br />
+                <br />
+              </form>
+            </div>
+          </section>
+          )}
+
             <table className="table table-striped">
               <thead>
                 <tr>
@@ -95,8 +157,16 @@ function Products() {
                         />
                       </td>
                       <td>
+                      <button
+                          className="btn btn-info btn-product-option btn-edit product-btn"
+                          onClick={() => {
+                            view_toggle(product._id);
+                          }}
+                        >
+                          View <JournalRichtext className="productIcon" />
+                        </button>
                         <button
-                          className="btn btn-secondary btn-product-option btn-edit product-btn"
+                          className="btn btn-secondary btn-product-option btn-edit product-btn btn-delete"
                           onClick={() => {
                             navigate(`/admin/editProduct/${product._id}`);
                           }}

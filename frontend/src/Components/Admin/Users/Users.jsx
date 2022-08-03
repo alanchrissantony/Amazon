@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoadingBox from "../../Users/LoadingBox/loadingBox";
 import MessageBox from "../../Users/MessageBox/messageBox";
 import { JournalRichtext, Trash, XCircle } from "react-bootstrap-icons";

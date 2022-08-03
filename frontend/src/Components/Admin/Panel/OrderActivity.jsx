@@ -1,194 +1,185 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./OrderActivity.css";
 import dashProductImg from "../../../Images/products.png";
 
 function OrderActivity() {
+  const [orders, setOrders] = useState(false);
+  const [products, setProducts] = useState(false);
+
+  const orders_list = async () => {
+    try {
+      const url = "/api/orders/admin/total&orders";
+      const data = await axios.post(url);
+      setOrders(data.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const products_list = async () => {
+    try {
+      const url = "/api/products";
+      const data = await axios.get(url);
+      setProducts(data.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    orders_list();
+    products_list();
+  }, []);
+
   return (
     <div className="orderactivity">
-      <div  className="orderactivitycontainer">
-        <div className="adminPanelOrderActivitySection">
-          <div className="adminPanelOrderActivityContainer">
-            <div className="adminPanelOrderActivityDiv">
-              <div className="adminPanelOrderActivityBox">
-                <div className="adminPanelOrderActivityBoxContainer">
-                  <div className="adminPanelOrderActivityBoxTitleContainer">
-                    <div className="adminPanelOrderActivityBoxTitleDiv">
-                      <p className="adminPanelOrderActivityBoxTitle">
-                        Order Activity
-                      </p>
-                    </div>
-                  </div>
-                  <div className="adminPanelOrderActivityBoxContentContainer">
-                    <div className="adminPanelOrderActivityBoxContentDiv">
-                      <div className="adminPanelOrderActivityBoxContentUserImgContainer">
-                        <div className="adminPanelOrderActivityBoxContentUserImgDiv">
-                          <img
-                            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                            alt=""
-                            className="adminPanelOrderActivityBoxContentUserImg"
-                          />
-                        </div>
-                      </div>
-                      <div className="adminPanelOrderActivityBoxContentUserContentSection">
-                        <div className="adminPanelOrderActivityBoxContentUserContentContainer">
-                          <div className="adminPanelOrderActivityBoxContentUserContentDiv">
-                            <div className="adminPanelOrderActivityBoxContentUserNameDiv">
-                              <p className="adminPanelOrderActivityBoxContentUserName">
-                                Lottie Arnold
-                              </p>
-                            </div>
-                            <div className="adminPanelOrderActivityBoxContentUserOrderTimeDiv">
-                              <p className="adminPanelOrderActivityBoxContentUserOrderTime">
-                                25 mins ago
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
-                        <div className="adminPanelOrderActivityBoxContentOrderImgContainer">
-                          <div className="adminPanelOrderActivityBoxContentOrderImgDiv">
-                            <img
-                              src={dashProductImg}
-                              alt=""
-                              className="adminPanelOrderActivityBoxContentOrderImg"
-                            />
-                          </div>
-                        </div>
-                        <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
-                          <div className="adminPanelOrderActivityBoxContentOrderContentDiv">
-                            <div className="adminPanelOrderActivityBoxContentOrderContentNameDiv">
-                              <p className="adminPanelOrderActivityBoxContentOrderContentName">
-                                Iphone X Mobile
-                              </p>
-                            </div>
-                            <div className="adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv">
-                              <p className="adminPanelOrderActivityBoxContentOrderContentOrderCategory">
-                                USB, wireless
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+      <div className="orderactivitycontainer">
+        {orders && (
+          <div className="adminPanelOrderActivitySection">
+            <div className="adminPanelOrderActivityContainer">
+              <div className="adminPanelOrderActivityDiv">
+                <div className="adminPanelOrderActivityBox">
+                  <div className="adminPanelOrderActivityBoxContainer">
+                    <div className="adminPanelOrderActivityBoxTitleContainer">
+                      <div className="adminPanelOrderActivityBoxTitleDiv">
+                        <p className="adminPanelOrderActivityBoxTitle">
+                          Order Activity
+                        </p>
                       </div>
                     </div>
+                    {orders.map((order) => (
+                      <div className="adminPanelOrderActivityBoxContentContainer">
+                        <div className="adminPanelOrderActivityBoxContentDiv">
+                          <div className="adminPanelOrderActivityBoxContentUserImgContainer">
+                            <div className="adminPanelOrderActivityBoxContentUserImgDiv">
+                              <img
+                                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                alt=""
+                                className="adminPanelOrderActivityBoxContentUserImg"
+                              />
+                            </div>
+                          </div>
+                          <div className="adminPanelOrderActivityBoxContentUserContentSection">
+                            <div className="adminPanelOrderActivityBoxContentUserContentContainer">
+                              <div className="adminPanelOrderActivityBoxContentUserContentDiv">
+                                <div className="adminPanelOrderActivityBoxContentUserNameDiv">
+                                  <p className="adminPanelOrderActivityBoxContentUserName">
+                                    {order.shippingAddress.name}
+                                  </p>
+                                </div>
+                                <div className="adminPanelOrderActivityBoxContentUserOrderTimeDiv">
+                                  <p className="adminPanelOrderActivityBoxContentUserOrderTime">
+                                    {order.createdAt}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
+                            <div className="adminPanelOrderActivityBoxContentOrderImgContainer">
+                              <div className="adminPanelOrderActivityBoxContentOrderImgDiv">
+                                <img
+                                  src={order.orderItems[0].image}
+                                  alt=""
+                                  className="adminPanelOrderActivityBoxContentOrderImg"
+                                />
+                              </div>
+                            </div>
+                            <div className="adminPanelOrderActivityBoxContentOrderContentContainer">
+                              <div className="adminPanelOrderActivityBoxContentOrderContentDiv">
+                                <div className="adminPanelOrderActivityBoxContentOrderContentNameDiv">
+                                  <p className="adminPanelOrderActivityBoxContentOrderContentName">
+                                    {order.orderItems[0].name}
+                                  </p>
+                                </div>
+                                <div className="adminPanelOrderActivityBoxContentOrderContentOrderCategoryDiv">
+                                  <p className="adminPanelOrderActivityBoxContentOrderContentOrderCategory">
+                                    USB, wireless
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="adminPanelTopSellingProductSection">
-          <div className="adminPanelTopSellingProductContainer">
-            <div className="adminPanelTopSellingProductDiv">
-              <div className="adminPanelTopSellingProductBox">
-                <div className="adminPanelTopSellingProductBoxContainer">
-                  <div className="adminPanelTopSellingProductTitleContainer">
-                    <div className="adminPanelTopSellingProductTitleDiv">
-                      <p className="adminPanelTopSellingProductTitle">
-                        Top Selling Products
-                      </p>
-                    </div>
-                  </div>
-                  <div className="adminPanelTopSellingProductContentContainer">
-                    <div className="adminPanelTopSellingProductContentDiv">
-                      <div className="adminPanelTopSellingProductContentImgDiv">
-                        <div className="adminPanelTopSellingProductContentImgDivCon">
-                          <img
-                            src={dashProductImg}
-                            alt=""
-                            className="adminPanelTopSellingProductContentImg"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="adminPanelTopSellingProductContentTextContainer">
-                        <div className="adminPanelTopSellingProductContentTextDiv">
-                          <div className="adminPanelTopSellingProductContentTextTitleDiv">
-                            <p className="adminPanelTopSellingProductContentTextTitle">
-                              Homepod
-                            </p>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentTextCategoryDiv">
-                            <p className="adminPanelTopSellingProductContentTextCategory">
-                              USB, wireless
-                            </p>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentTextDescriptionDiv">
-                            <p className="adminPanelTopSellingProductContentTextDescription">
-                              White • Slate fabric • Hands-free
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="adminPanelTopSellingProductContentPriceSection">
-                        <div className="adminPanelTopSellingProductContentPriceContainer">
-                          <div className="adminPanelTopSellingProductContentPriceDiv">
-                            <p className="adminPanelTopSellingProductContentPrice">
-                              $129.76
-                            </p>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentReviewsDiv">
-                            <p className="adminPanelTopSellingProductContentReviews">
-                              Sales
-                            </p>
-                          </div>
-                        </div>
+        )}
+        {products && (
+          <div className="adminPanelTopSellingProductSection">
+            <div className="adminPanelTopSellingProductContainer">
+              <div className="adminPanelTopSellingProductDiv">
+                <div className="adminPanelTopSellingProductBox">
+                  <div className="adminPanelTopSellingProductBoxContainer">
+                    <div className="adminPanelTopSellingProductTitleContainer">
+                      <div className="adminPanelTopSellingProductTitleDiv">
+                        <p className="adminPanelTopSellingProductTitle">
+                          Top Selling Products
+                        </p>
                       </div>
                     </div>
-                  </div>
+                    {products.map((product) => (
+                      <div className="adminPanelTopSellingProductContentContainer">
+                        <div className="adminPanelTopSellingProductContentDiv">
+                          <div className="adminPanelTopSellingProductContentImgDiv">
+                            <div className="adminPanelTopSellingProductContentImgDivCon">
+                              <img
+                                src={product.image}
+                                alt=""
+                                className="adminPanelTopSellingProductContentImg"
+                              />
+                            </div>
+                          </div>
 
-                  <div className="adminPanelTopSellingProductContentContainer">
-                    <div className="adminPanelTopSellingProductContentDiv">
-                      <div className="adminPanelTopSellingProductContentImgDiv">
-                        <div className="adminPanelTopSellingProductContentImgDivCon">
-                          <img
-                            src={dashProductImg}
-                            alt=""
-                            className="adminPanelTopSellingProductContentImg"
-                          />
-                        </div>
-                      </div>
-                      <div className="adminPanelTopSellingProductContentTextContainer">
-                        <div className="adminPanelTopSellingProductContentTextDiv">
-                          <div className="adminPanelTopSellingProductContentTextTitleDiv">
-                            <p className="adminPanelTopSellingProductContentTextTitle">
-                              Homepod
-                            </p>
+                          <div className="adminPanelTopSellingProductContentTextContainer">
+                            <div className="adminPanelTopSellingProductContentTextDiv">
+                              <div className="adminPanelTopSellingProductContentTextTitleDiv">
+                                <p className="adminPanelTopSellingProductContentTextTitle">
+                                  {product.name}
+                                </p>
+                              </div>
+                              <div className="adminPanelTopSellingProductContentTextCategoryDiv">
+                                <p className="adminPanelTopSellingProductContentTextCategory">
+                                  {product.brand}
+                                </p>
+                              </div>
+                              <div className="adminPanelTopSellingProductContentTextDescriptionDiv">
+                                <p className="adminPanelTopSellingProductContentTextDescription">
+                                  {product.description}
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                          <div className="adminPanelTopSellingProductContentTextCategoryDiv">
-                            <p className="adminPanelTopSellingProductContentTextCategory">
-                              USB, wireless
-                            </p>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentTextDescriptionDiv">
-                            <p className="adminPanelTopSellingProductContentTextDescription">
-                              White • Slate fabric • Hands-free
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="adminPanelTopSellingProductContentPriceSection">
-                        <div className="adminPanelTopSellingProductContentPriceContainer">
-                          <div className="adminPanelTopSellingProductContentPriceDiv">
-                            <p className="adminPanelTopSellingProductContentPrice">
-                              $129.76
-                            </p>
-                          </div>
-                          <div className="adminPanelTopSellingProductContentReviewsDiv">
-                            <p className="adminPanelTopSellingProductContentReviews">
-                              Sales
-                            </p>
+                          <div className="adminPanelTopSellingProductContentPriceSection">
+                            <div className="adminPanelTopSellingProductContentPriceContainer">
+                              <div className="adminPanelTopSellingProductContentPriceDiv">
+                                <p className="adminPanelTopSellingProductContentPrice">
+                                  ${product.price}
+                                </p>
+                              </div>
+                              <div className="adminPanelTopSellingProductContentReviewsDiv">
+                                <p className="adminPanelTopSellingProductContentReviews">
+                                  {product.category}
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    ))}
+
+                    
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

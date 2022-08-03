@@ -40,8 +40,6 @@ function Panel() {
         <div>
           <Header />
           <AdminPanel />
-          <Dash />
-          <Progress />
           <OrderActivity />
           <Footer />
         </div>

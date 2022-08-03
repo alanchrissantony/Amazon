@@ -8,91 +8,17 @@ import { useNavigate, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 import { useDispatch, useSelector } from "react-redux";
-import LoadingBox from "../../Users/LoadingBox/loadingBox";
-import MessageBox from "../../Users/MessageBox/messageBox";
-import {
-  adminTotalListOrder,
-  adminTotalListUsers,
-} from "../../../actions/adminActions";
-import { listProducts } from "../../../actions/productActions";
+
 
 function AdminPanel() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const [userErr, setUserErr] = useState(true)
-
-  // const adminOrderList = useSelector((state) => state.adminOrderList);
-  // const {
-  //   loading: orderLoading,
-  //   error: orderError,
-  //   adminInfo,
-  // } = adminOrderList;
-
-  // const productList = useSelector((state) => state.productList);
-  // const {
-  //   loading: productLoading,
-  //   error: productError,
-  //   products,
-  // } = productList;
-
-  // const adminUserList = useSelector((state) => state.adminUserList);
-  // const {
-  //   loading: userLoading,
-  //   error: userError,
-  //   adminInfo: userList,
-  // } = adminUserList;
-
-  // const AdminSignIn = () => {
-  //   const { user } = useContext(AuthContext);
-  //   if (user) {
-  //     localStorage.setItem("adminInfo", JSON.stringify(user));
-  //   }
-  // };
-
-  // AdminSignIn();
-
-  // useEffect(() => {
-  //   const user = localStorage.getItem("adminInfo");
-  //   if (!user) {
-  //     navigate("/admin");
-  //   } else if (user) {
-  //     setUserErr(false)
-  //     dispatch(adminTotalListOrder());
-  //     dispatch(listProducts());
-  //     dispatch(adminTotalListUsers());
-  //   }
-  // }, [navigate]);
-
-  // const salesFunction = () => {
-  //   let totalSales = 0;
-  //   for (var i = 0; i < adminInfo.length; i++) {
-  //     totalSales = totalSales + adminInfo[i].totalPrice;
-  //   }
-  //   localStorage.setItem("totalSales", JSON.stringify(totalSales));
-  // };
-
-  // if (adminInfo) {
-  //   salesFunction();
-  // }
+  
 
   return (
     <div className="adminPanelSectionContainer">
-      {/* {orderLoading ? (
-        <LoadingBox></LoadingBox>
-      ) : productLoading ? (
-        <LoadingBox></LoadingBox>
-      ) : userLoading ? (
-        <LoadingBox></LoadingBox>
-      ) : orderError ? (
-        <MessageBox>{orderError}</MessageBox>
-      ) : productError ? (
-        <MessageBox>{productError}</MessageBox>
-      ) : userError ? (
-        <MessageBox>{userError}</MessageBox>
-      ) : userErr ? (
-        <LoadingBox></LoadingBox>
-      ) : ( */}
+      
       <section className="adminPanelOverviewSection">
         <div className="adminPanelOverviewContainer">
           <div className="adminPanelOverviewTitleDiv">
@@ -204,7 +130,7 @@ function AdminPanel() {
           </div>
         </div>
       </section>
-      {/* )} */}
+
     </div>
   );
 }

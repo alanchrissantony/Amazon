@@ -242,8 +242,8 @@ function OrderDetails() {
                           <div className="orderHistoryProductOrderStatusTextDiv">
                             <p className="orderHistoryProductOrderStatusText">
                               {order.isPaid
-                                ? "Your product has been shipped."
-                                : "Complete your transaction"}
+                                ? "Product has been shipped."
+                                : "The transaction is not yet finished"}
                             </p>
                           </div>
                           {order.orderItems.map((product) => (

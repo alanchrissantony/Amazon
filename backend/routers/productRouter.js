@@ -51,4 +51,30 @@ productRouter.get('/:id',
   })
 );
 
+
+productRouter.post('/edit',
+  expressAsyncHandler(async (req, res) =>{
+    const data = req.body
+    const product = await Product.findById(data._id);
+
+    if(product){
+
+      product.name = data.name || product.name;
+      product.image = data.image || product.image;
+      product.brand = data.brand || product.brand;
+      product.category = data.category || product.category;
+      product.department = data.department || product.department;
+      product.description = data.description || product.description;
+      product.price = data.price || product.price;
+      product.countInStock = data.countInStock || product.countInStock;
+      
+    }
+    const updatedProduct = await product.save()
+
+      res.send({ updatedProduct });
+    
+  })
+
+);
+
 export default productRouter;

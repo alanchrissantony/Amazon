@@ -40,7 +40,9 @@ function ProductScreen(props) {
         setCart([
             {
                 id: product._id,
-                title: product.title,
+                title: product.name,
+                brand: product.brand,
+                category: product.category,
                 image: product.image,
                 price: product.price,
                 quantity: qty
