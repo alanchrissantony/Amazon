@@ -7,18 +7,19 @@ function Department(props) {
     const {departments} = props;
     const navigate=useNavigate()
 
+
   return (
     <div key={departments._id} className="departmentBox" onClick={(e)=>{
         e.preventDefault()
-        navigate('/products')
+        navigate(`/products`)
       }}>
       <a className='departmentTitleLink'><h2 className='departmentTitle'>{departments.name}</h2></a>
       <a className='departmentImageLink'><img src={departments.image} className='departmentImage' alt="" /></a>
       <br />
-      <a href=""className='departmentShopLink' onClick={(e)=>{
+      <p className='departmentShopLink' onClick={(e)=>{
         e.preventDefault()
-        navigate('/products')
-      }}>Shop now</a>
+        navigate(`/products`)
+      }}>Shop now</p>
     </div>
   )
 }

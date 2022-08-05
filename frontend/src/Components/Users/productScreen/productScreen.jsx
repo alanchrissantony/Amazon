@@ -51,6 +51,21 @@ function ProductScreen(props) {
         navigate(`/cart/${productId}?qty=${qty}`)
     }
 
+    const handleBuyNow=(e)=>{
+        setCart([
+            {
+                id: product._id,
+                title: product.name,
+                brand: product.brand,
+                category: product.category,
+                image: product.image,
+                price: product.price,
+                quantity: qty
+            }
+        ])
+        navigate('/shipping')
+    }
+
     useEffect(()=>{
         localStorage.setItem('Cart', JSON.stringify(cart))
     }, [cart])
@@ -112,7 +127,7 @@ function ProductScreen(props) {
                         
                         {product.countInStock ? <div className="CartBuyButtonsDiv">
                             <button onClick={()=>handleAddCart()} className='ProductCartBtn'><span className='ProductCartBtnText'>Add to Cart</span></button>
-                            <button className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
+                            <button onClick={()=>handleBuyNow()} className='ProductBuyBtn'><span className='ProductBuyBtnText'>Buy Now</span></button>
                         </div> : ''}
                     </div>
                 </div>

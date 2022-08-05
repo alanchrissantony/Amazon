@@ -190,7 +190,7 @@ function EditProduct() {
                 >
                   {departments.map((department, index) =>{
                     return(
-                      <option defaultValue={department.name}>{department.name}</option>
+                      <option value={department._id}>{department.name}</option>
                     )
                   })}
                 </select>

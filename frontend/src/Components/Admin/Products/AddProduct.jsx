@@ -174,7 +174,7 @@ function AddProduct() {
                 >
                   {departments.map((department, index) =>{
                     return(
-                      <option value={department.name}>{department.name}</option>
+                      <option value={department._id}>{department.name}</option>
                     )
                   })}
                 </select>

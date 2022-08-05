@@ -98,7 +98,7 @@ function Departments() {
         <section className="adminProductsSection">
           <div className="container">
             <div className="adminPanelOverviewTitleDiv">
-              <p className="adminPanelOverviewTitle">Products</p>
+              <p className="adminPanelOverviewTitle">Departments</p>
             </div>
             <div className="adminPanelOverviewSubTitleDiv">
               <p className="adminPanelOverviewSubTitleText">
@@ -108,7 +108,12 @@ function Departments() {
                   </span>
                 </Link>
                 {">"}
-
+                <Link to="/admin/products" style={{ textDecoration: "none" }}>
+                  <span className="adminPanelOverviewSubAmazonDashboardTitle">
+                    Products
+                  </span>
+                </Link>
+                {">"}
                 <span className="adminPanelOverviewSubAmazonDashboardTitle">
                   Departments
                 </span>

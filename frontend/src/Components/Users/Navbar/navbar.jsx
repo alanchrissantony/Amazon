@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import Logo from "../../../Images/logo.svg";
 import Location from "../../../Images/location.png";
@@ -7,11 +7,17 @@ import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../../../actions/userActions";
 import { Search } from "../../../../node_modules/@material-ui/icons/index";
+import { List, X } from "react-bootstrap-icons";
+import { Icon } from "@iconify/react";
+import axios from "axios";
 
 function Home() {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+
+  const [sidebar, setSidebar] = useState(false);
+  const [departments, setDepartments] = useState(false);
 
   const cart = useSelector((state) => state.cart);
   const { cartItems, shippingAddress } = cart;
@@ -23,20 +29,38 @@ function Home() {
     dispatch(signout());
   };
 
+  const get_departments = async () => {
+    let url = "/api/departments";
+    const { data } = await axios.post(url);
+    setDepartments(data);
+  };
+
+  const activate_sidebar = () => {
+    setSidebar(true);
+  };
+
+  const deactivate_sidebar = () => {
+    setSidebar(false);
+  };
+
+  useEffect(() => {
+    get_departments();
+  }, []);
+
   return (
     <div className="navcontainer">
       <div className="navbarContainer">
         <header className="userHomeHeader">
           <div className="row logoRowHomeHeader">
             <div className="amazonNavLogoDiv">
-              <a
+              <div
                 onClick={(e) => {
                   e.preventDefault();
                   navigate("/");
                 }}
               >
                 <img className="amazonNavLogo" src={Logo} alt="" />
-              </a>
+              </div>
             </div>
             <div className="locationRowHomeHeader">
               <div className="locationNavLogoDiv">
@@ -141,7 +165,7 @@ function Home() {
               </ul>
             </div>
             <div className="navTextDivOrders">
-              <Link to={"/orderhistory"}>
+              <Link to={"/orderhistory"} style={{ textDecoration: "none" }}>
                 <p className="navText">
                   Returns <br />
                   <span className="navHighText">& Orders</span>
@@ -149,7 +173,7 @@ function Home() {
               </Link>
             </div>
             <div className="navTextDivCart">
-              <Link to="/cart/:id">
+              <Link to="/cart/:id" style={{ textDecoration: "none" }}>
                 <img className="cartNavLogo" src={Cart} alt="" />
                 <div className="navCartCountDiv">
                   <span className="navCartCountText">{cartItems.length}</span>
@@ -158,7 +182,94 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div className="row departmentRowHomeHeader"></div>
+          <div className="row departmentRowHomeHeader">
+            <div className="departmentRowHomeHeaderContainer">
+              <List className="navbarToggleIcon" onClick={activate_sidebar} />
+              {sidebar && (
+                <section className="sidebarSection">
+                  <div className="sidebarContainer">
+                    <div className="sidebarHeader">
+                      <div className="sidebarHeaderContainer">
+                        <p className="sidebarHeaderText">
+                          <span>
+                            <Icon
+                              icon="carbon:user-avatar-filled"
+                              style={{ color: "white", fontSize: "2rem" }}
+                            />
+                          </span>{" "}
+                          <p className="sidebarHeaderText sidebarHeaderTextSpan">
+                            Hello, {userInfo ? userInfo.name : "Sign in"}
+                          </p>
+                          <p className="navSidebarCloseIcon">
+                            <X
+                              style={{ color: "white", fontSize: "2rem" }}
+                              onClick={deactivate_sidebar}
+                            />
+                          </p>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="sidebarBody">
+                      <div className="sidebarBodyContainer">
+                        <div className="sidebarTrendingSection">
+                          <p className="sidebarBodyTitle">Trending</p>
+                          <div className="sidebarBodyTextDiv">
+                            <p className="sidebarBodyText">Best Sellers</p>
+                          </div>
+                          <div className="sidebarBodyTextDiv">
+                            <p className="sidebarBodyText">New Releases</p>
+                          </div>
+                          <div className="sidebarBodyTextDiv">
+                            <p className="sidebarBodyText">
+                              Movers and Shakers
+                            </p>
+                          </div>
+                          <hr />
+                        </div>
+                        {departments && (
+                          <div className="sidebarTrendingSection">
+                            <p className="sidebarBodyTitle">
+                              Shop By Department
+                            </p>
+                            {departments.map((department) => (
+                              <div className="sidebarBodyTextDiv">
+                                <p className="sidebarBodyText">
+                                  {department.name}
+                                </p>
+                              </div>
+                            ))}
+                            <hr />
+                          </div>
+                        )}
+                        <div className="sidebarTrendingSection">
+                          <p className="sidebarBodyTitle">Help & Settings</p>
+                          <div className="sidebarBodyTextDiv">
+                            <p className="sidebarBodyText">Your Account</p>
+                          </div>
+                          <div className="sidebarBodyTextDiv">
+                            <p className="sidebarBodyText">Sign Out</p>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+              <div className="departmentRowHomeHeaderContentDiv">
+                <p className="departmentRowHomeHeaderContentText">All</p>
+              </div>
+              {departments && (
+                <div>
+                  {departments.map((department) => (
+                    <div className="departmentRowHomeHeaderContentDiv">
+                      <p className="departmentRowHomeHeaderContentText">{department.name}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </header>
       </div>
     </div>

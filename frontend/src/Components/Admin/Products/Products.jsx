@@ -147,7 +147,7 @@ function Products() {
                     <tr key={index}>
                       <td>{index + 1}</td>
                       <td>{product.brand}</td>
-                      <td>{product.price}</td>
+                      <td>${product.price}</td>
                       <td>{product.category}</td>
                       <td>
                         <img

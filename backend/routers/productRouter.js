@@ -52,6 +52,18 @@ productRouter.get('/:id',
 );
 
 
+productRouter.post('/:id',
+  expressAsyncHandler(async (req, res) => {
+    const product = await Product.find({}).sort({department: 1});
+    if (product) {
+      res.send(product);
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  })
+);
+
+
 productRouter.post('/edit',
   expressAsyncHandler(async (req, res) =>{
     const data = req.body

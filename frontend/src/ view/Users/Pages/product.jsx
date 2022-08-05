@@ -1,17 +1,16 @@
 import React from 'react';
 import Navbar from '../../../Components/Users/Navbar/navbar'
-import Home from '../public/home';
+import Product from '../../../Components/Users/Products/product';
 import Footer from '../../../Components/Users/Footer/footer';
 
-
-function home() {
+function products() {
   return (
       <div>
           <Navbar/>
-          <Home/>
+          <Product/>
           <Footer/>
       </div>
   )
 }
 
-export default home;
+export default products;
