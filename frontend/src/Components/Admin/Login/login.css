@@ -48,13 +48,14 @@
     margin-left: 50px;
     margin-top: 2rem;
     width: 80%;
-    border-width: 1px;
-    border-radius: 5px;
+    border-radius: 3px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #bbb;
+    outline-color: #f69b3c;
+    outline-width: thin;
     height: 2rem;
-}
-.usernameInput:focus{
-    outline: none;
-    border-color: #a88734 #9c7e31 #846a29;
 }
 .fa-lock{
     margin-top: 2.5rem;
@@ -64,14 +65,15 @@
 .passwordInput{
     margin-left: 5px;
     margin-top: 2rem;
-    border-radius: 5px;
     width: 80%;
     height: 2rem;
-    border-width: 1px;
-}
-.passwordInput:focus{
-    outline: none;
-    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 3px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #d0d0d0;
+    border-top: 1px solid #bbb;
+    outline-color: #f69b3c;
+    outline-width: thin;
 }
 .btn-login{
     margin-left: auto;

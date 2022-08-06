@@ -10,7 +10,6 @@ const departmentRouter = express.Router();
 departmentRouter.post('/',
   expressAsyncHandler(async (req, res) => {
     const departments = await Department.find({});
-    console.log(departments);
     res.send(departments);
   })
 );

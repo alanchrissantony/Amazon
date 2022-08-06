@@ -23,7 +23,7 @@ function AddProducts() {
   useEffect(() => {
     const user = localStorage.getItem("adminInfo");
     if (!user) {
-      navigate("/admin");
+      navigate("/admin/login");
     } else if (user) {
       setUserErr(false);
     }

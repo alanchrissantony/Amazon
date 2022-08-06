@@ -3,8 +3,12 @@ import './rowPost.css'
 import axios from 'axios';
 import LoadingBox from '../LoadingBox/loadingBox';
 import MessageBox from '../MessageBox/messageBox';
+import { useNavigate } from "react-router-dom";
+
 
 function RowPost() {
+
+    const navigate = useNavigate();
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -16,7 +20,7 @@ function RowPost() {
   
         try{
           setLoading(false)
-          const{data}=await axios.get('/api/phones')
+          const{data}=await axios.post('/api/products/62e93ab19d39866975775821')
           setLoading(false)
           setProducts(data)
         }catch(err){
@@ -39,7 +43,10 @@ function RowPost() {
                 <div className="divRow">
                     <div className="posters">
                         {products.map(products=>(
-                            <img key={products._id} className='poster' src={products.image} alt="" />
+                            <img key={products._id} className='poster' src={products.image} alt="" onClick={(e)=>{
+                              e.preventDefault()
+                              navigate(`/products/${products._id}`)
+                            }}/>
                         ))}
                     </div>
                 </div>

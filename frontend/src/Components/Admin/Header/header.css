@@ -106,3 +106,20 @@
     box-shadow: none;
     border-bottom: none;
 }
+.headerSearchList{
+    width: 755px;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    margin-top: 49px;
+    margin-left: 183px;
+    border: 1px solid #ccc;
+}
+.headerSearchList div{
+    margin: 1rem;
+}
+.headerSearchList p{
+    font-weight: 700;
+    cursor: pointer;
+}

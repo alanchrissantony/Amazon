@@ -3,9 +3,8 @@
     width: 100%;
 }
 .departmentsSectionContainer{
-    height: 900px;
-    min-height: 900px;
-    overflow: initial;
+    height: auto;
+    overflow: auto;
 }
 .departmentsDivContainer{
     width: 95.34%;

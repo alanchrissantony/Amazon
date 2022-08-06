@@ -8,9 +8,11 @@
     width: 95.34%;
     margin: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 .divRow{
-    width: 1256px;
+    width: 98%;
     background-color: #fff;
     margin: 1rem;
     height: 280px;

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Products.css";
-import { PencilSquare, Plus, Trash, JournalRichtext, XCircle } from "react-bootstrap-icons";
+import {
+  PencilSquare,
+  Plus,
+  Trash,
+  JournalRichtext,
+  XCircle,
+} from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../../actions/productActions";
@@ -12,8 +18,9 @@ function Products() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [viewProduct, setViewProduct] = useState(false)
-  const [popup, setPopup] = useState(false)
+  const [viewProduct, setViewProduct] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [search, setSearch] = useState("");
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -31,15 +38,15 @@ function Products() {
     axios.post(url, proId).then(() => dispatch(listProducts()));
   };
 
-  const view_toggle = async(id) =>{
-    const data = await axios.get(`/api/products/${id}`)
-    setViewProduct(data.data)
-    setPopup(true)
+  const view_toggle = async (id) => {
+    const data = await axios.get(`/api/products/${id}`);
+    setViewProduct(data.data);
+    setPopup(true);
   };
 
-  const close_toggle = ()=>{
-    setPopup(false)
-  }
+  const close_toggle = () => {
+    setPopup(false);
+  };
 
   return (
     <div>
@@ -55,13 +62,13 @@ function Products() {
             </div>
             <div className="adminPanelOverviewSubTitleDiv">
               <p className="adminPanelOverviewSubTitleText">
-                <Link to='/admin' style={{ textDecoration: "none" }}>
-                <span className="adminPanelOverviewSubDashboardTitle">
-                  Dashboard
-                </span>
+                <Link to="/admin" style={{ textDecoration: "none" }}>
+                  <span className="adminPanelOverviewSubDashboardTitle">
+                    Dashboard
+                  </span>
                 </Link>
                 {">"}
-                
+
                 <span className="adminPanelOverviewSubAmazonDashboardTitle">
                   Products
                 </span>
@@ -81,54 +88,63 @@ function Products() {
                 </button>
               </Link>
             </div>
-
-            {popup && (
-            <section className="addDepartmentSection">
-            <div className="addDepartmentContainer">
-              <form action="">
-                <XCircle
-                  className="addNewDepartmentTitleIcon"
-                  onClick={close_toggle}
-                />
-                <p className="addNewAddressText addNewDepartmentTitle">
-                  Product Detials
-                </p>
-                <label htmlFor="" className="addProductInputLabel">
-                  Name : {viewProduct.name}
-                </label>
-                
-                <br />
-                <br />
-                <label htmlFor="" className="addProductInputLabel">
-                  Brand : {viewProduct.email}
-                </label>
-                <br />
-                <br />
-                <label htmlFor="" className="addProductInputLabel">
-                  Price : ${viewProduct.price}
-                </label>
-                <br />
-                <br />
-                <label htmlFor="" className="addProductInputLabel">
-                Category : {viewProduct.category}
-                </label>
-                <br />
-                <br />
-                <label htmlFor="" className="addProductInputLabel">
-                Department : {viewProduct.department}
-                </label>
-                <br />
-                <br />
-                <label htmlFor="" className="addProductInputLabel">
-                Description : {viewProduct.description}
-                </label>
-                
-                <br />
-                <br />
-              </form>
+            <div className="adminProductSearchBar">
+              <input
+                type="text"
+                className="adminInputSpace"
+                placeholder="Search"
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              />
             </div>
-          </section>
-          )}
+            {popup && (
+              <section className="addDepartmentSection">
+                <div className="addDepartmentContainer">
+                  <form action="">
+                    <XCircle
+                      className="addNewDepartmentTitleIcon"
+                      onClick={close_toggle}
+                    />
+                    <p className="addNewAddressText addNewDepartmentTitle">
+                      Product Detials
+                    </p>
+                    <label htmlFor="" className="addProductInputLabel">
+                      Name : {viewProduct.name}
+                    </label>
+
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Brand : {viewProduct.email}
+                    </label>
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Price : ${viewProduct.price}
+                    </label>
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Category : {viewProduct.category}
+                    </label>
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Department : {viewProduct.department}
+                    </label>
+                    <br />
+                    <br />
+                    <label htmlFor="" className="addProductInputLabel">
+                      Description : {viewProduct.description}
+                    </label>
+
+                    <br />
+                    <br />
+                  </form>
+                </div>
+              </section>
+            )}
 
             <table className="table table-striped">
               <thead>
@@ -142,7 +158,13 @@ function Products() {
                 </tr>
               </thead>
               <tbody>
-                {products.map((product, index) => {
+                {products.filter((product)=>{
+                  if(search === ''){
+                    return product
+                  }else if(product.name.toLowerCase().includes(search.toLowerCase()) || product.category.toLowerCase().includes(search.toLowerCase()) || product.brand.toLowerCase().includes(search.toLowerCase())){
+                    return product
+                  }
+                }).map((product, index) => {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
@@ -157,7 +179,7 @@ function Products() {
                         />
                       </td>
                       <td>
-                      <button
+                        <button
                           className="btn btn-info btn-product-option btn-edit product-btn"
                           onClick={() => {
                             view_toggle(product._id);

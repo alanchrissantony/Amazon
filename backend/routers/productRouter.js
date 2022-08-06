@@ -54,7 +54,7 @@ productRouter.get('/:id',
 
 productRouter.post('/:id',
   expressAsyncHandler(async (req, res) => {
-    const product = await Product.find({}).sort({department: 1});
+    const product = await Product.find({department: req.params.id});
     if (product) {
       res.send(product);
     } else {

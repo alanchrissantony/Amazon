@@ -254,7 +254,7 @@ a{
 }
 .navSearchBar{
     height: 39px;
-    width: 650px;
+    width: 600px;
     outline: none;
     border-right: none;
     box-shadow: none;
@@ -278,8 +278,23 @@ a{
     margin-left: 8px;
     margin-top: 8px;
 }
-
-
+.navSearchList{
+    width: 632px;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    margin-top: 49px;
+    margin-left: 342px;
+    border: 1px solid #ccc;
+}
+.navSearchList div{
+    margin: 1rem;
+}
+.navSearchList p{
+    font-weight: 700;
+    cursor: pointer;
+}
 
 .departmentRowHomeHeaderContainer{
     margin-top: 0.5rem;
@@ -361,8 +376,7 @@ p{
 .sidebarBody{
     width: 100%;
     height: auto;
-    overflow: auto;
-    overflow-y: scroll;
+    overflow: hidden;
     scroll-behavior: smooth;
     background-color: white;
     padding-top: 4.5rem;

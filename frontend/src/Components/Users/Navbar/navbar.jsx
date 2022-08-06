@@ -10,6 +10,7 @@ import { Search } from "../../../../node_modules/@material-ui/icons/index";
 import { List, X } from "react-bootstrap-icons";
 import { Icon } from "@iconify/react";
 import axios from "axios";
+import { Scrollbars } from "react-custom-scrollbars";
 
 function Home() {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ function Home() {
 
   const [sidebar, setSidebar] = useState(false);
   const [departments, setDepartments] = useState(false);
+  const [products, setProducts] = useState(false);
+  const [search, setSearch] = useState(false);
 
   const cart = useSelector((state) => state.cart);
   const { cartItems, shippingAddress } = cart;
@@ -35,6 +38,12 @@ function Home() {
     setDepartments(data);
   };
 
+  const get_products = async () => {
+    let url = "/api/products";
+    const { data } = await axios.get(url);
+    setProducts(data);
+  };
+
   const activate_sidebar = () => {
     setSidebar(true);
   };
@@ -45,6 +54,7 @@ function Home() {
 
   useEffect(() => {
     get_departments();
+    get_products();
   }, []);
 
   return (
@@ -94,13 +104,41 @@ function Home() {
               </div>
             </div>
             <div className="navSearchBarDiv">
-              <input type="text" className="navSearchBar" />
+              <input
+                type="text"
+                className="navSearchBar"
+                onChange={(e) => {
+                  setSearch(e.target.value.toLowerCase());
+                }}
+              />
               <div className="searchIconContainer">
                 <div className="searchIconDiv">
                   <Search className="searchIcon" />
                 </div>
               </div>
             </div>
+            {products && (
+              <div className="navSearchList">
+                {products
+                  .filter((product) => {
+                    if (search === "") {
+                      return false;
+                    }else if(product.name.toLowerCase().includes(search) || product.category.toLowerCase().includes(search) || product.brand.toLowerCase().includes(search)){
+                      return product
+                    }
+                  })
+                  .map((product, key) => {
+                    return (
+                      <div key={key}>
+                        <p onClick={(e)=>{
+                          e.preventDefault()
+                          navigate(`/product/${product.department}`)
+                        }}>{product.name}</p>
+                      </div>
+                    );
+                  })}
+              </div>
+            )}
             <div className="navTextDivAccount">
               <a>
                 {" "}
@@ -210,60 +248,161 @@ function Home() {
                       </div>
                     </div>
                     <div className="sidebarBody">
-                      <div className="sidebarBodyContainer">
-                        <div className="sidebarTrendingSection">
-                          <p className="sidebarBodyTitle">Trending</p>
-                          <div className="sidebarBodyTextDiv">
-                            <p className="sidebarBodyText">Best Sellers</p>
-                          </div>
-                          <div className="sidebarBodyTextDiv">
-                            <p className="sidebarBodyText">New Releases</p>
-                          </div>
-                          <div className="sidebarBodyTextDiv">
-                            <p className="sidebarBodyText">
-                              Movers and Shakers
-                            </p>
-                          </div>
-                          <hr />
-                        </div>
-                        {departments && (
+                      <Scrollbars style={{ width: "365px", height: "600px" }}>
+                        <div className="sidebarBodyContainer">
                           <div className="sidebarTrendingSection">
-                            <p className="sidebarBodyTitle">
-                              Shop By Department
-                            </p>
-                            {departments.map((department) => (
-                              <div className="sidebarBodyTextDiv">
-                                <p className="sidebarBodyText">
-                                  {department.name}
-                                </p>
-                              </div>
-                            ))}
+                            <p className="sidebarBodyTitle">Trending</p>
+                            <div
+                              className="sidebarBodyTextDiv"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                deactivate_sidebar();
+                              }}
+                            >
+                              <p
+                                className="sidebarBodyText"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  deactivate_sidebar();
+                                }}
+                              >
+                                Best Sellers
+                              </p>
+                            </div>
+                            <div
+                              className="sidebarBodyTextDiv"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                deactivate_sidebar();
+                              }}
+                            >
+                              <p
+                                className="sidebarBodyText"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  deactivate_sidebar();
+                                }}
+                              >
+                                New Releases
+                              </p>
+                            </div>
+                            <div
+                              className="sidebarBodyTextDiv"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                deactivate_sidebar();
+                              }}
+                            >
+                              <p
+                                className="sidebarBodyText"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  deactivate_sidebar();
+                                }}
+                              >
+                                Movers and Shakers
+                              </p>
+                            </div>
                             <hr />
                           </div>
-                        )}
-                        <div className="sidebarTrendingSection">
-                          <p className="sidebarBodyTitle">Help & Settings</p>
-                          <div className="sidebarBodyTextDiv">
-                            <p className="sidebarBodyText">Your Account</p>
+                          {departments && (
+                            <div className="sidebarTrendingSection">
+                              <p className="sidebarBodyTitle">
+                                Shop By Department
+                              </p>
+                              {departments.map((department) => (
+                                <div
+                                  className="sidebarBodyTextDiv"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    navigate(`/product/${department._id}`);
+                                    deactivate_sidebar();
+                                  }}
+                                >
+                                  <p
+                                    className="sidebarBodyText"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      navigate(`/product/${department._id}`);
+                                      deactivate_sidebar();
+                                    }}
+                                  >
+                                    {department.name}
+                                  </p>
+                                </div>
+                              ))}
+                              <hr />
+                            </div>
+                          )}
+                          <div className="sidebarTrendingSection">
+                            <p className="sidebarBodyTitle">Help & Settings</p>
+                            <div
+                              className="sidebarBodyTextDiv"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                navigate("/login&security");
+                              }}
+                            >
+                              <p
+                                className="sidebarBodyText"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  navigate("/login&security");
+                                }}
+                              >
+                                Your Account
+                              </p>
+                            </div>
+                            <div className="sidebarBodyTextDiv">
+                              {userInfo ? (
+                                <p
+                                  className="sidebarBodyText"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    signOutHandler();
+                                    deactivate_sidebar();
+                                  }}
+                                >
+                                  Sign Out
+                                </p>
+                              ) : (
+                                <p
+                                  className="sidebarBodyText"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    navigate("/login");
+                                  }}
+                                >
+                                  Sign In
+                                </p>
+                              )}
+                            </div>
+                            <hr />
                           </div>
-                          <div className="sidebarBodyTextDiv">
-                            <p className="sidebarBodyText">Sign Out</p>
-                          </div>
-                          <hr />
                         </div>
-                      </div>
+                      </Scrollbars>
                     </div>
                   </div>
                 </section>
               )}
               <div className="departmentRowHomeHeaderContentDiv">
-                <p className="departmentRowHomeHeaderContentText">All</p>
+                <Link to="/products">
+                  <p className="departmentRowHomeHeaderContentText">All</p>
+                </Link>
               </div>
               {departments && (
                 <div>
                   {departments.map((department) => (
                     <div className="departmentRowHomeHeaderContentDiv">
-                      <p className="departmentRowHomeHeaderContentText">{department.name}</p>
+                      <p
+                        className="departmentRowHomeHeaderContentText"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(`/product/${department._id}`);
+                        }}
+                      >
+                        {department.name}
+                      </p>
                     </div>
                   ))}
                 </div>
