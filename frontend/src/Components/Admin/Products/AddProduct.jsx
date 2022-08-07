@@ -94,14 +94,16 @@ function AddProduct() {
           </div>
           <hr />
           <div className="addProductInputContainer">
-            <form action="">
+            <form onSubmit={(e) => {
+                    add_product(data);
+                  }}>
               <p className="addNewAddressText">Add a new product</p>
               <div className="addProductFormLeft">
                 <label htmlFor="" className="addProductInputLabel">
                   Product
                 </label>
                 <br />
-                <input
+                <input required
                   type="text"
                   className="inputSpace"
                   placeholder="Product title"
@@ -116,7 +118,7 @@ function AddProduct() {
                   Price
                 </label>
                 <br />
-                <input
+                <input required
                   type="number"
                   className="inputSpace"
                   placeholder="Price"
@@ -133,7 +135,7 @@ function AddProduct() {
                   Category
                 </label>
                 <br />
-                <input
+                <input required
                   type="text"
                   className="inputSpace"
                   placeholder="Category"
@@ -148,7 +150,7 @@ function AddProduct() {
                   Brand
                 </label>
                 <br />
-                <input
+                <input required
                   type="text"
                   className="inputSpace"
                   placeholder="Brand"
@@ -174,7 +176,7 @@ function AddProduct() {
                 >
                   {departments.map((department, index) =>{
                     return(
-                      <option value={department._id}>{department.name}</option>
+                      <option key={index} value={department._id}>{department.name}</option>
                     )
                   })}
                 </select>
@@ -202,7 +204,7 @@ function AddProduct() {
                   Stock
                 </label>
                 <br />
-                <input
+                <input required
                   type="number"
                   className="inputSpace"
                   placeholder="Stock"
@@ -222,7 +224,7 @@ function AddProduct() {
                   alt=""
                 />
                 <br />
-                <input
+                <input required
                   type="text"
                   className="inputSpace"
                   placeholder="Image url"
@@ -232,11 +234,8 @@ function AddProduct() {
                 />
                 <br />
                 <br />
-                <button
+                <button type="submit"
                   className="btn btn-warning btn-addProduct"
-                  onClick={(e) => {
-                    add_product(data);
-                  }}
                 >
                   Add
                 </button>

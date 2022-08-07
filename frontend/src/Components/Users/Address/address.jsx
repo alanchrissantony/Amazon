@@ -86,23 +86,23 @@ function Address() {
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="name" className='newAddressLabel labelName'>Full name</label>
-                                <input type="text" className='inputSpace inputName' name='name' value={name} onChange={(e) => setName(e.target.value)} />
+                                <input required type="text" className='inputSpace inputName' name='name' value={name} onChange={(e) => setName(e.target.value)} />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="number" className='newAddressLabel labelNumber'>Mobile number</label>
-                                <input type="tel" className='inputSpace inputNumber' name='mobile' value={mobile} onChange={(e) => setMobile(e.target.value)} />
+                                <input required type="tel" className='inputSpace inputNumber' name='mobile' value={mobile} onChange={(e) => setMobile(e.target.value)} />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="pincode" className='newAddressLabel labelPincode'>Pincode</label>
-                                <input type="num" className='inputSpace inputPincode' name='pincode' value={pinCode} placeholder="6 digits [0-9] PIN code" onChange={(e) => setPinCode(e.target.value)} />
+                                <input required type="num" className='inputSpace inputPincode' name='pincode' value={pinCode} placeholder="6 digits [0-9] PIN code" onChange={(e) => setPinCode(e.target.value)} />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="flat" className='newAddressLabel labelFlat'>Flat, House no., Building, Company, Apartment</label>
-                                <input type="text" className='inputSpace inputFlat' name='address' value={address} onChange={(e) => setAddress(e.target.value)} />
+                                <input required type="text" className='inputSpace inputFlat' name='address' value={address} onChange={(e) => setAddress(e.target.value)} />
                             </div>
                             <div className="formDiv">
                                 <label htmlFor="area" className='newAddressLabel labelArea'>Area, Street, Sector, Village</label>
-                                <input type="text" className='inputSpace inputArea' name='place' value={place} onChange={(e) => setPlace(e.target.value)} />
+                                <input required type="text" className='inputSpace inputArea' name='place' value={place} onChange={(e) => setPlace(e.target.value)} />
                             </div>
 
 
@@ -113,12 +113,12 @@ function Address() {
                         <div className="newAddressFormContainerRight">
                             <div className="formDiv">
                                 <label htmlFor="landmark" className='newAddressLabel labelLandmark'>Landmark</label>
-                                <input type="text" className='inputSpace inputLandmark' value={landmark} placeholder='E.g. near Apollo hospital' name='landmark' onChange={(e) => setLandmark(e.target.value)} />
+                                <input required type="text" className='inputSpace inputLandmark' value={landmark} placeholder='E.g. near Apollo hospital' name='landmark' onChange={(e) => setLandmark(e.target.value)} />
                             </div>
                             <div className="formDiv inputCityDiv">
                                 <label htmlFor="city" className='newAddressLabel labelCity'>Town/City</label>
                                 <br />
-                                <input type="text" className='inputCity' name='city' value={city} onChange={(e) => setCity(e.target.value)} />
+                                <input required type="text" className='inputCity' name='city' value={city} onChange={(e) => setCity(e.target.value)} />
                             </div>
                             <div className='selectStateDiv'>
                                 <label htmlFor="state" className='newAddressLabel labelState'>State</label>

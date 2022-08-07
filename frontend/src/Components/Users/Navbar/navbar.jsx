@@ -312,6 +312,7 @@ function Home() {
                               </p>
                               {departments.map((department) => (
                                 <div
+                                  key={department._id}
                                   className="sidebarBodyTextDiv"
                                   onClick={(e) => {
                                     e.preventDefault();
@@ -393,7 +394,7 @@ function Home() {
               {departments && (
                 <div>
                   {departments.map((department) => (
-                    <div className="departmentRowHomeHeaderContentDiv">
+                    <div key={department._id} className="departmentRowHomeHeaderContentDiv">
                       <p
                         className="departmentRowHomeHeaderContentText"
                         onClick={(e) => {

@@ -116,7 +116,7 @@ function Products() {
                     <br />
                     <br />
                     <label htmlFor="" className="addProductInputLabel">
-                      Brand : {viewProduct.email}
+                      Brand : {viewProduct.brand}
                     </label>
                     <br />
                     <br />
@@ -168,7 +168,7 @@ function Products() {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{product.brand}</td>
+                      <td>{product.name}</td>
                       <td>${product.price}</td>
                       <td>{product.category}</td>
                       <td>

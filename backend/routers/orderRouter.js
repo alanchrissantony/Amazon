@@ -14,6 +14,7 @@ orderRouter.post(
     if (req.body.orderItems.length === 0) {
       res.status(400).send({ message: 'Cart is empty' });
     } else {
+
       const order = new Order({
         orderItems: req.body.orderItems,
         shippingAddress: req.body.shippingAddress,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./OrderActivity.css";
-import dashProductImg from "../../../Images/products.png";
+
 
 function OrderActivity() {
   const [orders, setOrders] = useState(false);
@@ -48,13 +48,13 @@ function OrderActivity() {
                         </p>
                       </div>
                     </div>
-                    {orders.map((order) => (
-                      <div className="adminPanelOrderActivityBoxContentContainer">
+                    {orders.map((order, index) => (
+                      <div key={index} className="adminPanelOrderActivityBoxContentContainer">
                         <div className="adminPanelOrderActivityBoxContentDiv">
                           <div className="adminPanelOrderActivityBoxContentUserImgContainer">
                             <div className="adminPanelOrderActivityBoxContentUserImgDiv">
                               <img
-                                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                                 alt=""
                                 className="adminPanelOrderActivityBoxContentUserImg"
                               />
@@ -123,8 +123,8 @@ function OrderActivity() {
                         </p>
                       </div>
                     </div>
-                    {products.map((product) => (
-                      <div className="adminPanelTopSellingProductContentContainer">
+                    {products.map((product, index) => (
+                      <div key={index} className="adminPanelTopSellingProductContentContainer">
                         <div className="adminPanelTopSellingProductContentDiv">
                           <div className="adminPanelTopSellingProductContentImgDiv">
                             <div className="adminPanelTopSellingProductContentImgDivCon">

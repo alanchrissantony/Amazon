@@ -1,18 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import "./panel.css";
-import { AuthContext } from "../../../store/FirebaseContext";
 import dashOrderImg from "../../../Images/Box.png";
 import dashUserImg from "../../../Images/users.png";
 import dashProductImg from "../../../Images/products.png";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-
-import { useDispatch, useSelector } from "react-redux";
 
 
 function AdminPanel() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   
 

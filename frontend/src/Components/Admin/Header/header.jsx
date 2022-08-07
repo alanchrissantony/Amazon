@@ -58,7 +58,7 @@ function Header() {
                   })
                   .map((product, key) => {
                     return (
-                      <div>
+                      <div key={key}>
                         <p onClick={(e)=>{
                           e.preventDefault()
                           navigate(`/product/${product.department}`)

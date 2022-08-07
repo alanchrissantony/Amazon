@@ -37,7 +37,7 @@ function EditProduct() {
 
 
   useEffect(() => {
-    console.log(productId, product._id);
+
     if (productId === product._id) {
       setTitle(product.name);
       setPrice(product.price);
@@ -62,6 +62,7 @@ function EditProduct() {
   };
 
   const save_edit = async(data) =>{
+
     let url = "/api/products/edit"
     await axios.post(url, data)
     navigate('/admin/products')
@@ -107,7 +108,7 @@ function EditProduct() {
             </div>
             <hr />
             <div className="addProductInputContainer">
-              <form action="">
+              <form>
                 <p className="addNewAddressText">Edit product</p>
                 <div className="addProductFormLeft">
                   <label htmlFor="" className="addProductInputLabel">
@@ -190,7 +191,7 @@ function EditProduct() {
                 >
                   {departments.map((department, index) =>{
                     return(
-                      <option value={department._id}>{department.name}</option>
+                      <option key={index} value={department._id}>{department.name}</option>
                     )
                   })}
                 </select>
@@ -263,8 +264,8 @@ function EditProduct() {
                             category: category,
                             department: department,
                             description: description,
-                            price: parseFloat(price),
-                            countInStock: parseInt(stock),
+                            price: price,
+                            countInStock: stock,
 
                       };
                       save_edit(data)
