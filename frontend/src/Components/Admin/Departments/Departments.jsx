@@ -35,7 +35,7 @@ function Departments() {
       const { data } = await axios.post(url);
       setDepartments(data);
     } catch (error) {
-      console.log(error.message);
+      
       setError(error.message);
     }
   };

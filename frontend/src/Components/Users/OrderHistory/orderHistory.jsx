@@ -32,7 +32,7 @@ function OrderHistory() {
     var today = new Date(),
         date = dayName + ', ' + today.getDate() + ' ' + monthNames[month.getMonth()] + ' ' + today.getFullYear();
 
-    console.log(orders, week.getDay);
+    
 
     return (
         <div className='orderHistorySection'>

@@ -46,7 +46,7 @@ function Order() {
     const time = new Date
     var paidAt = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
 
-    console.log(order);
+    
 
     return (
         <div className='orderSection'>

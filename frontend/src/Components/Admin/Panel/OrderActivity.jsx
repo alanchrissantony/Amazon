@@ -13,7 +13,7 @@ function OrderActivity() {
       const data = await axios.post(url);
       setOrders(data.data);
     } catch (error) {
-      console.log(error.message);
+      
     }
   };
 
@@ -23,7 +23,7 @@ function OrderActivity() {
       const data = await axios.get(url);
       setProducts(data.data);
     } catch (error) {
-      console.log(error.message);
+      
     }
   };
 

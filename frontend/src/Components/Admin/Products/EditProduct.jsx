@@ -57,7 +57,7 @@ function EditProduct() {
       const { data } = await axios.post(url);
       setDepartments(data);
     } catch (error) {
-      console.log(error.message);
+      
     }
   };
 

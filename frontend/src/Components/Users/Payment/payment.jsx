@@ -57,7 +57,7 @@ function Payment() {
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
-    console.log(cart.cartItems);
+    
 
     for (let i = 0; i < cart.cartItems.length; i++) {
       let countInStock = cart.cartItems[i].countInStock - cart.cartItems[i].qty;

@@ -46,7 +46,7 @@ function AddProduct() {
       .post(url, data)
       .then(navigate("/admin/products"))
       .catch(function (error) {
-        console.log(error);
+        
       });
   };
 
@@ -56,7 +56,7 @@ function AddProduct() {
       const { data } = await axios.post(url);
       setDepartments(data);
     } catch (error) {
-      console.log(error.message);
+      
       setError(error.message);
     }
   };

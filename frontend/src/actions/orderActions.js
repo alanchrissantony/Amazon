@@ -36,7 +36,7 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     const { data } = await Axios.get(`/api/orders/${orderId}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
-    console.log(data);
+    
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
     localStorage.setItem('orderDetails', JSON.stringify(data));
   } catch (error) {
@@ -83,14 +83,14 @@ export const listOrderMine = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     });
-    console.log('order history success', data);
+    
     dispatch({ type: ORDER_MINE_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
-        console.log('order history fail', message);
+        
     dispatch({ type: ORDER_MINE_LIST_FAIL, payload: message });
   }
 };

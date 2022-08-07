@@ -279,13 +279,13 @@ a{
     margin-top: 8px;
 }
 .navSearchList{
-    width: 632px;
+    width: 598px;
     height: auto;
     background-color: white;
     position: absolute;
     z-index: 999;
     margin-top: 49px;
-    margin-left: 308px;
+    margin-left: 342px;
     border: 1px solid #ccc;
 }
 .navSearchList div{

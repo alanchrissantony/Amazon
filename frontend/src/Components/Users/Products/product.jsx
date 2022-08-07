@@ -11,7 +11,7 @@ function Product() {
 
     const [products, setProducts] = useState(false)
 
-    // console.log(window.location.pathname.split('/')[2]);
+    
 
     const dispatch_products = async()=>{
         let path = window.location.pathname

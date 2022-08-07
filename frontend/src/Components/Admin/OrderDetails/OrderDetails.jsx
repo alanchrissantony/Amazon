@@ -20,7 +20,7 @@ function OrderDetails() {
       const data = await axios.post(url);
       setOrders(data.data);
     } catch (error) {
-      console.log(error.message);
+      
       setError(error.message);
     }
   };

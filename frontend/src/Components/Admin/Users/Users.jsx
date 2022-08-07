@@ -20,7 +20,7 @@ function Users() {
       const data = await axios.post(url);
       setUsers(data.data);
     } catch (error) {
-      console.log(error.message);
+      
       setError(error.message);
     }
   };
