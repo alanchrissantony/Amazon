@@ -21,9 +21,9 @@ NOTE: Please read the RUN section before opening an issue.
 ## Demo
 
 <p align="center">
+<img src="https://imgur.com/AUANDIe.png"/>
 <img src="https://imgur.com/ttUp2cr.png"/>
 <img src="https://imgur.com/Q2eD0Ch.png"/>
-<img src="https://imgur.com/AUANDIe.png"/>
 <img src="https://imgur.com/u7QgIXP.png"/>
 <img src="https://imgur.com/leiBFEb.png"/>
 
