@@ -21,26 +21,26 @@ NOTE: Please read the RUN section before opening an issue.
 ## Demo
 
 <p align="center">
-<img src="https://imgur.com/ttUp2cr"/>
-<img src="https://imgur.com/Q2eD0Ch"/>
-<img src="https://imgur.com/AUANDIe"/>
-<img src="https://imgur.com/u7QgIXP"/>
-<img src="https://imgur.com/leiBFEb"/>
+<img src="https://imgur.com/ttUp2cr.png"/>
+<img src="https://imgur.com/Q2eD0Ch.png"/>
+<img src="https://imgur.com/AUANDIe.png"/>
+<img src="https://imgur.com/u7QgIXP.png"/>
+<img src="https://imgur.com/leiBFEb.png"/>
 
-<img src="https://imgur.com/eG2LmmH"/>
-<img src="https://imgur.com/M26A2bA"/>
-<img src="https://imgur.com/UEWyeHs"/>
-<img src="https://imgur.com/SSvN2Xo"/>
-<img src="https://imgur.com/AkcApjM"/>
+<img src="https://imgur.com/eG2LmmH.png"/>
+<img src="https://imgur.com/M26A2bA.png"/>
+<img src="https://imgur.com/UEWyeHs.png"/>
+<img src="https://imgur.com/SSvN2Xo.png"/>
+<img src="https://imgur.com/AkcApjM.png"/>
 
-<img src="https://imgur.com/foLzkN4"/>
-<img src="https://imgur.com/EP1UcYI"/>
-<img src="https://imgur.com/uRWhLIN"/>
-<img src="https://imgur.com/Fyul6Fp"/>
-<img src="https://imgur.com/C2zV6l1"/>
+<img src="https://imgur.com/foLzkN4.png"/>
+<img src="https://imgur.com/EP1UcYI.png"/>
+<img src="https://imgur.com/uRWhLIN.png"/>
+<img src="https://imgur.com/Fyul6Fp.png"/>
+<img src="https://imgur.com/C2zV6l1.png"/>
 
-<img src="https://imgur.com/cpign8g"/>
-<img src="https://imgur.com/EYsweEs"/>
+<img src="https://imgur.com/cpign8g.png"/>
+<img src="https://imgur.com/EYsweEs.png"/>
 </p>
 
 
