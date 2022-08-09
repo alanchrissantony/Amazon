@@ -1,6 +1,6 @@
 <h1 align="center">Amazon<h1/>
 
-# Ecommerce-ShoppingCart
+# Ecommerce-Application
 
 
 ## Table of contents
