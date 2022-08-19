@@ -1,6 +1,6 @@
 <h1 align="center">Amazon<h1/>
 
-# Ecommerce-Application
+# MERN Ecommerce-Application
 
 
 ## Table of contents
