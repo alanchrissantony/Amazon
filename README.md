@@ -134,4 +134,4 @@ All the models can be found in the models directory created using mongoose.
 
   
 
-[Alan Chriss Antony](https://github.com/alanchrissantony)
+[Alan Chris Antony](https://github.com/alanchrissantony)
