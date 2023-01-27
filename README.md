@@ -14,7 +14,7 @@
 
 ## Introduction
 
-A virtual ecommerce website using React, Node js, Express js, and Mongoose.
+A virtual ecommerce web application using React, Node js, Express js, and Mongoose.
 
 NOTE: Please read the RUN section before opening an issue.
 
