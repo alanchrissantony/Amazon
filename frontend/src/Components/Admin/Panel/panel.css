@@ -77,8 +77,12 @@
   float: left;
 }
 .adminPanelOverviewOrdersImg {
+  padding-top: 1rem;
   width: 66px;
   height: auto;
+}
+.adminPanelOverviewOrdersTextDivContainer{
+  float: left;
 }
 .adminPanelOverviewOrdersText {
   color: #111;
@@ -95,7 +99,7 @@
   font-size: 14px;
 }
 .adminPanelOverviewOrdersTextDivContainer {
-  margin-left: 1rem;
+  margin-left: .75rem;
   float: left;
 }
 
