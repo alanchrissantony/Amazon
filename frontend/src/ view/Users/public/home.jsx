@@ -1,3 +1,4 @@
+import React from 'react';
 import Departments from '../../../Components/Users/Departments/departments'
 import RowPost from '../../../Components/Users/RowPosts/rowPost';
 
